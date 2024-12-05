@@ -2,33 +2,33 @@ import Link from "next/link";
 
 const Home = () => {
   return (
-    <main className="bg-slate-700 flex flex-col space-y-4 py-12">
-      <div className="p-4 flex justify-center bg-yellow-200">
+    <main className="flex flex-col space-y-4 bg-slate-700 py-12">
+      <div className="flex justify-center bg-yellow-200 p-4">
         <h1 className="text-2xl">RAWpertoire</h1>
       </div>
-      <div className="p-4 outline outline-white outline-4 mx-auto rounded-2xl border-slate-500 border-8 border-opacity-50 bg-white">
-        <h2 className="p-4 font-bold text-2xl text-emerald-500 underline underline-offset-8">
+      <div className="mx-auto w-11/12 rounded-2xl border-8 border-slate-500 border-opacity-50 bg-amber-100 p-4 outline outline-4 outline-white">
+        <h2 className="px-4 pt-4 text-2xl font-bold text-emerald-500 underline underline-offset-8">
           INTRO
         </h2>
-        <p className="text-justify w-4/5 mx-auto">
+        <p className="mx-auto p-4 text-justify font-medium drop-shadow-lg">
           Heyo, I&apos;m a creative Software Developer/Engineer with 6+ years of
           experience designing, developing and testing web-based applications.
           <br />
           <br />
           I&apos;m doing this portfolio/repetoire rework to test/display my
-          skills and hopefully leave my own mark on front-end development in
-          someway
+          skills and hopefully leave my own small mark on front-end development
+          in someway
         </p>
       </div>
-      <div className="p-4 outline outline-white outline-4 mx-auto rounded-2xl border-slate-500 border-8 border-opacity-50 bg-white w-11/12">
-        <h2 className="p-4 font-bold text-2xl text-emerald-500 underline underline-offset-8">
+      <div className="mx-auto w-11/12 rounded-2xl border-8 border-emerald-950 border-opacity-75 bg-slate-50 p-4 outline outline-4 outline-slate-500">
+        <h2 className="px-4 pt-4 text-2xl font-bold text-red-800 underline underline-offset-8">
           Summarized Career History
         </h2>
-        <ul className="w-11/12 mx-auto py-4">
-          <li className="mb-8">
-            <section>
-              <h3>General Motors</h3>
-              <div className="ml-4">
+        <ul className="list-inside py-4">
+          <li className="mb-8 p-4">
+            <section className="font-medium">
+              <h3 className="text-xl">General Motors</h3>
+              <div className="md:ml-4">
                 <h4>Data Engineer | January 2021 - April 2023</h4>
                 <h5>Austin, TX</h5>
                 <p className="pt-2">
@@ -43,7 +43,7 @@ const Home = () => {
                   forecasting, resulting in a 30% increase in efficiency.
                 </p>
                 <p>Other tasks included:</p>
-                <ul className="list-disc list-inside">
+                <ul className="list-inside list-disc">
                   <li>Applying queries to work with new table definitions</li>
                   <li>Fine tuning Spark configurations</li>
                   <li>Fine tuning Autosys job configurations</li>
@@ -112,9 +112,9 @@ const Home = () => {
           </li>
         </ul>
       </div>
-      <div className="flex w-11/12 mx-auto">
-        <div className="basis-1/4 p-4 outline outline-white outline-4 mx-auto rounded-2xl border-slate-500 border-8 border-opacity-50 bg-white">
-          <h2 className="p-4 font-bold text-2xl text-emerald-500 underline underline-offset-8">
+      <div className="mx-auto flex w-11/12">
+        <div className="mx-auto basis-1/4 rounded-2xl border-8 border-slate-500 border-opacity-50 bg-white p-4 outline outline-4 outline-white">
+          <h2 className="p-4 text-2xl font-bold text-emerald-500 underline underline-offset-8">
             Current Work
           </h2>
           <ul>
@@ -127,8 +127,8 @@ const Home = () => {
             <li>Appointment App (WIP)</li>
           </ul>
         </div>
-        <div className="basis-1/2 p-4 outline outline-white outline-4 mx-auto rounded-2xl border-slate-500 border-8 border-opacity-50 bg-white">
-          <h2 className="p-4 font-bold text-2xl text-emerald-500 underline underline-offset-8">
+        <div className="mx-auto basis-1/2 rounded-2xl border-8 border-slate-500 border-opacity-50 bg-white p-4 outline outline-4 outline-white">
+          <h2 className="p-4 text-2xl font-bold text-emerald-500 underline underline-offset-8">
             Skills Breakdown
           </h2>
           <h4>List all relevant hard/soft skills</h4>
