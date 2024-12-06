@@ -4,13 +4,13 @@ const Home = () => {
   return (
     <main className="flex flex-col space-y-4 bg-slate-700 py-12">
       <div className="flex justify-center bg-yellow-200 p-4">
-        <h1 className="text-2xl">RAWpertoire</h1>
+        <h1>RAWpertoire</h1>
       </div>
       <div className="mx-auto w-11/12 rounded-2xl border-8 border-slate-500 border-opacity-50 bg-amber-100 p-4 outline outline-4 outline-white">
-        <h2 className="px-4 pt-4 text-2xl font-bold text-emerald-500 underline underline-offset-8">
+        <h2 className="px-4 pt-4 font-bold text-emerald-500 underline underline-offset-8">
           INTRO
         </h2>
-        <p className="mx-auto p-4 text-justify font-medium drop-shadow-lg">
+        <p className="mx-auto p-4 text-justify text-base font-medium drop-shadow-lg">
           Heyo, I&apos;m a creative Software Developer/Engineer with 6+ years of
           experience designing, developing and testing web-based applications.
           <br />
@@ -21,7 +21,7 @@ const Home = () => {
         </p>
       </div>
       <div className="mx-auto w-11/12 rounded-2xl border-8 border-emerald-950 border-opacity-75 bg-slate-50 p-4 outline outline-4 outline-slate-500">
-        <h2 className="px-4 pt-4 text-2xl font-bold text-red-800 underline underline-offset-8">
+        <h2 className="px-4 pt-4 font-bold text-red-800 underline underline-offset-8">
           Summarized Career History
         </h2>
         <ul className="list-inside py-4">
