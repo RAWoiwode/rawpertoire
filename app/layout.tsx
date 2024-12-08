@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Noto_Serif } from "next/font/google";
+import Link from "next/link";
 
 const noto_sans = Noto_Serif({
   subsets: ["latin"],
@@ -19,7 +20,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={noto_sans.className}>
-      <body className="container mx-auto bg-slate-950">{children}</body>
+      <body className="flex bg-slate-950 p-4">
+        <nav className="basis-1/4 bg-slate-200 px-8 py-4">
+          <h1>RAWpertoire</h1>
+          <ul>
+            <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li>
+              <Link href="/cv">CV</Link>
+            </li>
+            <li>
+              <Link href="/current">Current Work</Link>
+            </li>
+          </ul>
+        </nav>
+        {children}
+      </body>
     </html>
   );
 }

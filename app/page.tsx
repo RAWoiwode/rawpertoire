@@ -2,11 +2,8 @@ import Link from "next/link";
 
 const Home = () => {
   return (
-    <main className="flex flex-col space-y-4 bg-slate-700 py-12">
-      <div className="flex justify-center bg-yellow-200 p-4">
-        <h1>RAWpertoire</h1>
-      </div>
-      <div className="mx-auto w-11/12 rounded-2xl border-8 border-slate-500 border-opacity-50 bg-amber-100 p-4 outline outline-4 outline-white">
+    <main className="h-screen space-y-4 overflow-auto bg-slate-700 py-6">
+      <div className="mx-auto w-11/12 rounded-2xl border-8 border-slate-500 border-opacity-50 bg-amber-100 p-4">
         <h2 className="px-4 pt-4 font-bold text-emerald-500 underline underline-offset-8">
           INTRO
         </h2>
