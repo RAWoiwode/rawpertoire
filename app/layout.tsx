@@ -35,7 +35,9 @@ export default function RootLayout({
             </li>
           </ul>
         </nav>
-        {children}
+        <main className="min-h-screen basis-3/4 space-y-4 overflow-auto bg-slate-700 py-6">
+          {children}
+        </main>
       </body>
     </html>
   );
