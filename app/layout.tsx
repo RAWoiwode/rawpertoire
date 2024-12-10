@@ -20,8 +20,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={noto_sans.className}>
-      <body className="flex bg-slate-950 p-4">
-        <nav className="basis-1/4 bg-slate-200 px-8 py-4">
+      <body className="bg-background-950 flex">
+        <nav className="bg-background-900 border-r-accent-300 basis-1/4 border-r-4 px-8 py-4">
           <h1>RAWpertoire</h1>
           <ul>
             <li>

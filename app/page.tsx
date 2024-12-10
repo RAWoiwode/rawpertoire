@@ -1,7 +1,7 @@
 const Home = () => {
   return (
-    <div className="mx-auto w-11/12 rounded-2xl border-8 border-slate-500 border-opacity-50 bg-amber-100 p-4">
-      <h2 className="px-4 pt-4 font-bold text-emerald-500 underline underline-offset-8">
+    <div className="border-secondary-500 bg-primary-700 mx-auto w-11/12 rounded-2xl border-8 border-opacity-50 p-4">
+      <h2 className="text-text-50 px-4 pt-4 font-bold underline underline-offset-8">
         INTRO
       </h2>
       <p className="mx-auto p-4 text-justify text-base font-medium drop-shadow-lg">
