@@ -12,6 +12,10 @@ TBD
 
 TBD
 
+### Inspiration
+
+[Brittany Chiand](https://brittanychiang.com/)
+
 ##### Extra Plugins used
 
 - prettier-plugin-tailwindcss
