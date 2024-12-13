@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Noto_Serif } from "next/font/google";
-import "./globals.css";
-import SideNav from "./components/SideNav";
+import { Noto_Sans } from "next/font/google";
 
-const noto_sans = Noto_Serif({
+import SideNav from "./components/SideNav";
+import "./globals.css";
+
+const noto_sans = Noto_Sans({
   subsets: ["latin"],
   weight: ["400"],
 });
@@ -20,9 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={noto_sans.className}>
-      <body className="flex bg-background-950">
+      <body className="container mx-auto flex bg-background-950 text-text-50">
         <SideNav />
-        <main className="bg-slate-700 min-h-screen basis-3/4 space-y-4 overflow-auto py-6">
+        <main className="bg-slate-700 min-h-screen w-3/4 space-y-4 overflow-auto py-6">
           {children}
         </main>
       </body>
