@@ -24,14 +24,14 @@ const SideNav = () => {
   const pathname = usePathname();
 
   return (
-    <div className="flex min-h-screen w-1/4 flex-col">
+    <div className="flex flex-grow flex-col rounded-xl bg-background-800 shadow-lg lg:w-1/6">
       <Header />
-      <nav className="flex flex-auto flex-col space-y-2 border-r-2 border-r-secondary-300 bg-background-950 px-8 py-4">
+      <nav className="flex flex-auto flex-col space-y-2 px-8 py-4">
         {navItems.map((item) => (
           <Link
             key={item.path}
             href={item.path}
-            className={`w-full rounded-md px-8 py-2 text-left text-xl font-bold transition-all hover:bg-background-900/20 hover:shadow-md active:bg-primary-400 ${item.path === pathname ? "bg-background-900 shadow-md" : ""}`}
+            className={`relative rounded-md px-8 py-2 text-xl font-bold transition-transform hover:bg-background-900/20 hover:shadow-md active:bg-primary-400 ${item.path === pathname ? "translate-x-8 rounded-r-none bg-background-900 shadow-md" : ""}`}
           >
             {item.name}
           </Link>
