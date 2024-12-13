@@ -1,18 +1,24 @@
 const Home = () => {
   return (
-    <div className="mx-auto w-11/12 rounded-2xl p-4 text-text-100">
-      <h2 className="px-4 pt-4 font-bold underline underline-offset-8">
-        INTRO
-      </h2>
-      <p className="mx-auto p-4 text-justify text-base font-medium drop-shadow-lg">
-        Heyo, I&apos;m a creative Software Developer/Engineer with 6+ years of
-        experience designing, developing and testing web-based applications.
-        <br />
-        <br />
-        I&apos;m doing this portfolio/repetoire rework to test/display my skills
-        and hopefully leave my own small mark on front-end development in
-        someway
-      </p>
+    <div className="mx-auto w-1/3 content-center p-4 text-text-100">
+      <div className="mx-auto space-y-4 p-4 text-justify text-base drop-shadow-lg">
+        <p>
+          Heyo, I&apos;m a creative developer with 6+ years of experience
+          designing and developing web-based applications. I enjoy creating UIs
+          that are pleasing both to the eye and user experience.
+        </p>
+        <p>
+          I am not currently in my field of choice, but I do still work on
+          front-end development when I can, whether it is tutorials/classes or
+          working on small projects for friends.
+        </p>
+        <p>
+          Doing this portfolio/repetoire rework is my way to test/display skills
+          and knowledge I&apos;ve obtained over the years to hopefully create
+          some small useful thing to leave a small mark on front-end development
+          in someway.
+        </p>
+      </div>
     </div>
   );
 };

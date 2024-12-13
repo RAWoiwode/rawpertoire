@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en" className={noto_sans.className}>
       <body className="mx-auto flex min-h-screen bg-background-950 p-4 text-text-50">
         <SideNav />
-        <main className="bg-slate-700 space-y-4 overflow-auto py-6 lg:w-5/6">
+        <main className="bg-slate-700 flex space-y-4 overflow-auto py-6 lg:w-5/6">
           {children}
         </main>
       </body>
