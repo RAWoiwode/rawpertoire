@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
+import { Noto_Sans } from "next/font/google";
+
+import SideNav from "./components/SideNav";
 import "./globals.css";
+
+const noto_sans = Noto_Sans({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -12,8 +20,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="bg-slate-950 container mx-auto">{children}</body>
+    <html lang="en" className={noto_sans.className}>
+      <body className="mx-auto flex min-h-screen bg-background-950 p-4 text-text-50">
+        <SideNav />
+        <main className="bg-slate-700 flex space-y-4 overflow-auto py-6 lg:w-5/6">
+          {children}
+        </main>
+      </body>
     </html>
   );
 }

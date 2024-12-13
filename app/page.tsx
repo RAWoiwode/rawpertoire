@@ -1,13 +1,25 @@
 const Home = () => {
   return (
-    <main className="bg-slate-400">
-      <div className="p-4 flex justify-center">
-        <h1 className="text-2xl">RAWpertoire</h1>
+    <div className="mx-auto w-1/3 content-center p-4 text-text-100">
+      <div className="mx-auto space-y-4 p-4 text-justify text-base drop-shadow-lg">
+        <p>
+          Heyo, I&apos;m a creative developer with 6+ years of experience
+          designing and developing web-based applications. I enjoy creating UIs
+          that are pleasing both to the eye and user experience.
+        </p>
+        <p>
+          I am not currently in my field of choice, but I do still work on
+          front-end development when I can, whether it is tutorials/classes or
+          working on small projects for friends.
+        </p>
+        <p>
+          Doing this portfolio/repetoire rework is my way to test/display skills
+          and knowledge I&apos;ve obtained over the years to hopefully create
+          some small useful thing to leave a small mark on front-end development
+          in someway.
+        </p>
       </div>
-      <div className="p-4 flex justify-center">
-        <p>Beginning of my portfolio rework</p>
-      </div>
-    </main>
+    </div>
   );
 };
 

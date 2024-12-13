@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-2xl;
+    @apply tracking-wide;
+  }
+  h2 {
+    @apply text-xl;
+    @apply tracking-wide;
+  }
+  p {
+    @apply text-lg/relaxed;
+    @apply tracking-wide;
+  }
+}
