@@ -11,6 +11,14 @@
     @apply text-xl;
     @apply tracking-wide;
   }
+  h3 {
+    @apply text-lg;
+    @apply tracking-wide;
+  }
+  h4 {
+    @apply text-base;
+    @apply tracking-wide;
+  }
   p {
     @apply text-lg/relaxed;
     @apply tracking-wide;

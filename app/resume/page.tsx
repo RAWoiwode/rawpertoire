@@ -1,53 +1,36 @@
-import Link from "next/link";
+import JobCard from "./components/JobCard";
 
-const CV = () => {
+const resumeItems = [
+  {
+    title: "Data Engineer @ General Motors",
+    date: "JAN 2021 - APR 2023",
+    desc:
+      "My main project during this time was the &quot;Warranty Process Supplier Algorithm&quot; (WPSA) app. <br /> " +
+      "The entire Big Data team was migrating from Legacy Architecture (Hadoop/YARN) to a NextGen " +
+      "architecture (Kubernetes/ESS). I was part of the complete rewrite for WPSA which helped optimizing its " +
+      "functionality. We leveraged k8s, Docker, and Spark to automate supplier cost forecasting, resulting in a " +
+      "30% increase in efficiency.<br /><br />Other tasks included: Applying queries to work with new table definitions, " +
+      "Fine tuning Spark onfigurations, Fine tuning Autosys job configurations",
+  },
+  {
+    title: "Software Developer, Front-end @ General Motors",
+    date: "AUG 2019 - DEC 2020",
+    desc: "My primary project on this team was to rewrite the UI of eCommerce&apos;s teams B2B application, transitioning from Java to React. All of us on the team were new to React so it was anexciting venture.<br /> We conducted in-depth code reviews to identify programming errors, and bugs. I integrated a Linter into the project to help maintain consistent code styling. I also lead the adding of many core React concepts (Reducer & Context) and showed the team how to use them. We also conducted unit testing of Components using Jest.<br /> Overall, this rewrite resulted in a roughly 30% increase in user involvement.",
+  },
+];
+
+const Resume = () => {
   return (
     <div className="mx-auto w-2/5 p-4">
-      <ul className="list-inside py-4">
-        <li className="mb-8 p-4">
-          <section className="font-medium">
-            <h3 className="text-xl">Data Engineer @ General Motors</h3>
-            <h4>Jan 2021 - Apr 2023</h4>
-            <p className="pt-2">
-              My main project during this time was the{" "}
-              <u>Warranty Process Supplier Algorithm (WPSA)</u> app.
-              <br />
-              The entire Big Data team was migrating from Legacy architecture
-              (Hadoop/YARN) to a NextGen architecture(Kubernetes/ESS). I was
-              part of the complete rewrite for WPSA which helped optimizing its
-              functionality. We leveraged k8s, Docker, and Spark to automate
-              supplier cost forecasting, resulting in a 30% increase in
-              efficiency.
-            </p>
-            <p>Other tasks included:</p>
-            <ul className="list-inside list-disc">
-              <li>Applying queries to work with new table definitions</li>
-              <li>Fine tuning Spark configurations</li>
-              <li>Fine tuning Autosys job configurations</li>
-            </ul>
-            <h3 className="pt-4 text-xl">
-              Software Developer, Front-end @ General Motors
-            </h3>
-            <h4>AUG 2019 - DEC 2020</h4>
-            <p className="pt-2">
-              My primary project on this team was to rewrite the UI of
-              eCommerce&apos;s teams B2B application, transitioning from Java to
-              React. All of us on the team were new to React so it was
-              anexciting venture.
-              <br />
-              We conducted in-depth code reviews to identify programming errors,
-              and bugs. I integrated a Linter into the project to help maintain
-              consistent code styling. I also lead the adding of many core React
-              concepts (Reducer & Context) and showed the team how to use them.
-              We also conducted unit testing of Components using Jest.
-              <br />
-              Overall, this rewrite resulted in a roughly 30% increase in user
-              involvement.
-            </p>
-          </section>
-        </li>
-        <hr className="m-8" />
-        <li>
+      {resumeItems.map((item) => (
+        <JobCard
+          key={item.title}
+          title={item.title}
+          date={item.date}
+          desc={item.desc}
+        />
+      ))}
+      {/* <li>
           <section>
             <h3>University of Texas at El Paso</h3>
             <div className="ml-4">
@@ -82,11 +65,9 @@ const CV = () => {
                 efficiency of getting said funding opportunities granted(~50%).
               </p>
             </div>
-          </section>
-        </li>
-      </ul>
+          </section> */}
     </div>
   );
 };
 
-export default CV;
+export default Resume;
