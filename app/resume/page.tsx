@@ -1,4 +1,5 @@
 import JobCard from "./components/JobCard";
+import SkillPill from "./components/SkillPill";
 
 const resumeItems = [
   {
@@ -20,15 +21,20 @@ const resumeItems = [
 
 const Resume = () => {
   return (
-    <div className="mx-auto w-2/5 space-y-2 p-4">
-      {resumeItems.map((item) => (
-        <JobCard
-          key={item.title}
-          title={item.title}
-          date={item.date}
-          desc={item.desc}
-        />
-      ))}
+    <div className="ml-24 flex">
+      <div className="w-2/5 space-y-2 p-4">
+        {resumeItems.map((item) => (
+          <JobCard
+            key={item.title}
+            title={item.title}
+            date={item.date}
+            desc={item.desc}
+          />
+        ))}
+      </div>
+      <div className="flex w-1/4 flex-wrap content-start gap-2 p-4">
+        <SkillPill />
+      </div>
     </div>
   );
 };
