@@ -10,7 +10,7 @@ const JobCard = ({ title, date, desc }: Props) => {
       <h3>{title}</h3>
       <h4>{date}</h4>
       <p
-        className="whitespace-normal pt-2"
+        className="whitespace-normal pt-2 text-justify"
         dangerouslySetInnerHTML={{ __html: desc }}
       />
     </section>

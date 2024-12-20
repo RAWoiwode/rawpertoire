@@ -20,7 +20,7 @@
     @apply tracking-wide;
   }
   p {
-    @apply text-lg/relaxed;
+    @apply text-base/relaxed;
     @apply tracking-wide;
   }
 }
