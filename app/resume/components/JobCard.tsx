@@ -24,7 +24,7 @@ const JobCard = ({
   };
   return (
     <section
-      className="rounded-lg p-6 transition-all hover:translate-x-2 hover:bg-background-800/50 hover:shadow-lg"
+      className="rounded-lg p-6 transition-all hover:translate-x-4 hover:bg-background-800/50 hover:shadow-lg"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
