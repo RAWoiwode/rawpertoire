@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { FaGithub } from "react-icons/fa6";
 
 import Header from "./Header";
+import { IconContext } from "react-icons";
 
 const navItems = [
   {
@@ -39,7 +41,21 @@ const SideNav = () => {
           ))}
         </nav>
         <div className="flex justify-center pb-4">
-          <Link href={""}>Github</Link>
+          <Link
+            href={"https://github.com/RAWoiwode"}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <IconContext.Provider
+              value={{
+                className:
+                  "text-secondary-800/50 hover:text-secondary-600/75 transition-colors",
+                size: "32",
+              }}
+            >
+              <FaGithub />
+            </IconContext.Provider>
+          </Link>
         </div>
       </div>
     </div>
