@@ -1,30 +1,38 @@
 import Link from "next/link";
+import ProjectCard from "./components/ProjectCard";
 
-const Current = () => {
+const Projects = () => {
   return (
-    <div className="mx-auto flex w-11/12">
-      <div className="mx-auto basis-1/4 rounded-2xl border-8 border-slate-500 border-opacity-50 bg-white p-4 outline outline-4 outline-white">
-        <h2 className="p-4 text-2xl font-bold text-emerald-500 underline underline-offset-8">
-          Current Work
-        </h2>
-        <ul>
-          <li>
-            <Link href={"https://rawoiwode.com/"}>This</Link>
-          </li>
-          <li>
-            <Link href={"https://betoycaty.mx/"}>Wedding Site</Link>
-          </li>
-          <li>Appointment App (WIP)</li>
-        </ul>
-      </div>
-      <div className="mx-auto basis-1/2 rounded-2xl border-8 border-slate-500 border-opacity-50 bg-white p-4 outline outline-4 outline-white">
-        <h2 className="p-4 text-2xl font-bold text-emerald-500 underline underline-offset-8">
-          Skills Breakdown
-        </h2>
-        <h4>List all relevant hard/soft skills</h4>
+    <div className="mx-auto w-1/3 content-center">
+      <div className="mx-auto space-y-8">
+        <ProjectCard>
+          <Link
+            href={"https://rawoiwode.com/"}
+            className="text-accent-200 underline"
+          >
+            This
+          </Link>
+          <p>witty description</p>
+          <p>rough time estimate</p>
+        </ProjectCard>
+        <ProjectCard>
+          <Link
+            href={"https://betoycaty.mx/"}
+            className="text-accent-200 underline"
+          >
+            Wedding Site
+          </Link>
+          <p>witty description</p>
+          <p>rough time estimate</p>
+        </ProjectCard>
+        <ProjectCard>
+          Appointment App (WIP)
+          <p>witty description</p>
+          <p>rough time estimate</p>
+        </ProjectCard>
       </div>
     </div>
   );
 };
 
-export default Current;
+export default Projects;

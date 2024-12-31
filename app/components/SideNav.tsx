@@ -24,7 +24,7 @@ const SideNav = () => {
   const pathname = usePathname();
 
   return (
-    <div className="flex flex-grow flex-col rounded-xl bg-background-800 shadow-lg lg:w-1/6">
+    <div className="flex flex-grow flex-col rounded-xl bg-background-700 shadow-lg lg:w-1/6">
       <Header />
       <nav className="flex flex-col items-center space-y-2 px-8 py-4">
         {navItems.map((item) => (
