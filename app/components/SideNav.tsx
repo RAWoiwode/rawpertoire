@@ -24,19 +24,24 @@ const SideNav = () => {
   const pathname = usePathname();
 
   return (
-    <div className="flex flex-grow flex-col rounded-xl bg-background-700 shadow-lg lg:w-1/6">
+    <div className="my-8 ml-12 flex max-h-[50vh] flex-col rounded-xl bg-background-700 py-8 shadow-lg lg:w-1/6">
       <Header />
-      <nav className="flex flex-col items-center space-y-2 px-8 py-4">
-        {navItems.map((item) => (
-          <Link
-            key={item.path}
-            href={item.path}
-            className={`relative w-44 rounded-md px-8 py-2 text-xl font-bold tracking-widest transition-transform ${item.path === pathname ? "translate-x-32 rounded-r-none bg-background-950" : "hover:translate-x-4"}`}
-          >
-            {item.name}
-          </Link>
-        ))}
-      </nav>
+      <div className="flex flex-1 flex-col justify-between">
+        <nav className="flex flex-col items-center space-y-2 px-8 py-4">
+          {navItems.map((item) => (
+            <Link
+              key={item.path}
+              href={item.path}
+              className={`relative w-44 rounded-md px-8 py-2 text-xl font-bold tracking-widest transition-transform ${item.path === pathname ? "translate-x-32 rounded-r-none bg-background-950" : "hover:translate-x-4"}`}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </nav>
+        <div className="flex justify-center pb-4">
+          <Link href={""}>Github</Link>
+        </div>
+      </div>
     </div>
   );
 };
