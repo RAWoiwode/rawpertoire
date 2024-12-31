@@ -19,6 +19,7 @@ TBD
 ##### Extra Plugins used
 
 - prettier-plugin-tailwindcss
+- [react-icons](https://react-icons.github.io/react-icons/)
 
 #### Humble beginnings
 
