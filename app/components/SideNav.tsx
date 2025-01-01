@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { FaGithub } from "react-icons/fa6";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 
 import Header from "./Header";
-import { IconContext } from "react-icons";
+import IconLink from "./IconLink";
 
 const navItems = [
   {
@@ -22,6 +22,12 @@ const navItems = [
   },
 ];
 
+/**
+ * Main SideNav Component.
+ *
+ * TODO: Separate data and UI
+ * TODO: Make translate animation on active item be more dynamic
+ */
 const SideNav = () => {
   const pathname = usePathname();
 
@@ -40,23 +46,24 @@ const SideNav = () => {
             </Link>
           ))}
         </nav>
-        <div className="flex justify-center pb-4">
-          <Link
-            href={"https://github.com/RAWoiwode"}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <IconContext.Provider
-              value={{
-                className:
-                  "text-secondary-800/50 hover:text-secondary-600/75 transition-colors",
-                size: "32",
-              }}
+        <ul className="flex justify-center space-x-4">
+          <li>
+            <IconLink
+              link="https://github.com/RAWoiwode"
+              title="GitHub Profile"
             >
               <FaGithub />
-            </IconContext.Provider>
-          </Link>
-        </div>
+            </IconLink>
+          </li>
+          <li>
+            <IconLink
+              link="https://www.linkedin.com/in/rawoiwode/"
+              title="LinkedIn Profile"
+            >
+              <FaLinkedinIn />
+            </IconLink>
+          </li>
+        </ul>
       </div>
     </div>
   );
