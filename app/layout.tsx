@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={noto_sans.className}>
-      <body className="mx-auto flex min-h-screen bg-background-950 p-4 text-text-50">
+      <body className="bg-background-950 text-text-50 md:mx-auto md:flex md:min-h-screen md:p-4">
         <SideNav />
         <main className="bg-slate-700 flex space-y-4 overflow-auto py-6 lg:w-5/6">
           {children}
