@@ -32,7 +32,7 @@ const SideNav = () => {
   const pathname = usePathname();
 
   return (
-    <div className="flex max-h-[50vh] flex-col bg-background-700 py-8 shadow-lg lg:my-8 lg:ml-12 lg:w-1/6 lg:rounded-xl">
+    <div className="flex max-h-[50vh] flex-col py-8 lg:my-8 lg:ml-12 lg:w-1/6 lg:rounded-xl lg:bg-background-700 lg:shadow-lg">
       <Header />
       <div className="flex flex-1 flex-col justify-between">
         <nav className="hidden flex-col items-center space-y-2 px-8 py-4 lg:flex">

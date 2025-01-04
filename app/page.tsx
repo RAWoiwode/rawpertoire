@@ -1,6 +1,6 @@
 const Home = () => {
   return (
-    <div className="mx-auto content-center bg-background-800 p-4 text-text-100 md:w-1/3">
+    <div className="mx-auto content-center p-4 text-text-100 lg:w-1/3">
       <div className="mx-auto space-y-4 p-4 text-justify text-base drop-shadow-lg">
         <p>
           Heyo, I&apos;m a creative developer with 6+ years of experience

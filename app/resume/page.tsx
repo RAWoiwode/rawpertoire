@@ -114,8 +114,8 @@ const Resume = () => {
   };
 
   return (
-    <div className="flex space-x-8 md:ml-24">
-      <div className="w-2/5 space-y-8 p-4">
+    <div className="flex lg:ml-24 lg:space-x-8">
+      <div className="space-y-8 p-4 lg:w-2/5">
         {resumeItems.map((item) => (
           <JobCard
             key={item.title}
@@ -128,7 +128,7 @@ const Resume = () => {
           />
         ))}
       </div>
-      <div className="w-1/4">
+      <div className="lg:w-1/4">
         <div
           className={`flex flex-wrap content-start gap-2 p-4 transition-all duration-300 ${isVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"}`}
         >

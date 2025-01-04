@@ -29,7 +29,7 @@ export default function RootLayout({
         <main className="bg-slate-700 hidden space-y-4 overflow-auto py-6 lg:flex lg:w-5/6">
           {children}
         </main>
-        <main className="bg-slate-700 flex flex-col space-y-4 lg:hidden">
+        <main className="bg-slate-700 flex flex-col space-y-4 py-4 lg:hidden">
           <Home />
           <Resume />
           <Projects />

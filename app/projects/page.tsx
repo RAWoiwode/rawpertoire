@@ -3,7 +3,7 @@ import ProjectCard from "./components/ProjectCard";
 
 const Projects = () => {
   return (
-    <div className="mx-auto w-1/3 content-center">
+    <div className="mx-2 content-center lg:mx-auto lg:w-1/3">
       <div className="mx-auto space-y-8">
         <ProjectCard>
           <Link
