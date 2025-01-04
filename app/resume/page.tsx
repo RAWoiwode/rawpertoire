@@ -114,7 +114,7 @@ const Resume = () => {
   };
 
   return (
-    <div className="ml-24 flex space-x-8">
+    <div className="flex space-x-8 md:ml-24">
       <div className="w-2/5 space-y-8 p-4">
         {resumeItems.map((item) => (
           <JobCard
