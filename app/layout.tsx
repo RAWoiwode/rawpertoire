@@ -3,6 +3,9 @@ import { Noto_Sans } from "next/font/google";
 
 import SideNav from "./components/SideNav";
 import "./globals.css";
+import Home from "./page";
+import Resume from "./resume/page";
+import Projects from "./projects/page";
 
 const noto_sans = Noto_Sans({
   subsets: ["latin"],
@@ -21,10 +24,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={noto_sans.className}>
-      <body className="mx-auto flex min-h-screen bg-background-950 p-4 text-text-50">
+      <body className="bg-background-950 text-text-50 lg:mx-auto lg:flex lg:min-h-screen lg:p-4">
         <SideNav />
-        <main className="bg-slate-700 flex space-y-4 overflow-auto py-6 lg:w-5/6">
+        <main className="bg-slate-700 hidden space-y-4 overflow-auto py-6 lg:flex lg:w-5/6">
           {children}
+        </main>
+        <main className="bg-slate-700 flex flex-col space-y-4 py-4 lg:hidden">
+          <Home />
+          <Resume />
+          <Projects />
         </main>
       </body>
     </html>
