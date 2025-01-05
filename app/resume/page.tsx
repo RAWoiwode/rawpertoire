@@ -1,9 +1,4 @@
-"use client";
-
-import { useRef, useState } from "react";
-
 import JobCard from "./components/JobCard";
-import SkillPills from "./components/SkillPills";
 
 const resumeItems = [
   {
@@ -91,50 +86,20 @@ const resumeItems = [
 ];
 
 /**
- * TODO: Make the SkillPills display next to the relevant JobCard
  * TODO: Separate data, logic, and ui
  */
 const Resume = () => {
-  const [jobSkills, setJobSkills] = useState<string[] | null>(null);
-  const [isVisible, setIsVisible] = useState(false); // Controls animation visibility
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  const handleJobMouseEnter = (skills: string[]) => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-      timeoutRef.current = null;
-    }
-    setJobSkills(skills);
-    setIsVisible(true);
-  };
-
-  const handleJobMouseLeave = () => {
-    setIsVisible(false); // Start fade out
-    timeoutRef.current = setTimeout(() => setJobSkills(null), 300);
-  };
-
   return (
-    <div className="flex lg:ml-24 lg:space-x-8">
-      <div className="space-y-8 p-4 lg:w-2/5">
-        {resumeItems.map((item) => (
-          <JobCard
-            key={item.title}
-            title={item.title}
-            date={item.date}
-            desc={item.desc}
-            skills={item.skills}
-            onJobMouseEnter={handleJobMouseEnter}
-            onJobMouseLeave={handleJobMouseLeave}
-          />
-        ))}
-      </div>
-      <div className="lg:w-1/4">
-        <div
-          className={`flex flex-wrap content-start gap-2 p-4 transition-all duration-300 ${isVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"}`}
-        >
-          {jobSkills && <SkillPills skills={jobSkills} />}
-        </div>
-      </div>
+    <div className="space-y-8 p-4">
+      {resumeItems.map((item) => (
+        <JobCard
+          key={item.title}
+          title={item.title}
+          date={item.date}
+          desc={item.desc}
+          skills={item.skills}
+        />
+      ))}
     </div>
   );
 };
