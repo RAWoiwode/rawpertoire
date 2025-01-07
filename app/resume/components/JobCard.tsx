@@ -3,11 +3,16 @@
 import { useRef, useState } from "react";
 import SkillPills from "./SkillPills";
 
+interface Skill {
+  skill: string;
+  years: number;
+}
+
 interface Props {
   title: string;
   date: string;
   desc: string;
-  skills: string[];
+  skills: Skill[];
 }
 
 const JobCard = ({ title, date, desc, skills }: Props) => {
@@ -21,7 +26,7 @@ const JobCard = ({ title, date, desc, skills }: Props) => {
       timeoutRef.current = null;
     }
     setIsRendered(true);
-    setTimeout(() => setIsVisible(true), 1);
+    setTimeout(() => setIsVisible(true), 100);
   };
 
   const handleJobMouseLeave = () => {
