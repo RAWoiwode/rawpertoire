@@ -1,3 +1,4 @@
+import MobileHeader from "../components/MobileHeader";
 import JobCard from "./components/JobCard";
 
 const resumeItems = [
@@ -90,16 +91,19 @@ const resumeItems = [
  */
 const Resume = () => {
   return (
-    <div className="space-y-8 p-4">
-      {resumeItems.map((item) => (
-        <JobCard
-          key={item.title}
-          title={item.title}
-          date={item.date}
-          desc={item.desc}
-          skills={item.skills}
-        />
-      ))}
+    <div className="p-4">
+      <MobileHeader>Resume</MobileHeader>
+      <div className="space-y-8 p-4">
+        {resumeItems.map((item) => (
+          <JobCard
+            key={item.title}
+            title={item.title}
+            date={item.date}
+            desc={item.desc}
+            skills={item.skills}
+          />
+        ))}
+      </div>
     </div>
   );
 };
