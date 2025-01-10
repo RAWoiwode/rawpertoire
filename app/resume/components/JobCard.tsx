@@ -15,6 +15,11 @@ interface Props {
   skills: Skill[];
 }
 
+/**
+ * Renders the JobCard for a specific Job
+ *
+ * TODO: Handle the mobile vs desktop better i.e. If I click on a JobCard in mobile view, the desktop div still 'renders'
+ */
 const JobCard = ({ title, date, desc, skills }: Props) => {
   const [isVisible, setIsVisible] = useState(false); // Controls animation visibility
   const [isRendered, setIsRendered] = useState(false);
@@ -35,9 +40,9 @@ const JobCard = ({ title, date, desc, skills }: Props) => {
   };
 
   return (
-    <div className="flex space-x-4">
+    <div className="flex flex-col lg:flex-row lg:space-x-4">
       <section
-        className="rounded-lg p-6 transition-all hover:translate-x-4 hover:bg-background-800/50 hover:shadow-lg lg:w-2/5"
+        className="rounded-lg pb-4 transition-all lg:w-2/5 lg:p-6 lg:px-4 lg:hover:translate-x-4 lg:hover:bg-background-800/50 lg:hover:shadow-lg"
         onMouseEnter={handleJobMouseEnter}
         onMouseLeave={handleJobMouseLeave}
       >
@@ -50,11 +55,14 @@ const JobCard = ({ title, date, desc, skills }: Props) => {
       </section>
       {isRendered && (
         <div
-          className={`flex w-2/5 flex-wrap content-start gap-2 p-4 transition-all duration-300 ${isVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"}`}
+          className={`hidden w-2/5 content-start gap-2 p-4 lg:flex lg:flex-wrap lg:transition-all lg:duration-300 ${isVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"}`}
         >
           <SkillPills skills={skills} />
         </div>
       )}
+      <div className="flex flex-wrap gap-2 lg:hidden">
+        <SkillPills skills={skills} />
+      </div>
     </div>
   );
 };
