@@ -1,10 +1,12 @@
 import Link from "next/link";
 import ProjectCard from "./components/ProjectCard";
+import MobileHeader from "../components/MobileHeader";
 
 const Projects = () => {
   return (
-    <div className="mx-auto w-1/3 content-center">
-      <div className="mx-auto space-y-8">
+    <div className="content-center p-4 lg:mx-auto lg:w-1/3">
+      <MobileHeader>Projects</MobileHeader>
+      <div className="mx-auto space-y-8 p-4">
         <ProjectCard>
           <Link
             href={"https://rawoiwode.com/"}

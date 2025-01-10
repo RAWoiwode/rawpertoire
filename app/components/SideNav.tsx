@@ -32,10 +32,10 @@ const SideNav = () => {
   const pathname = usePathname();
 
   return (
-    <div className="my-8 ml-12 flex max-h-[50vh] flex-col rounded-xl bg-background-700 py-8 shadow-lg lg:w-1/6">
+    <div className="flex max-h-[50vh] flex-col py-8 lg:my-8 lg:ml-12 lg:w-1/6 lg:rounded-xl lg:bg-background-700 lg:shadow-lg">
       <Header />
       <div className="flex flex-1 flex-col justify-between">
-        <nav className="flex flex-col items-center space-y-2 px-8 py-4">
+        <nav className="hidden flex-col items-center space-y-2 px-8 py-4 lg:flex">
           {navItems.map((item) => (
             <Link
               key={item.path}
