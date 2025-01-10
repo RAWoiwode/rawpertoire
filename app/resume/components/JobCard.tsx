@@ -42,7 +42,7 @@ const JobCard = ({ title, date, desc, skills }: Props) => {
   return (
     <div className="flex flex-col lg:flex-row lg:space-x-4">
       <section
-        className="rounded-lg pb-4 transition-all lg:w-2/5 lg:p-6 lg:px-2 lg:hover:translate-x-4 lg:hover:bg-background-800/50 lg:hover:shadow-lg"
+        className="rounded-lg pb-4 transition-all lg:w-2/5 lg:p-6 lg:px-4 lg:hover:translate-x-4 lg:hover:bg-background-800/50 lg:hover:shadow-lg"
         onMouseEnter={handleJobMouseEnter}
         onMouseLeave={handleJobMouseLeave}
       >
