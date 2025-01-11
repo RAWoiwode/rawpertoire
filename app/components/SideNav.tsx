@@ -27,6 +27,7 @@ const navItems = [
  *
  * TODO: Separate data and UI
  * TODO: Make translate animation on active item be more dynamic
+ * TODO: Make each nav item the same width so the animation works with each
  */
 const SideNav = () => {
   const pathname = usePathname();
