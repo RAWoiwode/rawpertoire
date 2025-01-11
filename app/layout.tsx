@@ -5,7 +5,7 @@ import SideNav from "./components/SideNav";
 import "./globals.css";
 import Home from "./page";
 import Projects from "./projects/page";
-import Resume from "./resume/page";
+import Experience from "./experience/page";
 
 const noto_sans = Noto_Sans({
   subsets: ["latin"],
@@ -32,7 +32,7 @@ export default function RootLayout({
           {/* Mobile */}
           <div className="lg:hidden">
             <Home />
-            <Resume />
+            <Experience />
             <Projects />
           </div>
         </main>

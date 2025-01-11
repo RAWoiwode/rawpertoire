@@ -6,14 +6,14 @@ interface Skill {
   years: number;
 }
 
-interface ResumeItem {
+interface ExperienceItem {
   title: string;
   date: string;
   desc: string;
   skills: Skill[];
 }
 
-const fetchResumeItems = async (): Promise<ResumeItem[]> => {
+const fetchExperienceItems = async (): Promise<ExperienceItem[]> => {
   // Simulate fetching from an API/DB
 
   return [
@@ -106,14 +106,14 @@ const fetchResumeItems = async (): Promise<ResumeItem[]> => {
  * TODO: Separate data, logic, and ui
  * TODO: Extract dupe interfaces
  */
-const Resume = async () => {
-  const resumeItems = await fetchResumeItems();
+const Experience = async () => {
+  const experienceItems = await fetchExperienceItems();
 
   return (
     <div className="p-4">
-      <MobileHeader>Resume</MobileHeader>
+      <MobileHeader>Experience</MobileHeader>
       <div className="space-y-8 p-4 lg:mx-auto">
-        {resumeItems.map((item) => (
+        {experienceItems.map((item) => (
           <JobCard
             key={item.title}
             title={item.title}
@@ -127,4 +127,4 @@ const Resume = async () => {
   );
 };
 
-export default Resume;
+export default Experience;
