@@ -32,7 +32,7 @@ const SideNav = () => {
   const pathname = usePathname();
 
   return (
-    <div className="flex max-h-[50vh] flex-col py-8 lg:my-8 lg:ml-12 lg:w-1/6 lg:rounded-xl lg:bg-background-700 lg:shadow-lg">
+    <div className="flex max-h-[50vh] min-h-fit flex-auto flex-col py-8 lg:ml-12 lg:mt-8 lg:rounded-xl lg:bg-background-700 lg:shadow-lg">
       <Header />
       <div className="flex flex-1 flex-col justify-between">
         <nav className="hidden flex-col items-center space-y-2 px-8 py-4 lg:flex">
@@ -40,7 +40,7 @@ const SideNav = () => {
             <Link
               key={item.path}
               href={item.path}
-              className={`relative w-44 rounded-md px-8 py-2 text-xl font-bold tracking-widest transition-transform ${item.path === pathname ? "translate-x-32 rounded-r-none bg-background-950" : "hover:translate-x-4"}`}
+              className={`relative w-44 rounded-md px-8 py-2 text-xl font-bold tracking-widest transition-transform ${item.path === pathname ? "translate-x-16 rounded-r-none bg-background-950 xl:translate-x-20" : "hover:translate-x-4"}`}
             >
               {item.name}
             </Link>
