@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <div className="mx-auto p-4 text-text-100">
       <MobileHeader>About</MobileHeader>
-      <div className="space-y-4 p-4 text-justify text-base drop-shadow-lg lg:mx-auto lg:w-1/2">
+      <div className="space-y-4 p-4 text-justify text-base drop-shadow-lg lg:mx-auto lg:w-2/3 xl:w-1/2">
         <p>
           Heyo, I&apos;m a creative developer with 6+ years of experience
           designing and developing web-based applications. I enjoy creating UIs
