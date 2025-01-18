@@ -26,8 +26,7 @@ const navItems = [
  * Main SideNav Component.
  *
  * TODO: Separate data and UI
- * TODO: Make translate animation on active item be more dynamic
- * TODO: Make each nav item the same width so the animation works with each
+ * TODO: Think about the a different hover action for navItems
  */
 const SideNav = () => {
   const pathname = usePathname();
@@ -36,12 +35,12 @@ const SideNav = () => {
     <div className="flex max-h-[50vh] min-h-fit flex-auto flex-col py-8 lg:ml-12 lg:mt-8 lg:rounded-xl lg:bg-background-700 lg:shadow-lg">
       <Header />
       <div className="flex flex-1 flex-col justify-between">
-        <nav className="hidden flex-col items-center space-y-2 px-8 py-4 lg:flex">
+        <nav className="hidden flex-col space-y-2 py-4 lg:flex">
           {navItems.map((item) => (
             <Link
               key={item.path}
               href={item.path}
-              className={`relative w-44 rounded-md px-8 py-2 text-xl font-bold tracking-widest transition-transform ${item.path === pathname ? "translate-x-16 rounded-r-none bg-background-950 xl:translate-x-20" : "hover:translate-x-4"}`}
+              className={`mx-auto w-[80%] py-2 text-center text-xl font-bold tracking-widest transition-all duration-200 ${item.path === pathname ? "w-[100%] rounded-none bg-background-950" : "hover:text-accent-700"}`}
             >
               {item.name}
             </Link>
