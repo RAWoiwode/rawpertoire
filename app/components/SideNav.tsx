@@ -27,6 +27,7 @@ const navItems = [
  *
  * TODO: Separate data and UI
  * TODO: Think about the a different hover action for navItems
+ * TODO: Keep an eye on the navItem link widths, sometimes they aren't the width they should be even though the css is correct
  */
 const SideNav = () => {
   const pathname = usePathname();
@@ -40,7 +41,7 @@ const SideNav = () => {
             <Link
               key={item.path}
               href={item.path}
-              className={`mx-auto w-[80%] py-2 text-center text-xl font-bold tracking-widest transition-all duration-200 ${item.path === pathname ? "w-[100%] rounded-none bg-background-950" : "hover:text-accent-700"}`}
+              className={`mx-auto w-1/2 py-2 text-center text-xl font-bold tracking-widest transition-all duration-200 ${item.path === pathname ? "w-full rounded-none bg-background-950" : "hover:text-accent-700"}`}
             >
               {item.name}
             </Link>
