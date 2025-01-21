@@ -40,9 +40,9 @@ const JobCard = ({ title, date, desc, skills }: Props) => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row lg:space-x-4">
+    <div className="flex flex-col xl:flex-row xl:space-x-4">
       <section
-        className="rounded-lg pb-4 transition-all lg:w-2/5 lg:p-6 lg:px-4 lg:hover:translate-x-4 lg:hover:bg-background-800/50 lg:hover:shadow-lg"
+        className="rounded-lg pb-4 transition-all xl:w-2/5 xl:shrink-0 xl:p-6 xl:px-4 xl:hover:translate-x-4 xl:hover:bg-background-800/50 xl:hover:shadow-lg"
         onMouseEnter={handleJobMouseEnter}
         onMouseLeave={handleJobMouseLeave}
       >
@@ -53,16 +53,16 @@ const JobCard = ({ title, date, desc, skills }: Props) => {
           dangerouslySetInnerHTML={{ __html: desc }}
         />
       </section>
+      <div className="flex flex-wrap gap-2 xl:hidden">
+        <SkillPills skills={skills} />
+      </div>
       {isRendered && (
         <div
-          className={`hidden w-2/5 content-start gap-2 p-4 lg:flex lg:flex-wrap lg:transition-all lg:duration-300 ${isVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"}`}
+          className={`hidden content-start gap-2 p-4 xl:flex xl:w-3/5 xl:flex-wrap xl:transition-all xl:duration-300 ${isVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"}`}
         >
           <SkillPills skills={skills} />
         </div>
       )}
-      <div className="flex flex-wrap gap-2 lg:hidden">
-        <SkillPills skills={skills} />
-      </div>
     </div>
   );
 };
