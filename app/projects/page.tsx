@@ -1,7 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 
-import ProjectCard from "./components/ProjectCard";
 import MobileHeader from "../components/MobileHeader";
+import ProjectCard from "./components/ProjectCard";
 
 const projectsInfo = [
   {
@@ -13,6 +14,7 @@ const projectsInfo = [
   {
     title: "Wedding Site",
     url: "https://betoycaty.mx/",
+    image: "/images/WeddingSite.png",
     description:
       "A Wedding site I developed for my friends who got married in 2024",
     timeEstimate: 40,
@@ -38,14 +40,25 @@ const Projects = () => {
               <Link
                 href={projectInfo.url}
                 className="text-accent-200 underline"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 {projectInfo.title}
               </Link>
             );
           }
+
           return (
             <ProjectCard key={projectInfo.title}>
               {titleDisplay}
+              {projectInfo.image && (
+                <Image
+                  alt={`${projectInfo.title} preview`}
+                  src={projectInfo.image}
+                  width={250}
+                  height={150}
+                />
+              )}
               <p>{projectInfo.description}</p>
               <p>{projectInfo.timeEstimate} hours</p>
             </ProjectCard>
