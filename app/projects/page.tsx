@@ -26,9 +26,9 @@ const projectsInfo = [
 
 const Projects = () => {
   return (
-    <div className="content-center p-4 lg:mx-auto lg:flex lg:w-2/3 lg:max-w-4xl">
+    <div className="mx-auto flex flex-col items-center p-4 lg:w-2/3 lg:max-w-4xl">
       <MobileHeader>Projects</MobileHeader>
-      <div className="w-full space-y-8 p-4 lg:p-0">
+      <div className="flex flex-col items-center space-y-8 p-4 lg:p-0">
         {projectsInfo.map((projectInfo) => (
           <Project key={projectInfo.title} {...projectInfo} />
         ))}

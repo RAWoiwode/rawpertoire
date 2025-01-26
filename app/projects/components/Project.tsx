@@ -19,7 +19,7 @@ const Project = ({ title, url, description, timeEstimate, image }: Props) => {
     titleDisplay = (
       <Link
         href={url}
-        className="text-accent-200 underline"
+        className="text-accent-200"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -30,17 +30,20 @@ const Project = ({ title, url, description, timeEstimate, image }: Props) => {
 
   return (
     <ProjectCard>
-      <div className="flex justify-center">
+      <div className="flex flex-col items-center space-y-2 xl:flex-row xl:space-x-6">
         {image && (
           <Image
             alt={`${title} preview`}
             src={IMAGE_DIRECTORY + image}
-            width={400}
-            height={200}
+            width={300}
+            height={300}
             priority
+            placeholder="blur"
+            className="h-auto w-auto max-w-full object-cover xl:max-w-[25%]"
+            blurDataURL="/images/blur.png"
           />
         )}
-        <div className="flex flex-col justify-between p-4">
+        <div className="flex flex-col justify-between p-4 text-center xl:text-left">
           {titleDisplay}
           <p>{description}</p>
           <p>{timeEstimate} hours</p>
