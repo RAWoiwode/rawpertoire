@@ -12,7 +12,7 @@ interface Props {
  */
 const ProjectCard = ({ children }: Props) => {
   return (
-    <div className="w-full rounded-sm bg-background-800/50 p-6 shadow-lg">
+    <div className="w-fit rounded-sm bg-background-800/50 p-6 shadow-lg">
       {children}
     </div>
   );
