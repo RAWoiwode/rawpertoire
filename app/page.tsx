@@ -1,5 +1,24 @@
 import MobileHeader from "./components/MobileHeader";
 
+/**
+ * The Home component serves as the "Home" page fo the app
+ *
+ * This coponent introduces the develops, highlights their overall experience,
+ * and provides a brief explanation of the purpose behind the portfolio.
+ *
+ * ## Example:
+ * ```tsx
+ * import Home from "@/app/Home";
+ *
+ * export default function App() {
+ *   return <Home />;
+ * }
+ * ```
+ *
+ * @author Ralph Woiwode
+ * @version 0.1.0
+ * @returns {JSX.Element} The Home page content for the app
+ */
 const Home = () => {
   return (
     <div className="mx-auto p-4 text-text-100">
