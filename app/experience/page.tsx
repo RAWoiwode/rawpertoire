@@ -1,11 +1,25 @@
 import MobileHeader from "../components/MobileHeader";
 import JobCard from "./components/JobCard";
 
+/**
+ * Represents a skill associated with an experience item.
+ * @interface Skill
+ * @property {string} skill - The name of the skill.
+ * @property {number} years - The number of years of experience with the skill.
+ */
 interface Skill {
   skill: string;
   years: number;
 }
 
+/**
+ * Represents an individual work experience entry.
+ * @interface ExperienceItem
+ * @property {string} title - The job title and company.
+ * @property {string} date - The date range of employment.
+ * @property {string} desc - A description of responsibilities and achievements.
+ * @property {Skill[]} skills - An array of skills relevant to the job.
+ */
 interface ExperienceItem {
   title: string;
   date: string;
@@ -13,9 +27,14 @@ interface ExperienceItem {
   skills: Skill[];
 }
 
+/**
+ * Fetches experience items from a simulated API or database.
+ *
+ * TODO: Integrate some type (probably NoSQL) of DB
+ * @returns {Promise<ExperienceItem[]>} A promise resolving to an array of experience items.
+ */
 const fetchExperienceItems = async (): Promise<ExperienceItem[]> => {
   // Simulate fetching from an API/DB
-
   return [
     {
       title: "Software Developer, Front-end @ General Motors",
@@ -60,10 +79,32 @@ const fetchExperienceItems = async (): Promise<ExperienceItem[]> => {
 };
 
 /**
- * TODO: Separate data, logic, and ui
- * TODO: Extract dupe interfaces
+ * The Experience component displays a list of past work experiences.
+ *
+ * Fetches experience data asynchronously.
+ *
+ * ## Notes:
+ * TODO: Separate data, logic, and UI.
+ * TODO: Extract duplicate interfaces (`Skill`, `ExperienceItem`) if reused elsewhere.
+ *
+ * ## Example:
+ * ```tsx
+ * import Experience from "@/app/experience/page";
+ *
+ * const App = () => (
+ *   <div>
+ *     <Experience />
+ *   </div>
+ * );
+ *
+ * export default App;
+ * ```
+ *
+ * @author Ralph Woiwode
+ * @version 0.1.0
+ * @returns {Promise<JSX.Element>} A section displaying work experience details.
  */
-const Experience = async () => {
+const Experience = async (): Promise<JSX.Element> => {
   const experienceItems = await fetchExperienceItems();
 
   return (

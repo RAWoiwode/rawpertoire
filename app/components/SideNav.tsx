@@ -23,13 +23,35 @@ const navItems = [
 ];
 
 /**
- * Main SideNav Component.
+ * The SideNav component renders the sidebar navigation for the app.
  *
- * TODO: Separate data and UI
- * TODO: Think about the a different hover action for navItems
- * TODO: Keep an eye on the navItem link widths, sometimes they aren't the width they should be even though the css is correct
+ * - Includes navigation links for "Home," "Experience," and "Projects."
+ * - Displays social media icons for GitHub and LinkedIn.
+ *
+ * ## Notes:
+ * TODO: Separate data (navItems) from the UI for improved maintainability.
+ * TODO: Review hover effects for `navItems` for better UX.
+ * TODO: Investigate occasional width inconsistencies in `navItem` links.
+ *
+ * ## Example:
+ * ```tsx
+ * import SideNav from "@/app/components/SideNav";
+ *
+ * const App = () => (
+ *   <div className="flex">
+ *     <SideNav />
+ *     <main>Content goes here</main>
+ *   </div>
+ * );
+ *
+ * export default App;
+ * ```
+ *
+ * @author Ralph Woiwode
+ * @version 0.1.0
+ * @returns {JSX.Element} A responsive sidebar navigation with links and social icons.
  */
-const SideNav = () => {
+const SideNav = (): JSX.Element => {
   const pathname = usePathname();
 
   return (
@@ -49,16 +71,13 @@ const SideNav = () => {
         </nav>
         <ul className="flex justify-center space-x-4">
           <li>
-            <IconLink
-              link="https://github.com/RAWoiwode"
-              title="GitHub Profile"
-            >
+            <IconLink url="https://github.com/RAWoiwode" title="GitHub Profile">
               <FaGithub />
             </IconLink>
           </li>
           <li>
             <IconLink
-              link="https://www.linkedin.com/in/rawoiwode/"
+              url="https://www.linkedin.com/in/rawoiwode/"
               title="LinkedIn Profile"
             >
               <FaLinkedinIn />
