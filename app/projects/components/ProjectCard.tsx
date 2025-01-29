@@ -1,18 +1,39 @@
+/**
+ * Props for the ProjectCard component.
+ * @interface Props
+ * @property {React.ReactNode} children - The content to render inside the project card.
+ */
 interface Props {
   children: React.ReactNode;
 }
 
 /**
- * Component that creates a simple card around a Project.
+ * The ProjectCard component creates a styled card container for wrapping project content.
  *
- * TODO: Look into making a custion 'shadow' TailwindCSS class
+ * ## Example:
+ * ```tsx
+ * import ProjectCard from "@/app/projects/components/ProjectCard";
  *
- * @param children
- * @returns
+ * const App = () => (
+ *   <ProjectCard>
+ *     <h4>Project Title</h4>
+ *     <p>A brief description of the project goes here.</p>
+ *   </ProjectCard>
+ * );
+ *
+ * export default App;
+ * ```
+ *
+ * ## Notes:
+ * TODO: Investigate creating a custom `shadow` TailwindCSS class for flexibility.
+ *
+ * @author Ralph Woiwode
+ * @version 0.1.0
+ * @returns {JSX.Element} A styled card container wrapping the provided children.
  */
-const ProjectCard = ({ children }: Props) => {
+const ProjectCard = ({ children }: Props): JSX.Element => {
   return (
-    <div className="rounded-sm bg-background-800/50 p-6 shadow-lg">
+    <div className="w-fit rounded-sm bg-background-800/50 p-6 shadow-lg">
       {children}
     </div>
   );
