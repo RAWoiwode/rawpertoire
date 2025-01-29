@@ -30,7 +30,7 @@ interface Props {
  * @version 0.1.0
  * @returns {JSX.Element} A styled pill w/ dots below the text.
  */
-const Pill = ({ item, dots }: Props) => {
+const Pill = ({ item, dots }: Props): JSX.Element => {
   return (
     <div className="rounded-md bg-background-800/50 px-3 py-1">
       <div className="text-center">{item}</div>

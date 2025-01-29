@@ -24,7 +24,27 @@ const projectsInfo = [
   },
 ];
 
-const Projects = () => {
+/**
+ * The Projects component displays a list using the `Project` component.
+ *
+ * ## Example:
+ * ```tsx
+ * import Projects from "@/app/projects/page";
+ *
+ * const App = () => (
+ *   <div>
+ *     <Projects />
+ *   </div>
+ * );
+ *
+ * export default App;
+ * ```
+ *
+ * @author Ralph Woiwode
+ * @version 0.1.0
+ * @returns {JSX.Element} A list of projects rendered as `Project` components.
+ */
+const Projects = (): JSX.Element => {
   return (
     <div className="mx-auto flex flex-col items-center p-4 lg:w-2/3 lg:max-w-4xl">
       <MobileHeader>Projects</MobileHeader>

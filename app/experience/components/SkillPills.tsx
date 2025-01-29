@@ -47,7 +47,7 @@ interface Props {
  * @version 0.1.0
  * @returns {JSX.Element[]} An array of `Pill` components for the provided skills.
  */
-const SkillPills = ({ skills }: Props) => {
+const SkillPills = ({ skills }: Props): JSX.Element[] => {
   return skills.map((skill) => (
     <Pill key={skill.skill} item={skill.skill} dots={skill.years} />
   ));
