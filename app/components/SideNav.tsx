@@ -51,7 +51,7 @@ const navItems = [
  * @version 0.1.0
  * @returns {JSX.Element} A responsive sidebar navigation with links and social icons.
  */
-const SideNav = () => {
+const SideNav = (): JSX.Element => {
   const pathname = usePathname();
 
   return (

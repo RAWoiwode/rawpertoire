@@ -28,7 +28,7 @@ interface Props {
  * @version 0.1.0
  * @returns {JSX.Element} A styled mobile-friendly heading.
  */
-const MobileHeader = ({ children }: Props) => {
+const MobileHeader = ({ children }: Props): JSX.Element => {
   return (
     <h2 className="text-center underline underline-offset-4 lg:hidden">
       {children}
