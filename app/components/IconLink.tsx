@@ -40,6 +40,8 @@ interface Props {
  * - The security attributes added to the Link component
  * - The 'IconContext.Provider' is used to style the icon globally w/in this component.
  *
+ * @author Ralph Woiwode
+ * @version 0.1.0
  * @returns {JSX.Element} A styled link containg a ReactIcon
  * TODO: Constantize the size of the icons (☞ﾟヮﾟ)☞
  */
