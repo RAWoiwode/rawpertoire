@@ -31,6 +31,7 @@ const navItems = [
  * ## Notes:
  * TODO: Separate data (navItems) from the UI for improved maintainability.
  * TODO: Review hover effects for `navItems` for better UX.
+ * TODO: Inset shadow??
  * TODO: Investigate occasional width inconsistencies in `navItem` links.
  *
  * ## Example:
@@ -55,7 +56,7 @@ const SideNav = (): JSX.Element => {
   const pathname = usePathname();
 
   return (
-    <div className="flex flex-auto flex-col py-8 lg:my-12 lg:ml-12 lg:rounded-xl lg:bg-background-700 lg:shadow-lg">
+    <div className="flex flex-auto flex-col py-8 lg:my-12 lg:ml-12 lg:rounded-xl lg:bg-secondary-600 lg:shadow-lg">
       <Header />
       <div className="flex flex-1 flex-col justify-between">
         <nav className="hidden flex-col space-y-2 py-4 lg:flex">
@@ -63,7 +64,7 @@ const SideNav = (): JSX.Element => {
             <Link
               key={item.path}
               href={item.path}
-              className={`mx-auto w-3/5 py-2 text-center text-xl font-bold tracking-widest transition-all duration-200 ${item.path === pathname ? "w-full rounded-none bg-background-950" : "hover:scale-110 hover:text-text-950 hover:drop-shadow-xl"}`}
+              className={`mx-auto w-3/5 py-2 text-center text-xl font-bold tracking-widest transition-all duration-200 ${item.path === pathname ? "w-full rounded-none bg-background-950" : "hover:scale-110 hover:text-text-950 hover:drop-shadow-sm"}`}
             >
               {item.name}
             </Link>

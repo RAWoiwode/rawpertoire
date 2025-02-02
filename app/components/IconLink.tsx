@@ -51,7 +51,7 @@ const IconLink = ({ url, title, children }: Props): JSX.Element => {
       <IconContext.Provider
         value={{
           className:
-            "text-secondary-500 lg:text-secondary-800/50 hover:text-secondary-300 lg:hover:text-secondary-600/75 transition-colors",
+            "text-secondary-600 lg:text-secondary-300 hover:text-secondary-300 lg:hover:text-secondary-900 transition-colors",
           size: "32",
         }}
       >
