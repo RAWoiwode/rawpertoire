@@ -56,7 +56,7 @@ const SideNav = (): JSX.Element => {
   const pathname = usePathname();
 
   return (
-    <div className="flex flex-auto flex-col py-8 lg:my-12 lg:ml-12 lg:rounded-xl lg:bg-secondary-600 lg:shadow-lg">
+    <div className="flex flex-auto flex-col py-8 lg:my-12 lg:ml-12 lg:rounded-xl lg:border-4 lg:border-b-secondary-800 lg:border-l-secondary-100 lg:border-r-secondary-800 lg:border-t-secondary-100 lg:bg-secondary-600 lg:shadow-inner">
       <Header />
       <div className="flex flex-1 flex-col justify-between">
         <nav className="hidden flex-col space-y-2 py-4 lg:flex">
