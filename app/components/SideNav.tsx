@@ -47,7 +47,7 @@ const navItems = [
  * ```
  *
  * @author Ralph Woiwode
- * @version 0.1.0
+ * @version 0.2.0
  * @returns {JSX.Element} A responsive sidebar navigation with links and social icons.
  */
 const SideNav = (): JSX.Element => {
