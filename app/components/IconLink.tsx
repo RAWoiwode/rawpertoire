@@ -44,6 +44,7 @@ interface Props {
  * @version 0.1.0
  * @returns {JSX.Element} A styled link containg a ReactIcon
  * TODO: Constantize the size of the icons (☞ﾟヮﾟ)☞
+ * TODO: Learn how to use layer utilities to properly pass classes to react-icons
  */
 const IconLink = ({ url, title, children }: Props): JSX.Element => {
   return (
