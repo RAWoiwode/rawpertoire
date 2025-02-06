@@ -56,7 +56,7 @@ const SideNav = (): JSX.Element => {
   const pathname = usePathname();
 
   return (
-    <div className="flex flex-auto flex-col py-8 lg:my-12 lg:ml-12 lg:rounded-xl lg:border-4 lg:border-b-secondary-800 lg:border-l-secondary-100 lg:border-r-secondary-800 lg:border-t-secondary-100 lg:bg-secondary-600 lg:shadow-inner">
+    <div className="lg:border-b-secondary-800 lg:border-l-secondary-100 lg:from-secondary-200 lg:to-secondary-300 lg:border-r-secondary-800 lg:border-t-secondary-100 lg:bg-secondary-600 flex flex-auto flex-col py-8 lg:my-12 lg:ml-12 lg:rounded-xl lg:border-4 lg:bg-gradient-to-b lg:shadow-inner">
       <Header />
       <div className="flex flex-1 flex-col justify-between">
         <nav className="hidden flex-col space-y-2 py-4 lg:flex">
@@ -64,7 +64,7 @@ const SideNav = (): JSX.Element => {
             <Link
               key={item.path}
               href={item.path}
-              className={`mx-auto w-3/5 py-2 text-center text-xl font-bold tracking-widest transition-all duration-200 ${item.path === pathname ? "w-full rounded-none bg-background-950" : "hover:scale-110 hover:text-text-950 hover:drop-shadow-sm"}`}
+              className={`mx-auto w-3/5 py-2 text-center text-xl font-bold tracking-widest transition-all duration-200 ${item.path === pathname ? "bg-background-950 w-full rounded-none" : "hover:text-text-950 hover:scale-110 hover:drop-shadow-sm"}`}
             >
               {item.name}
             </Link>
