@@ -30,7 +30,8 @@ const navItems = [
  *
  * ## Notes:
  * TODO: Separate data (navItems) from the UI for improved maintainability.
- * TODO: Review hover effects for `navItems` for better UX. Look at making a more 'believable' transparent bg
+ * TODO: Keep an eye on the blurring effect to make sure that's the best way to achieve it
+ * TODO: Work on click effect
  *
  * ## Example:
  * ```tsx
@@ -54,15 +55,20 @@ const SideNav = (): JSX.Element => {
   const pathname = usePathname();
 
   return (
-    <div className="lg:bg-secondary-100/20 flex flex-auto flex-col py-8 saturate-200 lg:my-12 lg:ml-12">
-      <Header />
-      <div className="flex flex-1 flex-col justify-between">
-        <nav className="hidden flex-col space-y-2 py-4 lg:flex">
+    <div className="relative flex flex-auto flex-col py-8 lg:my-12 lg:ml-12">
+      {/* Background Blur Layer using ::before */}
+      <div className="bg-secondary-100/15 absolute inset-0 backdrop-blur-lg before:absolute before:inset-0 before:backdrop-blur-lg" />
+      {/* Main Content (Unblurred) */}
+      <div className="relative flex flex-1 flex-col">
+        <Header />
+
+        {/* Navigation Links (Expands to push IconLinks to the bottom) */}
+        <nav className="hidden flex-1 flex-col space-y-2 py-4 lg:flex">
           {navItems.map((item) => (
             <Link
               key={item.path}
               href={item.path}
-              className={`bg-secondary-100/75 text-text-950 outline-secondary-200 mx-auto w-3/5 rounded-xs py-2 text-center text-xl tracking-widest outline-2 transition-colors duration-200 ${item.path === pathname ? "outline-secondary-600 bg-secondary-100/90" : "hover:outline-secondary-500 hover:outline-2"}`}
+              className={`bg-secondary-50/75 text-text-950 mx-auto w-3/5 rounded-xs py-2 text-center text-xl tracking-widest transition-all duration-200 ${item.path === pathname ? "bg-secondary-600 outline-0" : "hover:outline-accent-500 outline-4 outline-transparent"}`}
             >
               {item.name}
             </Link>

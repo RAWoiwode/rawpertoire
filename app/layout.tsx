@@ -36,6 +36,8 @@ export const metadata: Metadata = {
  * ## Mobile Behavior
  * - instead of 'children', the components are rendered directly
  *
+ * TODO: Look into width fractions. Not sure if they are still around in Tailwind 4.0
+ *
  * @author Ralph Woiwode
  * @version 0.1.0
  *
