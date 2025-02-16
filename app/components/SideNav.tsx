@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 
 import Header from "./Header";
@@ -53,13 +53,27 @@ const navItems = [
  */
 const SideNav = (): JSX.Element => {
   const pathname = usePathname();
+  const router = useRouter();
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    path: string,
+  ) => {
+    e.preventDefault();
+    const target = e.currentTarget;
+
+    // Add animation class
+    target.classList.add("animate-flash");
+
+    // Wait for animation to complete before navigating
+    setTimeout(() => {
+      router.push(path);
+    }, 400); // Slightly shorter than animation duration to feel more responsive
+  };
 
   return (
-    <div className="relative flex flex-auto flex-col py-8 lg:my-12 lg:ml-12">
-      {/* Background Blur Layer using ::before */}
-      <div className="bg-secondary-100/15 absolute inset-0 backdrop-blur-lg before:absolute before:inset-0 before:backdrop-blur-lg" />
-      {/* Main Content (Unblurred) */}
-      <div className="relative flex flex-1 flex-col">
+    <aside className="relative flex flex-auto flex-col lg:my-12 lg:ml-12">
+      <div className="bg-secondary-100/15 relative flex flex-1 flex-col py-8 backdrop-blur-lg">
         <Header />
 
         {/* Navigation Links (Expands to push IconLinks to the bottom) */}
@@ -68,7 +82,12 @@ const SideNav = (): JSX.Element => {
             <Link
               key={item.path}
               href={item.path}
-              className={`bg-secondary-50/75 text-text-950 mx-auto w-3/5 rounded-xs py-2 text-center text-xl tracking-widest transition-all duration-200 ${item.path === pathname ? "bg-secondary-600 outline-0" : "hover:outline-accent-500 outline-4 outline-transparent"}`}
+              onClick={(e) => handleNavClick(e, item.path)}
+              className={`text-text-950 mx-auto w-3/5 rounded-xs py-2 text-center text-xl tracking-widest transition-all duration-200 ${
+                item.path === pathname
+                  ? "bg-secondary-50/90 outline-4 outline-amber-300"
+                  : "hover:outline-accent-500 bg-secondary-50/75 outline-4 outline-transparent"
+              }`}
             >
               {item.name}
             </Link>
@@ -90,7 +109,7 @@ const SideNav = (): JSX.Element => {
           </li>
         </ul>
       </div>
-    </div>
+    </aside>
   );
 };
 

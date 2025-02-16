@@ -62,6 +62,17 @@
   --color-accent-800: oklch(91.01% 0.095 128.07);
   --color-accent-900: oklch(95.51% 0.049 127.38);
   --color-accent-950: oklch(97.75% 0.024 127.57);
+
+  --animate-flash: flash 0.5s ease-in forwards;
+  @keyframes flash {
+    0%,
+    100% {
+      background-color: oklch(16.69% 0.028 227.22);
+    }
+    10% {
+      background-color: oklch(97.43% 0.038 146.49);
+    }
+  }
 }
 
 @layer base {
