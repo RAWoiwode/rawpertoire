@@ -1,11 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 
 import Header from "./Header";
 import IconLink from "./IconLink";
+import { useState } from "react";
 
 const navItems = [
   {
@@ -30,8 +31,6 @@ const navItems = [
  *
  * ## Notes:
  * TODO: Separate data (navItems) from the UI for improved maintainability.
- * TODO: Review hover effects for `navItems` for better UX.
- * TODO: Investigate occasional width inconsistencies in `navItem` links.
  *
  * ## Example:
  * ```tsx
@@ -48,22 +47,49 @@ const navItems = [
  * ```
  *
  * @author Ralph Woiwode
- * @version 0.1.0
+ * @version 0.2.1
  * @returns {JSX.Element} A responsive sidebar navigation with links and social icons.
  */
 const SideNav = (): JSX.Element => {
   const pathname = usePathname();
+  const router = useRouter();
+  const [animatingLink, setAnimatingLink] = useState<string | null>(null);
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    path: string,
+  ) => {
+    e.preventDefault();
+
+    // Prevent multiple clicks while animating
+    if (animatingLink || path === pathname) return;
+
+    setAnimatingLink(path);
+
+    // Wait for animation to complete before navigating
+    setTimeout(() => {
+      router.push(path);
+      setAnimatingLink(null);
+    }, 400); // Slightly shorter than animation duration to feel more responsive
+  };
 
   return (
-    <div className="flex flex-auto flex-col py-8 lg:my-12 lg:ml-12 lg:rounded-xl lg:bg-background-700 lg:shadow-lg">
-      <Header />
-      <div className="flex flex-1 flex-col justify-between">
-        <nav className="hidden flex-col space-y-2 py-4 lg:flex">
+    <aside className="relative flex flex-auto flex-col lg:my-12 lg:ml-12">
+      <div className="bg-secondary-100/15 relative flex flex-1 flex-col py-8 backdrop-blur-lg">
+        <Header />
+
+        {/* Navigation Links (Expands to push IconLinks to the bottom) */}
+        <nav className="hidden flex-1 flex-col space-y-4 py-4 lg:flex">
           {navItems.map((item) => (
             <Link
               key={item.path}
               href={item.path}
-              className={`mx-auto w-3/5 py-2 text-center text-xl font-bold tracking-widest transition-all duration-200 ${item.path === pathname ? "w-full rounded-none bg-background-950" : "hover:scale-110 hover:text-text-950 hover:drop-shadow-xl"}`}
+              onClick={(e) => handleNavClick(e, item.path)}
+              className={`text-text-950 mx-auto w-3/5 rounded-xs py-2 text-center text-xl tracking-widest transition-all duration-200 ${animatingLink === item.path ? "animate-flash" : ""} ${
+                item.path === pathname
+                  ? "bg-secondary-50/90 outline-4 outline-amber-300"
+                  : "hover:outline-accent-500 bg-secondary-50/75 outline-4 outline-transparent"
+              }`}
             >
               {item.name}
             </Link>
@@ -85,7 +111,7 @@ const SideNav = (): JSX.Element => {
           </li>
         </ul>
       </div>
-    </div>
+    </aside>
   );
 };
 

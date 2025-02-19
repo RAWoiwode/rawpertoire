@@ -44,6 +44,7 @@ interface Props {
  * @version 0.1.0
  * @returns {JSX.Element} A styled link containg a ReactIcon
  * TODO: Constantize the size of the icons (☞ﾟヮﾟ)☞
+ * TODO: Learn how to use layer utilities to properly pass classes to react-icons
  */
 const IconLink = ({ url, title, children }: Props): JSX.Element => {
   return (
@@ -51,7 +52,7 @@ const IconLink = ({ url, title, children }: Props): JSX.Element => {
       <IconContext.Provider
         value={{
           className:
-            "text-secondary-500 lg:text-secondary-800/50 hover:text-secondary-300 lg:hover:text-secondary-600/75 transition-colors",
+            "text-secondary-600 hover:text-secondary-300 transition-colors",
           size: "32",
         }}
       >
