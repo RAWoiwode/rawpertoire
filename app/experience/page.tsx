@@ -1,4 +1,5 @@
 import MobileHeader from "../components/MobileHeader";
+import PageTransition from "../components/PageTransition";
 import JobCard from "./components/JobCard";
 
 /**
@@ -101,27 +102,29 @@ const fetchExperienceItems = async (): Promise<ExperienceItem[]> => {
  * ```
  *
  * @author Ralph Woiwode
- * @version 0.1.0
+ * @version 0.1.1
  * @returns {Promise<JSX.Element>} A section displaying work experience details.
  */
 const Experience = async (): Promise<JSX.Element> => {
   const experienceItems = await fetchExperienceItems();
 
   return (
-    <div className="p-4">
-      <MobileHeader>Experience</MobileHeader>
-      <div className="space-y-8 p-4">
-        {experienceItems.map((item) => (
-          <JobCard
-            key={item.title}
-            title={item.title}
-            date={item.date}
-            desc={item.desc}
-            skills={item.skills}
-          />
-        ))}
+    <PageTransition>
+      <div className="p-4">
+        <MobileHeader>Experience</MobileHeader>
+        <div className="space-y-8 p-4">
+          {experienceItems.map((item) => (
+            <JobCard
+              key={item.title}
+              title={item.title}
+              date={item.date}
+              desc={item.desc}
+              skills={item.skills}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </PageTransition>
   );
 };
 
