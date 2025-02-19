@@ -1,4 +1,5 @@
 import MobileHeader from "../components/MobileHeader";
+import PageTransition from "../components/PageTransition";
 import Project from "./components/Project";
 
 const projectsInfo = [
@@ -41,19 +42,21 @@ const projectsInfo = [
  * ```
  *
  * @author Ralph Woiwode
- * @version 0.1.0
+ * @version 0.1.1
  * @returns {JSX.Element} A list of projects rendered as `Project` components.
  */
 const Projects = (): JSX.Element => {
   return (
-    <div className="mx-auto flex flex-col items-center p-4 lg:w-2/3 lg:max-w-4xl">
-      <MobileHeader>Projects</MobileHeader>
-      <div className="flex flex-col items-center space-y-8 p-4 lg:p-0">
-        {projectsInfo.map((projectInfo) => (
-          <Project key={projectInfo.title} {...projectInfo} />
-        ))}
+    <PageTransition>
+      <div className="mx-auto flex flex-col items-center p-4 lg:w-2/3 lg:max-w-4xl">
+        <MobileHeader>Projects</MobileHeader>
+        <div className="flex flex-col items-center space-y-8 p-4 lg:p-0">
+          {projectsInfo.map((projectInfo) => (
+            <Project key={projectInfo.title} {...projectInfo} />
+          ))}
+        </div>
       </div>
-    </div>
+    </PageTransition>
   );
 };
 
