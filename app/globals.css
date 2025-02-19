@@ -2,6 +2,8 @@
 
 @tailwind utilities;
 
+/* TODO: Find better outline color */
+/* TODO: Create custom shadow style [Kage Bunshin no Jutsu]. */
 @theme {
   --color-text-50: oklch(18.25% 0.056 143.96);
   --color-text-100: oklch(26.96% 0.084 143.47);
