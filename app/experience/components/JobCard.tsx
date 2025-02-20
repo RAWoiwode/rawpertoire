@@ -40,7 +40,6 @@ interface Props {
  * ## Notes:
  * TODO: Improve handling of mobile vs. desktop interactions.
  * TODO: Address visibility issues where the desktop skill div still renders on hover in mobile view.
- * TODO: Create box around SkillPills and arrow pointing towards them.
  *
  * ## Example:
  * ```tsx
@@ -64,7 +63,7 @@ interface Props {
  * ```
  *
  * @author Ralph Woiwode
- * @version 0.1.0
+ * @version 0.2.0
  * @returns {JSX.Element} A job card displaying job details and skills.
  */
 const JobCard = ({ title, date, desc, skills }: Props): JSX.Element => {
@@ -81,7 +80,7 @@ const JobCard = ({ title, date, desc, skills }: Props): JSX.Element => {
   return (
     <div className="flex flex-col justify-center xl:flex-row xl:space-x-4">
       <section
-        className="xl:hover:bg-secondary-50/90 bg-secondary-50/75 text-text-950 rounded-md outline-4 outline-transparent transition-all xl:w-1/2 xl:p-6 xl:px-4 xl:hover:shadow-lg xl:hover:outline-amber-300"
+        className="xl:hover:bg-secondary-50/90 bg-secondary-50/75 text-text-950 rounded-sm outline-4 outline-transparent transition-all xl:w-1/2 xl:p-6 xl:px-4 xl:hover:shadow-lg xl:hover:outline-amber-300"
         onMouseEnter={handleJobMouseEnter}
         onMouseLeave={handleJobMouseLeave}
       >
@@ -98,7 +97,7 @@ const JobCard = ({ title, date, desc, skills }: Props): JSX.Element => {
       </div>
       {/* DESKTOP */}
       <div
-        className={`hidden h-fit content-start gap-2 p-4 xl:grid xl:auto-rows-max xl:grid-cols-2 ${isVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"}`}
+        className={`bg-secondary-50/50 text-text-950 relative hidden h-fit items-center gap-2 rounded-sm p-4 shadow-lg outline-4 outline-amber-300 transition-all xl:grid xl:auto-rows-max xl:grid-cols-2 xl:self-center ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"}`}
       >
         <SkillPills skills={skills} />
       </div>

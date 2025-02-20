@@ -31,6 +31,7 @@ const navItems = [
  *
  * ## Notes:
  * TODO: Separate data (navItems) from the UI for improved maintainability.
+ * TODO: See about loading the page while the animation is running
  *
  * ## Example:
  * ```tsx
