@@ -46,8 +46,10 @@ interface Props {
  * export default App;
  * ```
  *
+ * TODO: Add blur around image border?
+ *
  * @author Ralph Woiwode
- * @version 0.1.0
+ * @version 0.2.0
  * @returns {JSX.Element} A project card displaying project details, an optional image, and a clickable title (if a URL is provided).
  */
 const Project = ({
@@ -63,7 +65,7 @@ const Project = ({
     titleDisplay = (
       <Link
         href={url}
-        className="text-accent-200"
+        className="text-primary-600"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -74,7 +76,7 @@ const Project = ({
 
   return (
     <ProjectCard>
-      <div className="flex flex-col items-center space-y-2 xl:flex-row xl:space-x-6">
+      <div className="flex flex-col items-center space-y-2">
         {image && (
           <Image
             alt={`${title} preview`}
@@ -83,14 +85,17 @@ const Project = ({
             height={300}
             priority
             placeholder="blur"
-            className="h-auto w-auto max-w-full object-cover xl:max-w-[25%]"
+            className="h-auto w-auto max-w-full object-cover xl:max-w-[75%]"
             blurDataURL="/images/blur.png"
           />
         )}
         <div className="flex flex-col justify-between p-4 text-center xl:text-left">
           {titleDisplay}
+          <div className="flex flex-row items-center justify-evenly">
+            <hr className="text-accent-600 my-2 w-1/2 border-t-2" />
+            <p className="text-accent-600 text-sm">{timeEstimate} hours</p>
+          </div>
           <p>{description}</p>
-          <p>{timeEstimate} hours</p>
         </div>
       </div>
     </ProjectCard>
