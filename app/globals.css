@@ -72,6 +72,17 @@
       background-color: oklch(16.69% 0.028 227.22);
     }
     10% {
+      background-color: oklch(74.57% 0.132 232.71);
+    }
+  }
+
+  --animate-blue-flash: flash 0.5s ease-in forwards;
+  @keyframes blue-flash {
+    0%,
+    100% {
+      background-color: oklch(16.69% 0.028 227.22);
+    }
+    10% {
       background-color: oklch(97.43% 0.038 146.49);
     }
   }
