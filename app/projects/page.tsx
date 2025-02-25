@@ -13,20 +13,22 @@ const projectsInfo = [
     url: "http://localhost:3000/projects",
     description: "recursion ༼ つ ◕_◕ ༽つ",
     timeEstimate: 20,
+    image: "RAWpertoire.png",
   },
   {
     title: "Wedding Site",
     url: "https://betoycaty.mx/",
-    image: "WeddingSite.png",
     description:
       "A Wedding site I developed for my friends who got married in 2024",
     timeEstimate: 40,
+    image: "WeddingSite.png",
   },
   {
     title: "Appointment App (WIP)",
     url: "",
-    description: "",
+    description: "Manage tattoo appointments more smoothly",
     timeEstimate: 100,
+    image: "Tapt.png",
   },
 ];
 
@@ -53,19 +55,21 @@ const projectsInfo = [
  * @returns {JSX.Element} A list of projects rendered as `Project` components.
  */
 const Projects = (): JSX.Element => {
-  const [selectedProject, setSelectedProject] = useState(projectsInfo[0]);
+  const [selectedProject, setSelectedProject] = useState<ProjectProps>(
+    projectsInfo[0],
+  );
   const [animatingLink, setAnimatingLink] = useState<string | null>(null);
 
   const handleClick = (project: ProjectProps) => {
     if (animatingLink) return;
     // Prevent multiple clicks while animating
-    setSelectedProject(project);
     setAnimatingLink(project.title);
 
     // Wait for animation to complete before navigating
     setTimeout(() => {
+      setSelectedProject(project);
       setAnimatingLink(null);
-    }, 400); // Slightly shorter than animation duration to feel more responsive
+    }, 300); // Slightly shorter than animation duration to feel more responsive
   };
 
   return (
@@ -79,7 +83,7 @@ const Projects = (): JSX.Element => {
               <button
                 key={project.title}
                 onClick={() => handleClick(project)}
-                className={`text-secondary-500 w-full rounded-xs px-4 py-2 font-bold tracking-wider transition-colors xl:w-3/4 ${animatingLink === project.title ? "animate-blue-flash" : ""} ${
+                className={`text-secondary-500 w-full rounded-xs px-4 py-2 text-start font-bold tracking-wider transition-colors xl:w-3/4 ${animatingLink === project.title ? "animate-blue-flash" : ""} ${
                   selectedProject.title === project.title
                     ? "bg-secondary-50/90 outline-secondary-600 outline-4"
                     : "hover:outline-accent-500 bg-secondary-50/75 outline-4 outline-transparent"
@@ -90,8 +94,8 @@ const Projects = (): JSX.Element => {
             ))}
           </div>
           <div className="flex w-1/2 items-start justify-start p-4">
-            <div className="h-[500px] w-full from-0% to-100% transition-opacity">
-              <Project {...selectedProject} />
+            <div className="h-[512px] w-full">
+              <Project {...selectedProject} key={selectedProject.title} />
             </div>
           </div>
         </div>

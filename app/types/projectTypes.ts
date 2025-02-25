@@ -12,5 +12,5 @@ export interface ProjectProps {
   url: string;
   description: string;
   timeEstimate: number;
-  image?: string;
+  image: string;
 }

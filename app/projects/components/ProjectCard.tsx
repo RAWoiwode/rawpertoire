@@ -28,12 +28,12 @@ interface Props {
  * TODO: Investigate creating a custom `shadow` TailwindCSS class for flexibility.
  *
  * @author Ralph Woiwode
- * @version 0.1.2
+ * @version 0.1.3
  * @returns {JSX.Element} A styled card container wrapping the provided children.
  */
 const ProjectCard = ({ children }: Props): JSX.Element => {
   return (
-    <div className="bg-secondary-50/95 text-secondary-500 mx-2 h-full rounded-sm p-6 shadow-lg">
+    <div className="bg-secondary-50/95 text-text-950 h-full p-6 shadow-lg">
       {children}
     </div>
   );
