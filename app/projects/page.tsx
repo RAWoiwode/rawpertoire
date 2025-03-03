@@ -14,6 +14,7 @@ const projectsInfo = [
     description: "recursion ༼ つ ◕_◕ ༽つ",
     timeEstimate: 20,
     image: "RAWpertoire.png",
+    gitHubUrl: "https://github.com/RAWoiwode/rawpertoire",
   },
   {
     title: "Wedding Site",
@@ -22,6 +23,7 @@ const projectsInfo = [
       "A Wedding site I developed for my friends who got married in 2024",
     timeEstimate: 40,
     image: "WeddingSite.png",
+    gitHubUrl: "https://github.com/RAWoiwode/wedding-joika",
   },
   {
     title: "Appointment App (WIP)",
@@ -29,6 +31,7 @@ const projectsInfo = [
     description: "Manage tattoo appointments more smoothly",
     timeEstimate: 100,
     image: "Tapt.png",
+    gitHubUrl: "https://github.com/hrtejada/tapt",
   },
 ];
 
@@ -47,8 +50,6 @@ const projectsInfo = [
  *
  * export default App;
  * ```
- *
- * TODO: Assign project type in handleClick properly
  *
  * @author Ralph Woiwode
  * @version 0.2.0
