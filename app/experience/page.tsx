@@ -102,7 +102,7 @@ const fetchExperienceItems = async (): Promise<ExperienceItem[]> => {
  * ```
  *
  * @author Ralph Woiwode
- * @version 0.1.1
+ * @version 0.1.2
  * @returns {Promise<JSX.Element>} A section displaying work experience details.
  */
 const Experience = async (): Promise<JSX.Element> => {
@@ -112,7 +112,7 @@ const Experience = async (): Promise<JSX.Element> => {
     <PageTransition>
       <div className="p-4">
         <MobileHeader>Experience</MobileHeader>
-        <div className="space-y-8 p-4">
+        <div className="space-y-12 p-4 xl:space-y-8">
           {experienceItems.map((item) => (
             <JobCard
               key={item.title}
