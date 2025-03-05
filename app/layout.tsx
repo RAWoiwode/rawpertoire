@@ -6,6 +6,8 @@ import Experience from "./experience/page";
 import "./globals.css";
 import Home from "./page";
 import Projects from "./projects/page";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 /* Chosen font for most of the site */
 const noto_sans = Noto_Sans({
@@ -37,7 +39,7 @@ export const metadata: Metadata = {
  * - instead of 'children', the components are rendered directly
  *
  * @author Ralph Woiwode
- * @version 0.1.1
+ * @version 0.2.0
  *
  * @returns {JSX.Element} The layout structure of the app
  */
@@ -51,14 +53,16 @@ export default function RootLayout({
       <body className="bg-background-200/50 text-text-950 lg:mx-auto lg:flex lg:min-h-screen lg:p-4">
         <SideNav />
         <main className="flex flex-col justify-center space-y-4 overflow-auto py-6 lg:w-5/6">
-          {/* Desktop */}
-          <div className="hidden lg:block">{children}</div>
-          {/* Mobile */}
-          <div className="lg:hidden">
-            <Home />
-            <Experience />
-            <Projects />
-          </div>
+          <Suspense fallback={<Loading />}>
+            {/* Desktop */}
+            <div className="hidden lg:block">{children}</div>
+            {/* Mobile */}
+            <div className="lg:hidden">
+              <Home />
+              <Experience />
+              <Projects />
+            </div>
+          </Suspense>
         </main>
       </body>
     </html>

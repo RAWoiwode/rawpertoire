@@ -6,7 +6,7 @@ import { FaFilePdf, FaGithub, FaLinkedinIn } from "react-icons/fa6";
 
 import Header from "./Header";
 import IconLink from "./IconLink";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const navItems = [
   {
@@ -56,6 +56,12 @@ const SideNav = (): JSX.Element => {
   const router = useRouter();
   const [animatingLink, setAnimatingLink] = useState<string | null>(null);
 
+  useEffect(() => {
+    navItems.forEach((item) => {
+      router.prefetch(item.path);
+    });
+  }, [router]);
+
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     path: string,
@@ -66,6 +72,7 @@ const SideNav = (): JSX.Element => {
     if (animatingLink || path === pathname) return;
 
     setAnimatingLink(path);
+    router.prefetch(path); // Enusre latest data; Future proofing
 
     // Wait for animation to complete before navigating
     setTimeout(() => {
