@@ -27,19 +27,19 @@ interface Props {
  * ```
  *
  * @author Ralph Woiwode
- * @version 0.2.1
+ * @version 0.2.2
  * @returns {JSX.Element} A styled pill w/ dots below the text.
  */
 const Pill = ({ item, dots }: Props): JSX.Element => {
   return (
-    <div className="bg-secondary-50/75 w-24 rounded-sm px-3 py-1">
-      <div className="text-text-950 text-center">{item}</div>
+    <div className="bg-secondary-50 w-24 rounded-sm px-3 py-1">
+      <div className="text-text-50 text-center">{item}</div>
       {dots > 0 && (
         <div className="mt-0.5 flex justify-center">
           {Array.from({ length: dots }, (_, index) => (
             <div
               key={index}
-              className="bg-secondary-500 mx-0.5 h-1 w-1 rounded-full"
+              className="bg-secondary-600 mx-0.5 h-1 w-1 rounded-full"
             />
           ))}
         </div>

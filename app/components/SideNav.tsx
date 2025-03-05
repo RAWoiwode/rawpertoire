@@ -76,7 +76,7 @@ const SideNav = (): JSX.Element => {
 
   return (
     <aside className="relative flex flex-auto flex-col lg:my-12 lg:ml-12">
-      <div className="bg-secondary-100/75 relative flex flex-1 flex-col py-8 backdrop-blur-lg">
+      <div className="bg-secondary-50/30 relative flex flex-1 flex-col py-8 backdrop-blur-lg">
         <Header />
 
         {/* Navigation Links (Expands to push IconLinks to the bottom) */}
@@ -88,8 +88,8 @@ const SideNav = (): JSX.Element => {
               onClick={(e) => handleNavClick(e, item.path)}
               className={`text-text-50 mx-auto w-4/5 rounded-xs py-2 text-center text-xl tracking-widest transition-all duration-200 ${animatingLink === item.path ? "animate-flash" : ""} ${
                 item.path === pathname
-                  ? "bg-background-200/75 text-text-950 outline-accent-500 font-bold outline-4"
-                  : "hover:outline-accent-700 bg-secondary-50/60 outline-4 outline-transparent"
+                  ? "bg-secondary-900/80 text-text-950 outline-accent-400 font-bold outline-4"
+                  : "hover:outline-accent-600 bg-secondary-50/75 outline-4 outline-transparent"
               }`}
             >
               {item.name}

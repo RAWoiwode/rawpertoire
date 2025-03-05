@@ -48,7 +48,7 @@ export default function RootLayout({
 }>): JSX.Element {
   return (
     <html lang="en" className={noto_sans.className}>
-      <body className="bg-background-900 text-text-100 lg:mx-auto lg:flex lg:min-h-screen lg:p-4">
+      <body className="bg-background-200/50 text-text-950 lg:mx-auto lg:flex lg:min-h-screen lg:p-4">
         <SideNav />
         <main className="flex flex-col justify-center space-y-4 overflow-auto py-6 lg:w-5/6">
           {/* Desktop */}

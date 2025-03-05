@@ -22,7 +22,7 @@
  */
 const Header = () => {
   return (
-    <h1 className="text-secondary-600 w-full px-4 py-6 text-center text-4xl">
+    <h1 className="text-secondary-300 w-full px-4 py-6 text-center text-4xl">
       <span className="text-5xl">RAW</span>pertoire
     </h1>
   );
