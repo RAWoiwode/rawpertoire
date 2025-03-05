@@ -32,7 +32,6 @@ const navItems = [
  * ## Notes:
  * TODO: Separate data (navItems) from the UI for improved maintainability.
  * TODO: See about loading the page while the animation is running
- * TODO: Add icon to view/download resume
  *
  * ## Example:
  * ```tsx
@@ -49,7 +48,7 @@ const navItems = [
  * ```
  *
  * @author Ralph Woiwode
- * @version 0.2.1
+ * @version 0.2.2
  * @returns {JSX.Element} A responsive sidebar navigation with links and social icons.
  */
 const SideNav = (): JSX.Element => {
@@ -77,7 +76,7 @@ const SideNav = (): JSX.Element => {
 
   return (
     <aside className="relative flex flex-auto flex-col lg:my-12 lg:ml-12">
-      <div className="bg-secondary-100/15 relative flex flex-1 flex-col py-8 backdrop-blur-lg">
+      <div className="bg-secondary-100/75 relative flex flex-1 flex-col py-8 backdrop-blur-lg">
         <Header />
 
         {/* Navigation Links (Expands to push IconLinks to the bottom) */}
@@ -87,10 +86,10 @@ const SideNav = (): JSX.Element => {
               key={item.path}
               href={item.path}
               onClick={(e) => handleNavClick(e, item.path)}
-              className={`text-text-950 mx-auto w-4/5 rounded-xs py-2 text-center text-xl tracking-widest transition-all duration-200 ${animatingLink === item.path ? "animate-flash" : ""} ${
+              className={`text-text-50 mx-auto w-4/5 rounded-xs py-2 text-center text-xl tracking-widest transition-all duration-200 ${animatingLink === item.path ? "animate-flash" : ""} ${
                 item.path === pathname
-                  ? "bg-secondary-50/90 outline-4 outline-amber-300"
-                  : "hover:outline-accent-500 bg-secondary-50/75 outline-4 outline-transparent"
+                  ? "bg-background-200/75 text-text-950 outline-accent-500 font-bold outline-4"
+                  : "hover:outline-accent-700 bg-secondary-50/60 outline-4 outline-transparent"
               }`}
             >
               {item.name}

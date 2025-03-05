@@ -36,11 +36,8 @@ export const metadata: Metadata = {
  * ## Mobile Behavior
  * - instead of 'children', the components are rendered directly
  *
- * TODO: Look into width fractions. Not sure if they are still around in Tailwind 4.0
- * TODO: Remove totk image used for testing blur
- *
  * @author Ralph Woiwode
- * @version 0.1.0
+ * @version 0.1.1
  *
  * @returns {JSX.Element} The layout structure of the app
  */
@@ -51,14 +48,7 @@ export default function RootLayout({
 }>): JSX.Element {
   return (
     <html lang="en" className={noto_sans.className}>
-      <body className="bg-background-950 text-text-50 lg:mx-auto lg:flex lg:min-h-screen lg:p-4">
-        {/* <Image
-          src={`${IMAGE_DIRECTORY}totk.webp`}
-          alt="background"
-          fill
-          className="object-cover"
-          priority
-        /> */}
+      <body className="bg-background-900 text-text-100 lg:mx-auto lg:flex lg:min-h-screen lg:p-4">
         <SideNav />
         <main className="flex flex-col justify-center space-y-4 overflow-auto py-6 lg:w-5/6">
           {/* Desktop */}
