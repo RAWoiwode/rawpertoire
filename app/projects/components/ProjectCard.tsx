@@ -24,16 +24,13 @@ interface Props {
  * export default App;
  * ```
  *
- * ## Notes:
- * TODO: Investigate creating a custom `shadow` TailwindCSS class for flexibility.
- *
  * @author Ralph Woiwode
- * @version 0.1.5
+ * @version 0.1.6
  * @returns {JSX.Element} A styled card container wrapping the provided children.
  */
 const ProjectCard = ({ children }: Props): JSX.Element => {
   return (
-    <div className="bg-secondary-100/75 text-secondary-600 flex h-full flex-col justify-between p-6 shadow-lg">
+    <div className="bg-secondary-100/75 text-secondary-600 shadow-secondary-100 shadow-project-card flex h-full flex-col justify-between p-6">
       {children}
     </div>
   );
