@@ -52,7 +52,7 @@ const projectsInfo = [
  * ```
  *
  * @author Ralph Woiwode
- * @version 0.2.0
+ * @version 0.2.1
  * @returns {JSX.Element} A list of projects rendered as `Project` components.
  */
 const Projects = (): JSX.Element => {
@@ -84,10 +84,10 @@ const Projects = (): JSX.Element => {
               <button
                 key={project.title}
                 onClick={() => handleClick(project)}
-                className={`text-secondary-500 w-full rounded-xs px-4 py-2 text-start font-bold tracking-wider transition-colors xl:w-3/4 ${animatingLink === project.title ? "animate-blue-flash" : ""} ${
+                className={`text-secondary-600 w-full rounded-xs px-4 py-2 text-start text-lg tracking-wider transition-colors xl:w-3/4 ${animatingLink === project.title ? "animate-blue-flash" : ""} ${
                   selectedProject.title === project.title
                     ? "bg-secondary-50/90 outline-secondary-600 outline-4"
-                    : "hover:outline-accent-500 bg-secondary-50/75 outline-4 outline-transparent"
+                    : "hover:outline-accent-500 bg-secondary-50/60 outline-4 outline-transparent"
                 }`}
               >
                 {project.title}

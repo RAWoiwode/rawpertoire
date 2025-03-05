@@ -36,7 +36,7 @@ import { GoRepo } from "react-icons/go";
  * TODO: Create a better template instead of using the 1px margin bottom thing for shifts b/w links and no links
  *
  * @author Ralph Woiwode
- * @version 0.3.2
+ * @version 0.3.3
  * @returns {JSX.Element} A project card displaying project details, an optional image, and a clickable title (if a URL is provided).
  */
 const Project = ({
@@ -84,10 +84,10 @@ const Project = ({
         <div className="flex w-full flex-col p-4 text-center xl:text-left">
           {titleDisplay}
           <div className="flex flex-row items-center justify-evenly">
-            <hr className="text-accent-600 my-4 w-1/2 border-t-2" />
-            <p className="text-accent-600 text-xs">{timeEstimate} hours</p>
+            <hr className="text-accent-300 my-4 w-1/2 border-t-2" />
+            <p className="text-accent-300 text-sm">{timeEstimate} hours</p>
           </div>
-          <p className="text-sm">{description}</p>
+          <p className="text-md">{description}</p>
         </div>
       </div>
       <Link
@@ -100,7 +100,7 @@ const Project = ({
         <IconContext.Provider
           value={{
             className:
-              "text-secondary-600 hover:text-secondary-300 transition-colors",
+              "text-secondary-400 hover:text-secondary-200 transition-colors",
             size: "32",
           }}
         >
