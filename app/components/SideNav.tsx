@@ -48,7 +48,7 @@ const navItems = [
  * ```
  *
  * @author Ralph Woiwode
- * @version 0.2.2
+ * @version 0.2.3
  * @returns {JSX.Element} A responsive sidebar navigation with links and social icons.
  */
 const SideNav = (): JSX.Element => {
@@ -88,8 +88,8 @@ const SideNav = (): JSX.Element => {
               onClick={(e) => handleNavClick(e, item.path)}
               className={`text-text-50 mx-auto w-4/5 rounded-xs py-2 text-center text-xl tracking-widest transition-all duration-200 ${animatingLink === item.path ? "animate-flash" : ""} ${
                 item.path === pathname
-                  ? "bg-secondary-900/80 text-text-950 outline-accent-400 font-bold outline-4"
-                  : "hover:outline-accent-600 bg-secondary-50/75 outline-4 outline-transparent"
+                  ? "bg-secondary-950/80 text-text-950 outline-accent-400 font-bold outline-4"
+                  : "hover:outline-accent-600 bg-secondary-50/90 outline-4 outline-transparent"
               }`}
             >
               {item.name}
