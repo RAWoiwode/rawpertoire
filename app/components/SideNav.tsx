@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import { FaFilePdf, FaGithub, FaLinkedinIn } from "react-icons/fa6";
 
 import Header from "./Header";
 import IconLink from "./IconLink";
@@ -109,6 +109,11 @@ const SideNav = (): JSX.Element => {
               title="LinkedIn Profile"
             >
               <FaLinkedinIn />
+            </IconLink>
+          </li>
+          <li>
+            <IconLink url="/files/RAW_Resume.pdf" title="Resume">
+              <FaFilePdf />
             </IconLink>
           </li>
         </ul>
