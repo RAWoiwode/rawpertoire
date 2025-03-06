@@ -1,6 +1,4 @@
-import MobileHeader from "../components/MobileHeader";
-import MobilePaddingWrapper from "../components/MobilePaddingWrapper";
-import PageTransition from "../components/PageTransition";
+import PageWrapper from "../components/PageWrapper";
 import ExperienceContent from "./components/ExperienceContent";
 
 /**
@@ -22,17 +20,14 @@ import ExperienceContent from "./components/ExperienceContent";
  * ```
  *
  * @author Ralph Woiwode
- * @version 0.2.0
+ * @version 0.3.0
  * @returns {Promise<JSX.Element>} A section displaying work experience details.
  */
 const Experience = async (): Promise<JSX.Element> => {
   return (
-    <PageTransition>
-      <MobilePaddingWrapper>
-        <MobileHeader>Experience</MobileHeader>
-        <ExperienceContent />
-      </MobilePaddingWrapper>
-    </PageTransition>
+    <PageWrapper sectionTitle="Experience">
+      <ExperienceContent />
+    </PageWrapper>
   );
 };
 

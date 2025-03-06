@@ -1,6 +1,4 @@
-import MobileHeader from "../components/MobileHeader";
-import MobilePaddingWrapper from "../components/MobilePaddingWrapper";
-import PageTransition from "../components/PageTransition";
+import PageWrapper from "../components/PageWrapper";
 import ProjectContent from "./components/ProjectContent";
 
 /**
@@ -12,7 +10,7 @@ import ProjectContent from "./components/ProjectContent";
  *
  * const App = () => (
  *   <div>
- *     <Projects />
+ *     <ProjectContent />
  *   </div>
  * );
  *
@@ -20,17 +18,14 @@ import ProjectContent from "./components/ProjectContent";
  * ```
  *
  * @author Ralph Woiwode
- * @version 0.2.1
+ * @version 0.3.0
  * @returns {JSX.Element} A list of projects rendered as `Project` components.
  */
 const Projects = (): JSX.Element => {
   return (
-    <PageTransition>
-      <MobilePaddingWrapper>
-        <MobileHeader>Projects</MobileHeader>
-        <ProjectContent />
-      </MobilePaddingWrapper>
-    </PageTransition>
+    <PageWrapper sectionTitle="Projects">
+      <ProjectContent />
+    </PageWrapper>
   );
 };
 

@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { Noto_Sans } from "next/font/google";
+import { Suspense } from "react";
 
 import SideNav from "./components/SideNav";
 import Experience from "./experience/page";
 import "./globals.css";
+import Loading from "./loading";
 import Home from "./page";
 import Projects from "./projects/page";
-import { Suspense } from "react";
-import Loading from "./loading";
 
 /* Chosen font for most of the site */
 const noto_sans = Noto_Sans({
@@ -38,9 +38,10 @@ export const metadata: Metadata = {
  * ## Mobile Behavior
  * - instead of 'children', the components are rendered directly
  *
+ * TODO: Update Metatags for each page
+ *
  * @author Ralph Woiwode
  * @version 0.2.0
- *
  * @returns {JSX.Element} The layout structure of the app
  */
 export default function RootLayout({
