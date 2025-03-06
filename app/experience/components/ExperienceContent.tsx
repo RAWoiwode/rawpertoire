@@ -1,4 +1,4 @@
-import JobCard from "./components/JobCard";
+import JobCard from "./JobCard";
 
 /**
  * Represents a skill associated with an experience item.
@@ -78,7 +78,7 @@ const ExperienceContent = async () => {
   const experiences: Experience[] = await fetchExperienceData();
 
   return (
-    <div className="space-y-12 p-4 xl:space-y-8">
+    <div className="space-y-12 xl:space-y-8">
       {experiences.map((experience) => (
         <JobCard
           key={experience.title}

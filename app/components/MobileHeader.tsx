@@ -30,7 +30,7 @@ interface Props {
  */
 const MobileHeader = ({ children }: Props): JSX.Element => {
   return (
-    <h2 className="text-center underline underline-offset-4 lg:hidden">
+    <h2 className="mb-4 text-center underline underline-offset-4 lg:hidden">
       {children}
     </h2>
   );

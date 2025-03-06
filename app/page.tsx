@@ -1,4 +1,5 @@
 import MobileHeader from "./components/MobileHeader";
+import MobilePaddingWrapper from "./components/MobilePaddingWrapper";
 import PageTransition from "./components/PageTransition";
 
 /**
@@ -23,9 +24,9 @@ import PageTransition from "./components/PageTransition";
 const Home = () => {
   return (
     <PageTransition>
-      <div className="mx-auto p-4">
+      <MobilePaddingWrapper>
         <MobileHeader>About</MobileHeader>
-        <div className="space-y-4 p-4 text-justify drop-shadow-sm lg:mx-auto lg:w-2/3 xl:w-1/2">
+        <div className="space-y-4 text-justify drop-shadow-sm lg:mx-auto lg:w-2/3 xl:w-1/2">
           <p className="lg:text-lg">
             Heyo, I&apos;m a creative developer with 6+ years of experience
             designing and developing web-based applications. I enjoy creating
@@ -43,7 +44,7 @@ const Home = () => {
             development in someway.
           </p>
         </div>
-      </div>
+      </MobilePaddingWrapper>
     </PageTransition>
   );
 };

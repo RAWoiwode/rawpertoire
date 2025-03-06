@@ -1,6 +1,7 @@
 import MobileHeader from "../components/MobileHeader";
+import MobilePaddingWrapper from "../components/MobilePaddingWrapper";
 import PageTransition from "../components/PageTransition";
-import ExperienceContent from "./ExperienceContent";
+import ExperienceContent from "./components/ExperienceContent";
 
 /**
  * The Experience component displays a list of past work experiences.
@@ -27,10 +28,10 @@ import ExperienceContent from "./ExperienceContent";
 const Experience = async (): Promise<JSX.Element> => {
   return (
     <PageTransition>
-      <div className="p-4 lg:p-0">
+      <MobilePaddingWrapper>
         <MobileHeader>Experience</MobileHeader>
         <ExperienceContent />
-      </div>
+      </MobilePaddingWrapper>
     </PageTransition>
   );
 };
