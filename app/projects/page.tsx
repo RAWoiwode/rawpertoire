@@ -2,7 +2,7 @@ import PageWrapper from "../components/PageWrapper";
 import ProjectContent from "./components/ProjectContent";
 
 /**
- * The Projects component displays a list using the `Project` component.
+ * The Projects component displays a list using the `ProjectContent` component.
  *
  * ## Example:
  * ```tsx
@@ -17,9 +17,11 @@ import ProjectContent from "./components/ProjectContent";
  * export default App;
  * ```
  *
+ * @component
+ * @returns {JSX.Element} A section containing a list of projects
+ *
  * @author Ralph Woiwode
  * @version 0.3.0
- * @returns {JSX.Element} A list of projects rendered as `Project` components.
  */
 const Projects = (): JSX.Element => {
   return (
