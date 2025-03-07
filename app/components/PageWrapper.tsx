@@ -4,20 +4,19 @@ import { useEffect, useState } from "react";
 
 /**
  * Props for the MobileHeader component.
- * @interface Props
+ * @interface PageWrapperProps
  * @property {React.ReactNode} sectionTitle - The string to display inside the header tag.
  * @property {React.ReactNode} children - The page content to display.
  */
-interface Props {
+interface PageWrapperProps {
   sectionTitle: string;
   children: React.ReactNode;
 }
 
 /**
  * Provides a smooth transition effect when switching between pages, consistent mobile padding,
- * and a mobile header.
+ * and a mobile friendly header.
  *
- * @param {Props} props
  *
  * ## Example:
  * ```tsx
@@ -30,11 +29,17 @@ interface Props {
  * }
  * ```
  *
+ * @component
+ * @param {PageWrapperProps} props
+ * @returns {JSX.Element} The animated page transition
+ *
  * @author Ralph Woiwode
  * @version 0.2.0
- * @returns {JSX.Element} The page transition
  */
-const PageWrapper = ({ sectionTitle, children }: Props): JSX.Element => {
+const PageWrapper = ({
+  sectionTitle,
+  children,
+}: PageWrapperProps): JSX.Element => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {

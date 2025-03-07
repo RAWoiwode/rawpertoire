@@ -3,12 +3,12 @@ import { IconContext } from "react-icons";
 
 /**
  * Props for the IconLink component.
- * @interface Props
+ * @interface IconLinkProps
  * @property {string} link - The URL to navigate to when the link is clicked.
  * @property {string} title - The tooltip text displayed on hover.
  * @property {React.ReactNode} children - The React Icon component to render inside the link.
  */
-interface Props {
+interface IconLinkProps {
   url: string;
   title: string;
   children: React.ReactNode;
@@ -18,9 +18,8 @@ interface Props {
  * The IconLink component creates an accessible hyperlink that wraps React Icons.
  *
  * It uses 'next/link' for routing and supports external links w/ appropriate
- * attributes for security.
+ * security attributes.
  *
- * @param {Props} props
  *
  * ## Example:
  * ```tsx
@@ -37,16 +36,18 @@ interface Props {
  * ```
  *
  * ## Notes
- * - The security attributes added to the Link component
  * - The 'IconContext.Provider' is used to style the icon globally w/in this component.
+ * TODO: Constantize the size of the icons (☞ﾟヮﾟ)☞
+ * TODO: Learn how to use layer utilities to properly pass classes to react-icons
+ *
+ * @component
+ * @param {IconLinkProps} props
+ * @returns {JSX.Element} A styled link containg a ReactIcon
  *
  * @author Ralph Woiwode
  * @version 0.1.0
- * @returns {JSX.Element} A styled link containg a ReactIcon
- * TODO: Constantize the size of the icons (☞ﾟヮﾟ)☞
- * TODO: Learn how to use layer utilities to properly pass classes to react-icons
  */
-const IconLink = ({ url, title, children }: Props): JSX.Element => {
+const IconLink = ({ url, title, children }: IconLinkProps): JSX.Element => {
   return (
     <Link href={url} target="_blank" rel="noopener noreferrer" title={title}>
       <IconContext.Provider

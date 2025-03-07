@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { FaFilePdf, FaGithub, FaLinkedinIn } from "react-icons/fa6";
 
 import Header from "./Header";
 import IconLink from "./IconLink";
-import { useEffect, useState } from "react";
 
 const navItems = [
   {
@@ -26,12 +26,10 @@ const navItems = [
 /**
  * The SideNav component renders the sidebar navigation for the app.
  *
- * - Includes navigation links for "Home," "Experience," and "Projects."
- * - Displays social media icons for GitHub and LinkedIn.
+ * - Provides quick access to the main sections of the porfolio
+ * - Displays social media icons for GitHub, LinkedIn and a resume download.
  *
- * ## Notes:
  * TODO: Separate data (navItems) from the UI for improved maintainability.
- * TODO: See about loading the page while the animation is running
  *
  * ## Example:
  * ```tsx
@@ -47,9 +45,11 @@ const navItems = [
  * export default App;
  * ```
  *
+ * @component
+ * @returns {JSX.Element} A responsive sidebar navigation with links and social icons.
+ *
  * @author Ralph Woiwode
  * @version 0.2.3
- * @returns {JSX.Element} A responsive sidebar navigation with links and social icons.
  */
 const SideNav = (): JSX.Element => {
   const pathname = usePathname();
@@ -62,14 +62,19 @@ const SideNav = (): JSX.Element => {
     });
   }, [router]);
 
+  /**
+   * Handles navigation clicks with animation.
+   *
+   * @param {React.MouseEvent<HTMLAnchorElement>} e - Click event
+   * @param {string} path - Path to navigate to
+   */
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     path: string,
   ) => {
     e.preventDefault();
 
-    // Prevent multiple clicks while animating
-    if (animatingLink || path === pathname) return;
+    if (animatingLink || path === pathname) return; // Prevent multiple clicks while animating
 
     setAnimatingLink(path);
     router.prefetch(path); // Enusre latest data; Future proofing
@@ -78,15 +83,13 @@ const SideNav = (): JSX.Element => {
     setTimeout(() => {
       router.push(path);
       setAnimatingLink(null);
-    }, 400); // Slightly shorter than animation duration to feel more responsive
+    }, 400);
   };
 
   return (
     <aside className="relative flex flex-auto flex-col lg:my-12 lg:ml-12">
       <div className="bg-secondary-50/30 relative flex flex-1 flex-col py-8 backdrop-blur-lg">
         <Header />
-
-        {/* Navigation Links (Expands to push IconLinks to the bottom) */}
         <nav className="hidden flex-1 flex-col space-y-4 py-4 lg:flex">
           {navItems.map((item) => (
             <Link

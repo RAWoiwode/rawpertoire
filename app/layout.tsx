@@ -30,19 +30,14 @@ export const metadata: Metadata = {
  * It provides a responsive structure w/:
  * - Global font styling
  * - Side navigation for desktop
- * - A 'main' section that renders content for both mobile and desktop
- *
- * ## Desktop Behavior
- * - The 'children' passed to the layout are rendered inside the 'main' tag
- *
- * ## Mobile Behavior
- * - instead of 'children', the components are rendered directly
+ * - Dynamic content rendering
  *
  * TODO: Update Metatags for each page
+ * @component
+ * @returns {JSX.Element} The layout structure of the app
  *
  * @author Ralph Woiwode
  * @version 0.2.0
- * @returns {JSX.Element} The layout structure of the app
  */
 export default function RootLayout({
   children,
