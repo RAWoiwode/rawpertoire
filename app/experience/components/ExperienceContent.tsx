@@ -26,6 +26,16 @@ interface Experience {
   skills: Skill[];
 }
 
+/**
+ * Fetches work experience data asynchronously.
+ *
+ * This function simulates an API call using `setTimeout` to return
+ * an array of experience objects.
+ *
+ * @async
+ * @function
+ * @returns {Promise<Experience[]>} A promise that resolves with an array of experience data.
+ */
 const fetchExperienceData = async (): Promise<Experience[]> => {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -74,7 +84,19 @@ const fetchExperienceData = async (): Promise<Experience[]> => {
   });
 };
 
-const ExperienceContent = async () => {
+/**
+ * The ExperienceContent component fetches and displays job experience data.
+ *
+ * - Fetches experience data asynchronously using `fetchExperienceData`.
+ *
+ * @component
+ * @async
+ * @returns {Promise<JSX.Element>} A section containing job experience cards.
+ *
+ * @author Ralph Woiwode
+ * @version 0.3.0
+ */
+const ExperienceContent = async (): Promise<JSX.Element> => {
   const experiences: Experience[] = await fetchExperienceData();
 
   return (
