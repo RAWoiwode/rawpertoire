@@ -1,18 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
-
-import { IMAGE_DIRECTORY } from "@/app/constants";
-import { Project } from "@/app/types/projectTypes";
 import { IconContext } from "react-icons";
 import { GoRepo } from "react-icons/go";
 
+import { IMAGE_DIRECTORY } from "@/app/constants";
+import { Project } from "@/app/types/projectTypes";
+
 /**
- * The Project component renders an individual project's details, including its title, description,
- * time estimate, and an optional image preview. The title becomes a clickable link if a `url` is provided.
+ * The ProjectCard component renders an individual project's details, including:
+ * - Title (with optional clickable link)
+ * - Description
+ * - Estimated time to complete
+ * - An optional image preview
+ * - A GitHub repository link (if provided)
  *
- * ## Example:
+ * ## Features:
+ * - If `url` is provided, the title is wrapped in a hyperlink.
+ * - Displays an image preview if `image` is available.
+ * - Includes a GitHub repository icon linking to the project's repo.
+ *
+ * ## Example Usage:
  * ```tsx
- * import Project from "@/app/projects/components/Project";
+ * import ProjectCard from "@/app/projects/components/ProjectCard";
  *
  * const exampleProject = {
  *   title: "My Portfolio",
@@ -20,23 +29,23 @@ import { GoRepo } from "react-icons/go";
  *   description: "A showcase of my work as a front-end developer.",
  *   timeEstimate: 30,
  *   image: "portfolio-preview.png",
+ *   gitHubUrl: "https://github.com/RAWoiwode/portfolio",
  * };
  *
- * const App = () => (
- *   <div>
- *     <Project {...exampleProject} />
- *   </div>
- * );
+ * const App = () => <ProjectCard {...exampleProject} />;
  *
  * export default App;
  * ```
  *
- * TODO: Add blur around image border?
- * TODO: Create a better template instead of using the 1px margin bottom thing for shifts b/w links and no links
+ * TODO: Add blur effect around image borders.
+ * TODO: Improve layout to avoid using the `1px margin-bottom` trick for shifting elements.
+ *
+ * @component
+ * @param {Project} props
+ * @returns {JSX.Element} A project card displaying project details, an optional image, and a clickable title (if a URL is provided).
  *
  * @author Ralph Woiwode
  * @version 0.3.3
- * @returns {JSX.Element} A project card displaying project details, an optional image, and a clickable title (if a URL is provided).
  */
 const ProjectCard = ({
   title,

@@ -1,26 +1,63 @@
 "use client";
 
-import { Project } from "@/app/types/projectTypes";
 import { useState } from "react";
+
+import { Project } from "@/app/types/projectTypes";
 import ProjectCard from "./ProjectCard";
 
-interface Props {
+/**
+ * Props for the ProjectDisplay component.
+ * @interface ProjectDisplayProps
+ * @property {Project[]} projects - An array of project data to be displayed.
+ */
+interface ProjectDisplayProps {
   projects: Project[];
 }
-const ProjectDisplay = ({ projects }: Props): JSX.Element => {
+
+/**
+ * The ProjectDisplay component handles the layout and selection logic for displaying projects.
+ *
+ * ## Example Usage:
+ * ```tsx
+ * import ProjectDisplay from "@/app/components/ProjectDisplay";
+ * import { Project } from "@/app/types/projectTypes";
+ *
+ * const projects: Project[] = [
+ *   { title: "Project A", url: "", description: "Sample project", timeEstimate: 10, image: "", gitHubUrl: "" },
+ *   { title: "Project B", url: "", description: "Another project", timeEstimate: 20, image: "", gitHubUrl: "" }
+ * ];
+ *
+ * const App = () => <ProjectDisplay projects={projects} />;
+ *
+ * export default App;
+ * ```
+ *
+ * @component
+ * @param {ProjectDisplayProps} props
+ * @returns {JSX.Element} The project display layout with interactive selection.
+ *
+ * @author Ralph Woiwode
+ * @version 0.2.0
+ */
+const ProjectDisplay = ({ projects }: ProjectDisplayProps): JSX.Element => {
   const [selectedProject, setSelectedProject] = useState<Project>(projects[0]);
   const [animatingLink, setAnimatingLink] = useState<string | null>(null);
 
+  /**
+   * Handles project selection with animation.
+   *
+   * @param {Project} project - The selected project.
+   */
   const handleClick = (project: Project) => {
-    if (animatingLink) return;
-    // Prevent multiple clicks while animating
+    if (animatingLink) return; // Prevent multiple clicks while animating
+
     setAnimatingLink(project.title);
 
     // Wait for animation to complete before navigating
     setTimeout(() => {
       setSelectedProject(project);
       setAnimatingLink(null);
-    }, 300); // Slightly shorter than animation duration to feel more responsive
+    }, 300);
   };
 
   return (
@@ -48,7 +85,6 @@ const ProjectDisplay = ({ projects }: Props): JSX.Element => {
           </div>
         </div>
       </div>
-
       {/* MOBILE */}
       <div className="flex w-full flex-col items-center gap-8 xl:hidden">
         {projects.map((project) => (

@@ -17,13 +17,13 @@ interface Skill {
 
 /**
  * Props for the JobCard component.
- * @interface Props
+ * @interface JobCardProps
  * @property {string} title - The job title and company.
  * @property {string} date - The employment period.
  * @property {string} desc - A brief description of the job responsibilities.
  * @property {Skill[]} skills - An array of skills associated with the job.
  */
-interface Props {
+interface JobCardProps {
   title: string;
   date: string;
   desc: string;
@@ -36,10 +36,6 @@ interface Props {
  *
  * - Supports hover effects on desktop (`onMouseEnter`, `onMouseLeave`).
  * - Uses `SkillPills` to display associated skills.
- *
- * ## Notes:
- * TODO: Improve handling of mobile vs. desktop interactions.
- * TODO: Address visibility issues where the desktop skill div still renders on hover in mobile view.
  *
  * ## Example:
  * ```tsx
@@ -62,19 +58,28 @@ interface Props {
  * export default App;
  * ```
  *
+ * @component
+ * @param {JobCardProps} props
+ * @returns {JSX.Element} A job card displaying job details and skills.
+ *
  * @author Ralph Woiwode
  * @version 0.2.2
- * @returns {JSX.Element} A job card displaying job details and skills.
  */
-const JobCard = ({ title, date, desc, skills }: Props): JSX.Element => {
+const JobCard = ({ title, date, desc, skills }: JobCardProps): JSX.Element => {
   const [isVisible, setIsVisible] = useState(false); // Controls animation visibility
 
+  /**
+   * Handles mouse enter event to show skills on desktop.
+   */
   const handleJobMouseEnter = () => {
     setIsVisible(true);
   };
 
+  /**
+   * Handles mouse leave event to hide skills on desktop.
+   */
   const handleJobMouseLeave = () => {
-    setIsVisible(false); // Fade out
+    setIsVisible(false);
   };
 
   return (

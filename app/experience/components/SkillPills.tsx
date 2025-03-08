@@ -13,10 +13,10 @@ interface Skill {
 
 /**
  * Props for the SkillPills component.
- * @interface Props
+ * @interface SkillPillsProps
  * @property {Skill[]} skills - An array of skills to render as pills.
  */
-interface Props {
+interface SkillPillsProps {
   skills: Skill[];
 }
 
@@ -43,11 +43,14 @@ interface Props {
  * export default App;
  * ```
  *
+ * @component
+ * @param {SkillPillsProps} props
+ * @returns {JSX.Element[]} An array of `Pill` components for the provided skills.
+ *
  * @author Ralph Woiwode
  * @version 0.1.0
- * @returns {JSX.Element[]} An array of `Pill` components for the provided skills.
  */
-const SkillPills = ({ skills }: Props): JSX.Element[] => {
+const SkillPills = ({ skills }: SkillPillsProps): JSX.Element[] => {
   return skills.map((skill) => (
     <Pill key={skill.skill} item={skill.skill} dots={skill.years} />
   ));

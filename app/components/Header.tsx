@@ -16,11 +16,13 @@
  * export default App;
  * ```
  *
+ * @component
+ * @returns {JSX.Element} The header element displaying the app title
+ *
  * @author Ralph Woiwode
  * @version 0.2.0
- * @returns {JSX.Element} The header element with the app title
  */
-const Header = () => {
+const Header = (): JSX.Element => {
   return (
     <h1 className="text-secondary-300 w-full px-4 py-6 text-center text-4xl">
       <span className="text-5xl">RAW</span>pertoire

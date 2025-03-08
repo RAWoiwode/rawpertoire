@@ -1,55 +1,77 @@
-# RAWpertoire
+# **RAWpertoire**
 
-This serves as my main portfolio for my Front-End Development work (and possibly other things in the future).
+This serves as my main portfolio for my **Front-End Development** work (and possibly other things in the future).
 
-I will update this README as I progress. For now, here are a few basic details.
+I will update this README as I progress.
 
-## Features
+## **Features**
 
 - **Project Showcase** - Display of personal and professional projects.
 - **Experience Timeline** - Work history with associated skills.
 - **Responsive Design** - Mobile-friendly layout with adaptive navigation.
-- **Custom Components** - Reusable, well-documented React components.
-- **Dynamic Routing** - Next.js App Router for optimized navigation.
-- **Tailwind CSS Styling** - Utility-first approach for clean, scalable styling.
+- **Dynamic Navigation** - Smooth page transitions and preloading via Next.js.
+- **Custom Components** - Modular, well-documented, and reusable UI components.
+- **Optimized Performance** - Lazy loading, prefetching, and optimized assets.
 
-## Knowledge/Skills Applied
+---
 
-- **React & Next.js**
+## **Tech Stack & Concepts Applied**
 
-  - Server & Client Components
-  - App Router (`app/` structure)
-  - Metadata API
+### **Next.js & React**
 
-- **TypeScript**
+- **App Router** (`app/` structure) for optimized navigation.
+- **Server & Client Components** for efficiency.
+- **Dynamic Routing** with `next/navigation`.
+- **Metadata API** for SEO enhancements.
 
-  - Strongly typed props and interfaces
-  - Modular type definitions for better maintainability
+### **TypeScript**
 
-- **State Management**
+- Strongly typed components for better maintainability.
+- Modular interfaces (`projectTypes.ts`, etc.).
 
-  - `useState` for UI interactions
-  - Async data fetching within server components (future work)
+### **State Management**
 
-- **Performance & Optimization**
+- `useState` for UI interactions.
+- `useEffect` for event-driven updates.
+- Async data fetching within Server Components.
 
-  - **Next.js Image Optimization** (`next/image`)
-  - **Lazy Loading** for assets and components
-  - **Prettier + ESLint** for code consistency
+### **Performance & Optimization**
 
-- **Accessibility & UX**
-  - Properly structured semantic HTML
-  - Keyboard & screen reader-friendly interactions
+- **Next.js Image Optimization** (`next/image`).
+- **Lazy Loading & Suspense** for assets & components.
+- **Preloading & Prefetching** via `router.prefetch()`.
+- **Prettier + ESLint** for consistent code quality.
 
-### Inspiration
+### **Styling & UI**
 
-[Brittany Chiang](https://brittanychiang.com/)
+- **Tailwind CSS** - Utility-first styling approach.
+- **Prettier Plugin for Tailwind** for auto-sorted class names.
+- **Component-Driven Design** with reusable UI elements (`JobCard`, `SkillPills`, etc.).
 
-##### Extra Plugins Used
+### **Accessibility & UX**
+
+- Semantic HTML for better screen reader support.
+- Keyboard-friendly navigation patterns.
+
+---
+
+## **Inspiration**
+
+- [Brittany Chiang](https://brittanychiang.com/)
+
+## **Extra Plugins Used**
 
 - [`prettier-plugin-tailwindcss`](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)
 - [`react-icons`](https://react-icons.github.io/react-icons/)
 
-#### Humble Beginnings
+---
+
+## **Humble Beginnings**
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+---
+
+### **Next Steps & Future Enhancements**
+
+- WIP

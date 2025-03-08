@@ -1,9 +1,9 @@
 import PageWrapper from "./components/PageWrapper";
 
 /**
- * The Home component serves as the "Home" page fo the app
+ * The Home component serves as the introduction page fo the app.
  *
- * This coponent introduces the develops, highlights their overall experience,
+ * This component introduces the developer, highlights their overall experience,
  * and provides a brief explanation of the purpose behind the portfolio.
  *
  * ## Example:
@@ -15,13 +15,13 @@ import PageWrapper from "./components/PageWrapper";
  * }
  * ```
  *
- * TODO: Update Documentation for entire app
+ * @component
+ * @returns {JSX.Element} The Home page content for the app
  *
  * @author Ralph Woiwode
  * @version 0.2.0
- * @returns {JSX.Element} The Home page content for the app
  */
-const Home = () => {
+const Home = (): JSX.Element => {
   return (
     <PageWrapper sectionTitle="About">
       <div className="space-y-4 text-justify drop-shadow-sm lg:mx-auto lg:w-2/3 xl:w-1/2">
