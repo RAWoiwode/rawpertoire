@@ -18,7 +18,8 @@ const fetchProjectData = async (): Promise<Project[]> => {
         {
           title: "This",
           url: "http://localhost:3000/projects",
-          description: "recursion ༼ つ ◕_◕ ༽つ",
+          description:
+            "A modern, responsive portfolio showcasing my front-end development skills, projects, and experience through a dynamic, well-structured UI. ༼ つ ◕_◕ ༽つ",
           timeEstimate: 20,
           image: "RAWpertoire.png",
           gitHubUrl: "https://github.com/RAWoiwode/rawpertoire",
@@ -27,7 +28,7 @@ const fetchProjectData = async (): Promise<Project[]> => {
           title: "Wedding Site",
           url: "https://betoycaty.mx/",
           description:
-            "A Wedding site I developed for my friends who got married in 2024",
+            "A multi-page wedding website designed for a seamless guest experience, featuring the couple's story, schedule, travel details, registry, local recommendations, FAQs, and an interactive RSVP system for status lookup and updates.",
           timeEstimate: 40,
           image: "WeddingSite.png",
           gitHubUrl: "https://github.com/RAWoiwode/wedding-joika",
@@ -35,7 +36,8 @@ const fetchProjectData = async (): Promise<Project[]> => {
         {
           title: "Appointment App (WIP)",
           url: "",
-          description: "Manage tattoo appointments more smoothly",
+          description:
+            "A work-in-progress appointment management app designed for tattoo artists and stylists, providing a streamlined way to review client requests, quickly assess messages, and efficiently accept or deny appointments.",
           timeEstimate: 100,
           image: "Tapt.png",
           gitHubUrl: "https://github.com/hrtejada/tapt",
@@ -65,7 +67,7 @@ const fetchProjectData = async (): Promise<Project[]> => {
  * @returns {Promise<JSX.Element>} A section displaying a list of projects.
  *
  * @author Ralph Woiwode
- * @version 0.3.0
+ * @version 0.3.1
  */
 const ProjectContent = async (): Promise<JSX.Element> => {
   const projects = await fetchProjectData();
