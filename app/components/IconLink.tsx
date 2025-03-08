@@ -45,7 +45,7 @@ interface IconLinkProps {
  * @returns {JSX.Element} A styled link containg a ReactIcon
  *
  * @author Ralph Woiwode
- * @version 0.1.0
+ * @version 0.1.1
  */
 const IconLink = ({ url, title, children }: IconLinkProps): JSX.Element => {
   return (
@@ -53,7 +53,7 @@ const IconLink = ({ url, title, children }: IconLinkProps): JSX.Element => {
       <IconContext.Provider
         value={{
           className:
-            "text-secondary-400 hover:text-secondary-200 transition-colors",
+            "text-secondary-100 hover:text-secondary-500 transition-colors",
           size: "32",
         }}
       >
