@@ -49,7 +49,7 @@ const navItems = [
  * @returns {JSX.Element} A responsive sidebar navigation with links and social icons.
  *
  * @author Ralph Woiwode
- * @version 0.2.3
+ * @version 0.2.4
  */
 const SideNav = (): JSX.Element => {
   const pathname = usePathname();
@@ -88,7 +88,7 @@ const SideNav = (): JSX.Element => {
 
   return (
     <aside className="relative flex flex-auto flex-col lg:my-12 lg:ml-12">
-      <div className="bg-secondary-50/30 relative flex flex-1 flex-col py-8 backdrop-blur-lg">
+      <div className="bg-secondary-50/50 relative flex flex-1 flex-col py-8 backdrop-blur-lg">
         <Header />
         <nav className="hidden flex-1 flex-col space-y-4 py-4 lg:flex">
           {navItems.map((item) => (
@@ -98,7 +98,7 @@ const SideNav = (): JSX.Element => {
               onClick={(e) => handleNavClick(e, item.path)}
               className={`text-text-50 mx-auto w-4/5 rounded-xs py-2 text-center text-xl tracking-widest transition-all duration-200 ${animatingLink === item.path ? "animate-flash" : ""} ${
                 item.path === pathname
-                  ? "bg-secondary-950/80 text-text-950 outline-accent-400 font-bold outline-4"
+                  ? "bg-secondary-950 text-text-950 outline-accent-400 font-bold outline-4"
                   : "hover:outline-accent-600 bg-secondary-50/90 outline-4 outline-transparent"
               }`}
             >

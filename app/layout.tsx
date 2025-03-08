@@ -33,11 +33,12 @@ export const metadata: Metadata = {
  * - Dynamic content rendering
  *
  * TODO: Update Metatags for each page
+ *
  * @component
  * @returns {JSX.Element} The layout structure of the app
  *
  * @author Ralph Woiwode
- * @version 0.2.0
+ * @version 0.2.1
  */
 export default function RootLayout({
   children,
@@ -46,7 +47,7 @@ export default function RootLayout({
 }>): JSX.Element {
   return (
     <html lang="en" className={noto_sans.className}>
-      <body className="bg-background-200/50 text-text-950 lg:mx-auto lg:flex lg:min-h-screen lg:p-4">
+      <body className="bg-background-500/30 text-text-950 lg:mx-auto lg:flex lg:min-h-screen lg:p-4">
         <SideNav />
         <main className="flex flex-col justify-center space-y-4 overflow-auto py-6 lg:w-5/6">
           <Suspense fallback={<Loading />}>
