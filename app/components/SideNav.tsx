@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { FaFilePdf, FaGithub, FaLinkedinIn } from "react-icons/fa6";
 
 import Header from "./Header";
 import IconLink from "./IconLink";
@@ -25,13 +26,10 @@ const navItems = [
 /**
  * The SideNav component renders the sidebar navigation for the app.
  *
- * - Includes navigation links for "Home," "Experience," and "Projects."
- * - Displays social media icons for GitHub and LinkedIn.
+ * - Provides quick access to the main sections of the porfolio
+ * - Displays social media icons for GitHub, LinkedIn and a resume download.
  *
- * ## Notes:
  * TODO: Separate data (navItems) from the UI for improved maintainability.
- * TODO: Review hover effects for `navItems` for better UX.
- * TODO: Investigate occasional width inconsistencies in `navItem` links.
  *
  * ## Example:
  * ```tsx
@@ -47,23 +45,62 @@ const navItems = [
  * export default App;
  * ```
  *
- * @author Ralph Woiwode
- * @version 0.1.0
+ * @component
  * @returns {JSX.Element} A responsive sidebar navigation with links and social icons.
+ *
+ * @author Ralph Woiwode
+ * @version 0.2.4
  */
 const SideNav = (): JSX.Element => {
   const pathname = usePathname();
+  const router = useRouter();
+  const [animatingLink, setAnimatingLink] = useState<string | null>(null);
+
+  useEffect(() => {
+    navItems.forEach((item) => {
+      router.prefetch(item.path);
+    });
+  }, [router]);
+
+  /**
+   * Handles navigation clicks with animation.
+   *
+   * @param {React.MouseEvent<HTMLAnchorElement>} e - Click event
+   * @param {string} path - Path to navigate to
+   */
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    path: string,
+  ) => {
+    e.preventDefault();
+
+    if (animatingLink || path === pathname) return; // Prevent multiple clicks while animating
+
+    setAnimatingLink(path);
+    router.prefetch(path); // Enusre latest data; Future proofing
+
+    // Wait for animation to complete before navigating
+    setTimeout(() => {
+      router.push(path);
+      setAnimatingLink(null);
+    }, 400);
+  };
 
   return (
-    <div className="flex flex-auto flex-col py-8 lg:my-12 lg:ml-12 lg:rounded-xl lg:bg-background-700 lg:shadow-lg">
-      <Header />
-      <div className="flex flex-1 flex-col justify-between">
-        <nav className="hidden flex-col space-y-2 py-4 lg:flex">
+    <aside className="relative flex flex-auto flex-col lg:my-12 lg:ml-12">
+      <div className="bg-secondary-50/50 relative flex flex-1 flex-col py-8 backdrop-blur-lg">
+        <Header />
+        <nav className="hidden flex-1 flex-col space-y-4 py-4 lg:flex">
           {navItems.map((item) => (
             <Link
               key={item.path}
               href={item.path}
-              className={`mx-auto w-3/5 py-2 text-center text-xl font-bold tracking-widest transition-all duration-200 ${item.path === pathname ? "w-full rounded-none bg-background-950" : "hover:scale-110 hover:text-text-950 hover:drop-shadow-xl"}`}
+              onClick={(e) => handleNavClick(e, item.path)}
+              className={`text-text-50 mx-auto w-4/5 rounded-xs py-2 text-center text-xl tracking-widest transition-all duration-200 ${animatingLink === item.path ? "animate-flash" : ""} ${
+                item.path === pathname
+                  ? "bg-secondary-950 text-text-950 outline-accent-400 font-bold outline-4"
+                  : "hover:outline-accent-600 bg-secondary-50/90 outline-4 outline-transparent"
+              }`}
             >
               {item.name}
             </Link>
@@ -83,9 +120,14 @@ const SideNav = (): JSX.Element => {
               <FaLinkedinIn />
             </IconLink>
           </li>
+          <li>
+            <IconLink url="/files/RAW_Resume.pdf" title="Resume">
+              <FaFilePdf />
+            </IconLink>
+          </li>
         </ul>
       </div>
-    </div>
+    </aside>
   );
 };
 

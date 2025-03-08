@@ -1,10 +1,10 @@
 /**
  * Props for the Pill component.
- * @interface Props
+ * @interface PillProps
  * @property {string} item - The text or label to display inside the pill.
  * @property {number} dots - The number of decorative dots to render below the text.
  */
-interface Props {
+interface PillProps {
   item: string;
   dots: number;
 }
@@ -26,20 +26,23 @@ interface Props {
  * export default App;
  * ```
  *
- * @author Ralph Woiwode
- * @version 0.1.0
+ * @component
+ * @param {PillProps} props
  * @returns {JSX.Element} A styled pill w/ dots below the text.
+ *
+ * @author Ralph Woiwode
+ * @version 0.2.2
  */
-const Pill = ({ item, dots }: Props): JSX.Element => {
+const Pill = ({ item, dots }: PillProps): JSX.Element => {
   return (
-    <div className="rounded-md bg-background-800/50 px-3 py-1">
-      <div className="text-center">{item}</div>
+    <div className="bg-secondary-50 w-24 rounded-sm px-3 py-1">
+      <div className="text-text-50 text-center">{item}</div>
       {dots > 0 && (
         <div className="mt-0.5 flex justify-center">
           {Array.from({ length: dots }, (_, index) => (
             <div
               key={index}
-              className="mx-0.5 h-1 w-1 rounded-full bg-secondary-500"
+              className="bg-secondary-600 mx-0.5 h-1 w-1 rounded-full"
             />
           ))}
         </div>

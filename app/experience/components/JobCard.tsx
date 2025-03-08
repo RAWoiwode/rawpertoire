@@ -17,13 +17,13 @@ interface Skill {
 
 /**
  * Props for the JobCard component.
- * @interface Props
+ * @interface JobCardProps
  * @property {string} title - The job title and company.
  * @property {string} date - The employment period.
  * @property {string} desc - A brief description of the job responsibilities.
  * @property {Skill[]} skills - An array of skills associated with the job.
  */
-interface Props {
+interface JobCardProps {
   title: string;
   date: string;
   desc: string;
@@ -36,10 +36,6 @@ interface Props {
  *
  * - Supports hover effects on desktop (`onMouseEnter`, `onMouseLeave`).
  * - Uses `SkillPills` to display associated skills.
- *
- * ## Notes:
- * TODO: Improve handling of mobile vs. desktop interactions.
- * TODO: Address visibility issues where the desktop skill div still renders on hover in mobile view.
  *
  * ## Example:
  * ```tsx
@@ -62,42 +58,51 @@ interface Props {
  * export default App;
  * ```
  *
- * @author Ralph Woiwode
- * @version 0.1.0
+ * @component
+ * @param {JobCardProps} props
  * @returns {JSX.Element} A job card displaying job details and skills.
+ *
+ * @author Ralph Woiwode
+ * @version 0.2.2
  */
-const JobCard = ({ title, date, desc, skills }: Props): JSX.Element => {
+const JobCard = ({ title, date, desc, skills }: JobCardProps): JSX.Element => {
   const [isVisible, setIsVisible] = useState(false); // Controls animation visibility
 
+  /**
+   * Handles mouse enter event to show skills on desktop.
+   */
   const handleJobMouseEnter = () => {
     setIsVisible(true);
   };
 
+  /**
+   * Handles mouse leave event to hide skills on desktop.
+   */
   const handleJobMouseLeave = () => {
-    setIsVisible(false); // Fade out
+    setIsVisible(false);
   };
 
   return (
     <div className="flex flex-col justify-center xl:flex-row xl:space-x-4">
       <section
-        className="rounded-lg pb-4 transition-all xl:w-1/2 xl:shrink-0 xl:p-6 xl:px-4 xl:hover:translate-x-4 xl:hover:bg-background-800/50 xl:hover:shadow-lg"
+        className="lg:hover:bg-secondary-100/90 bg-secondary-50 text-text-50 xl:active:outline-accent-500 xl:hover:outline-accent-500 shadow-secondary-100 mb-4 rounded-sm p-6 outline-4 outline-transparent transition-all xl:mb-0 xl:w-1/2 xl:px-4 xl:hover:shadow-lg"
         onMouseEnter={handleJobMouseEnter}
         onMouseLeave={handleJobMouseLeave}
       >
-        <h3>{title}</h3>
-        <h4>{date}</h4>
+        <h3 className="text-pretty">{title}</h3>
+        <h4 className="uppercase italic">{date}</h4>
         <p
-          className="whitespace-normal pt-2 text-justify"
+          className="pt-4 text-justify whitespace-normal"
           dangerouslySetInnerHTML={{ __html: desc }}
         />
       </section>
       {/* MOBILE */}
-      <div className="flex flex-wrap gap-2 xl:hidden">
+      <div className="flex flex-wrap justify-center gap-2 xl:hidden">
         <SkillPills skills={skills} />
       </div>
       {/* DESKTOP */}
       <div
-        className={`hidden content-start gap-2 p-4 xl:flex xl:w-1/5 xl:flex-wrap xl:transition-all xl:duration-300 ${isVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"}`}
+        className={`bg-secondary-100/80 outline-accent-500 shadow-secondary-100 hidden items-center gap-2 rounded-sm p-4 shadow-lg outline-4 transition-all xl:grid xl:h-fit xl:auto-rows-max xl:grid-cols-2 xl:self-center ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"}`}
       >
         <SkillPills skills={skills} />
       </div>

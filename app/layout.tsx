@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Noto_Sans } from "next/font/google";
+import { Suspense } from "react";
 
 import SideNav from "./components/SideNav";
 import Experience from "./experience/page";
 import "./globals.css";
+import Loading from "./loading";
 import Home from "./page";
 import Projects from "./projects/page";
 
@@ -28,18 +30,15 @@ export const metadata: Metadata = {
  * It provides a responsive structure w/:
  * - Global font styling
  * - Side navigation for desktop
- * - A 'main' section that renders content for both mobile and desktop
+ * - Dynamic content rendering
  *
- * ## Desktop Behavior
- * - The 'children' passed to the layout are rendered inside the 'main' tag
+ * TODO: Update Metatags for each page
  *
- * ## Mobile Behavior
- * - instead of 'children', the components are rendered directly
+ * @component
+ * @returns {JSX.Element} The layout structure of the app
  *
  * @author Ralph Woiwode
- * @version 0.1.0
- *
- * @returns {JSX.Element} The layout structure of the app
+ * @version 0.2.1
  */
 export default function RootLayout({
   children,
@@ -48,17 +47,19 @@ export default function RootLayout({
 }>): JSX.Element {
   return (
     <html lang="en" className={noto_sans.className}>
-      <body className="bg-background-950 text-text-50 lg:mx-auto lg:flex lg:min-h-screen lg:p-4">
+      <body className="bg-background-500/30 text-text-950 lg:mx-auto lg:flex lg:min-h-screen lg:p-4">
         <SideNav />
         <main className="flex flex-col justify-center space-y-4 overflow-auto py-6 lg:w-5/6">
-          {/* Desktop */}
-          <div className="hidden lg:block">{children}</div>
-          {/* Mobile */}
-          <div className="lg:hidden">
-            <Home />
-            <Experience />
-            <Projects />
-          </div>
+          <Suspense fallback={<Loading />}>
+            {/* Desktop */}
+            <div className="hidden lg:block">{children}</div>
+            {/* Mobile */}
+            <div className="lg:hidden">
+              <Home />
+              <Experience />
+              <Projects />
+            </div>
+          </Suspense>
         </main>
       </body>
     </html>
