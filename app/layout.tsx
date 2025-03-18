@@ -1,13 +1,8 @@
 import type { Metadata } from "next";
 import { Noto_Sans } from "next/font/google";
-import { Suspense } from "react";
 
 import SideNav from "./components/SideNav";
-import Experience from "./experience/page";
 import "./globals.css";
-import Loading from "./loading";
-import Home from "./page";
-import Projects from "./projects/page";
 
 /* Chosen font for most of the site */
 const noto_sans = Noto_Sans({
@@ -38,7 +33,7 @@ export const metadata: Metadata = {
  * @returns {JSX.Element} The layout structure of the app
  *
  * @author Ralph Woiwode
- * @version 0.2.1
+ * @version 0.3.0
  */
 export default function RootLayout({
   children,
@@ -47,19 +42,10 @@ export default function RootLayout({
 }>): JSX.Element {
   return (
     <html lang="en" className={noto_sans.className}>
-      <body className="bg-background-500/30 text-text-950 lg:mx-auto lg:flex lg:min-h-screen lg:p-4">
+      <body className="bg-background text-text lg:mx-auto lg:flex lg:min-h-screen">
         <SideNav />
         <main className="flex flex-col justify-center space-y-4 overflow-auto py-6 lg:w-5/6">
-          <Suspense fallback={<Loading />}>
-            {/* Desktop */}
-            <div className="hidden lg:block">{children}</div>
-            {/* Mobile */}
-            <div className="lg:hidden">
-              <Home />
-              <Experience />
-              <Projects />
-            </div>
-          </Suspense>
+          {children}
         </main>
       </body>
     </html>

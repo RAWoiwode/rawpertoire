@@ -1,25 +1,20 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import { FaFilePdf, FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 
+import { useEffect } from "react";
 import Header from "./Header";
 import IconLink from "./IconLink";
 
 const navItems = [
   {
     name: "Home",
-    path: "/",
   },
   {
     name: "Experience",
-    path: "/experience",
   },
   {
     name: "Projects",
-    path: "/projects",
   },
 ];
 
@@ -52,15 +47,15 @@ const navItems = [
  * @version 0.2.4
  */
 const SideNav = (): JSX.Element => {
-  const pathname = usePathname();
-  const router = useRouter();
-  const [animatingLink, setAnimatingLink] = useState<string | null>(null);
+  // const pathname = usePathname();
+  // const router = useRouter();
+  // const [animatingLink, setAnimatingLink] = useState<string | null>(null);
 
-  useEffect(() => {
-    navItems.forEach((item) => {
-      router.prefetch(item.path);
-    });
-  }, [router]);
+  // useEffect(() => {
+  //   navItems.forEach((item) => {
+  //     router.prefetch(item.path);
+  //   });
+  // }, [router]);
 
   /**
    * Handles navigation clicks with animation.
@@ -68,44 +63,79 @@ const SideNav = (): JSX.Element => {
    * @param {React.MouseEvent<HTMLAnchorElement>} e - Click event
    * @param {string} path - Path to navigate to
    */
-  const handleNavClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    path: string,
-  ) => {
+  // const handleNavClick = (
+  //   e: React.MouseEvent<HTMLAnchorElement>,
+  //   path: string,
+  // ) => {
+  //   e.preventDefault();
+
+  //   if (animatingLink || path === pathname) return; // Prevent multiple clicks while animating
+
+  //   setAnimatingLink(path);
+  //   router.prefetch(path); // Enusre latest data; Future proofing
+
+  //   // Wait for animation to complete before navigating
+  //   setTimeout(() => {
+  //     router.push(path);
+  //     setAnimatingLink(null);
+  //   }, 400);
+  // };
+
+  // Handle initial page load with hash
+  useEffect(() => {
+    // Check if there's a hash in the URL on page load
+    if (window.location.hash) {
+      const id = window.location.hash.substring(1);
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+    }
+  }, []);
+
+  /**
+   * Handles smooth scrolling when clicking navigation links
+   *
+   * @param {React.MouseEvent} e - The click event
+   * @param {string} id - The ID of the target section
+   */
+  const handleSmoothScroll = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
 
-    if (animatingLink || path === pathname) return; // Prevent multiple clicks while animating
+    const targetElement = document.getElementById(id);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
 
-    setAnimatingLink(path);
-    router.prefetch(path); // Enusre latest data; Future proofing
-
-    // Wait for animation to complete before navigating
-    setTimeout(() => {
-      router.push(path);
-      setAnimatingLink(null);
-    }, 400);
+      // Update URL without causing a page jump or reload
+      if (typeof window !== "undefined") {
+        window.history.pushState({}, "", `#${id}`);
+      }
+    }
   };
 
   return (
-    <aside className="relative flex flex-auto flex-col lg:my-12 lg:ml-12">
-      <div className="bg-secondary-50/50 relative flex flex-1 flex-col py-8 backdrop-blur-lg">
+    <aside className="flex flex-col justify-between px-16 lg:sticky lg:top-0 lg:max-h-screen lg:w-1/4 lg:py-16">
+      <div>
         <Header />
-        <nav className="hidden flex-1 flex-col space-y-4 py-4 lg:flex">
+        <nav className="mt-12 hidden w-max flex-col space-y-4 lg:flex">
           {navItems.map((item) => (
-            <Link
-              key={item.path}
-              href={item.path}
-              onClick={(e) => handleNavClick(e, item.path)}
-              className={`text-text-50 mx-auto w-4/5 rounded-xs py-2 text-center text-xl tracking-widest transition-all duration-200 ${animatingLink === item.path ? "animate-flash" : ""} ${
-                item.path === pathname
-                  ? "bg-secondary-950 text-text-950 outline-accent-400 font-bold outline-4"
-                  : "hover:outline-accent-600 bg-secondary-50/90 outline-4 outline-transparent"
-              }`}
+            <a
+              key={item.name}
+              href={`#${item.name.toLowerCase()}`}
+              onClick={(e) => handleSmoothScroll(e, item.name.toLowerCase())}
+              className={`text-text hover:text-accent px-2 py-2 tracking-widest uppercase transition-all duration-200 hover:translate-x-4`}
             >
-              {item.name}
-            </Link>
+              {item.name.toUpperCase()}
+            </a>
           ))}
         </nav>
+      </div>
+      <div className="space-y-4">
         <ul className="flex justify-center space-x-4">
           <li>
             <IconLink url="https://github.com/RAWoiwode" title="GitHub Profile">
@@ -120,12 +150,15 @@ const SideNav = (): JSX.Element => {
               <FaLinkedinIn />
             </IconLink>
           </li>
-          <li>
-            <IconLink url="/files/RAW_Resume.pdf" title="Resume">
-              <FaFilePdf />
-            </IconLink>
-          </li>
         </ul>
+        <a
+          href="/files/RAW_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:outline-accent hover:text-accent mx-auto flex w-max p-2 outline"
+        >
+          Resume
+        </a>
       </div>
     </aside>
   );
