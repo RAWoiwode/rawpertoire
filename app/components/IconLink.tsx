@@ -52,8 +52,7 @@ const IconLink = ({ url, title, children }: IconLinkProps): JSX.Element => {
     <Link href={url} target="_blank" rel="noopener noreferrer" title={title}>
       <IconContext.Provider
         value={{
-          className:
-            "text-secondary-100 hover:text-secondary-500 transition-colors",
+          className: "text-text hover:text-accent transition-colors",
           size: "32",
         }}
       >
