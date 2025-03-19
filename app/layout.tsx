@@ -42,11 +42,13 @@ export default function RootLayout({
 }>): JSX.Element {
   return (
     <html lang="en" className={noto_sans.className}>
-      <body className="bg-background text-text lg:mx-auto lg:flex lg:min-h-screen">
-        <SideNav />
-        <main className="flex flex-col justify-center space-y-4 overflow-auto py-6 lg:w-5/6">
-          {children}
-        </main>
+      <body className="bg-background text-text">
+        <div className="mx-auto flex max-w-screen-xl lg:min-h-screen">
+          <SideNav />
+          <main className="flex flex-col space-y-4 py-24 pr-16 pl-4 lg:w-[50%] lg:px-0">
+            {children}
+          </main>
+        </div>
       </body>
     </html>
   );

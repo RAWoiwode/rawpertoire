@@ -24,12 +24,10 @@
  */
 const Header = (): JSX.Element => {
   return (
-    <>
-      <h1 className="text-text-500 w-full text-3xl font-bold uppercase">
-        <span className="text-5xl">RAW</span>pertoire
-      </h1>
+    <div className="w-2/5">
+      <h1 className="text-text text-3xl font-bold">RAWpertoire</h1>
       <p className="text-right">by: Ralph Alex Woiwode</p>
-    </>
+    </div>
   );
 };
 

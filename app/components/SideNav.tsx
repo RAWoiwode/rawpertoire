@@ -3,7 +3,6 @@
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 
 import { useEffect } from "react";
-import Header from "./Header";
 import IconLink from "./IconLink";
 
 const navItems = [
@@ -44,7 +43,7 @@ const navItems = [
  * @returns {JSX.Element} A responsive sidebar navigation with links and social icons.
  *
  * @author Ralph Woiwode
- * @version 0.2.4
+ * @version 0.3.0
  */
 const SideNav = (): JSX.Element => {
   // const pathname = usePathname();
@@ -119,16 +118,15 @@ const SideNav = (): JSX.Element => {
   };
 
   return (
-    <aside className="flex flex-col justify-between px-16 lg:sticky lg:top-0 lg:max-h-screen lg:w-1/4 lg:py-16">
+    <aside className="flex w-[40%] flex-col justify-between px-16 lg:sticky lg:top-0 lg:max-h-screen lg:py-24">
       <div>
-        <Header />
-        <nav className="mt-12 hidden w-max flex-col space-y-4 lg:flex">
+        <nav className="hidden w-max flex-col space-y-4 lg:flex">
           {navItems.map((item) => (
             <a
               key={item.name}
               href={`#${item.name.toLowerCase()}`}
               onClick={(e) => handleSmoothScroll(e, item.name.toLowerCase())}
-              className={`text-text hover:text-accent px-2 py-2 tracking-widest uppercase transition-all duration-200 hover:translate-x-4`}
+              className={`text-text hover:text-accent px-2 py-2 text-lg tracking-widest uppercase transition-all duration-200 hover:translate-x-4`}
             >
               {item.name.toUpperCase()}
             </a>
@@ -136,7 +134,7 @@ const SideNav = (): JSX.Element => {
         </nav>
       </div>
       <div className="space-y-4">
-        <ul className="flex justify-center space-x-4">
+        <ul className="flex space-x-4">
           <li>
             <IconLink url="https://github.com/RAWoiwode" title="GitHub Profile">
               <FaGithub />
@@ -155,7 +153,7 @@ const SideNav = (): JSX.Element => {
           href="/files/RAW_Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:outline-accent hover:text-accent mx-auto flex w-max p-2 outline"
+          className="hover:outline-accent hover:text-accent flex w-max p-2 outline"
         >
           Resume
         </a>

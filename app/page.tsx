@@ -25,14 +25,14 @@ import ProjectContent from "./components/projects/ProjectContent";
  */
 const Home = (): JSX.Element => {
   return (
-    <div className="flex flex-col space-y-12">
-      <section id="home" className="pt-20">
+    <div className="flex flex-col space-y-20">
+      <section id="home" className="">
         <HomeContent />
       </section>
-      <section id="experience" className="pt-20">
+      <section id="experience" className="">
         <ExperienceContent />
       </section>
-      <section id="projects" className="pt-20">
+      <section id="projects" className="">
         <ProjectContent />
       </section>
     </div>
