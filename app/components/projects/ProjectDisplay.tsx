@@ -37,7 +37,7 @@ interface ProjectDisplayProps {
  * @returns {JSX.Element} The project display layout with interactive selection.
  *
  * @author Ralph Woiwode
- * @version 0.2.0
+ * @version 0.3.0
  */
 const ProjectDisplay = ({ projects }: ProjectDisplayProps): JSX.Element => {
   const [selectedProject, setSelectedProject] = useState<Project>(projects[0]);
@@ -80,7 +80,7 @@ const ProjectDisplay = ({ projects }: ProjectDisplayProps): JSX.Element => {
           ))}
         </div>
         <div className="flex w-1/2 items-start justify-start">
-          <div className="h-[512px] w-full">
+          <div className="h-[600px] w-full">
             <ProjectCard {...selectedProject} key={selectedProject.title} />
           </div>
         </div>
