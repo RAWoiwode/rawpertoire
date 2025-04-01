@@ -3,11 +3,11 @@ import Pill from "./Pill";
 /**
  * Represents a skill associated with a job experience.
  * @interface Skill
- * @property {string} skill - The name of the skill.
+ * @property {string} name - The name of the skill.
  * @property {number} years - The number of years of experience with the skill.
  */
 interface Skill {
-  skill: string;
+  name: string;
   years: number;
 }
 
@@ -52,7 +52,7 @@ interface SkillPillsProps {
  */
 const SkillPills = ({ skills }: SkillPillsProps): JSX.Element[] => {
   return skills.map((skill) => (
-    <Pill key={skill.skill} item={skill.skill} dots={skill.years} />
+    <Pill key={skill.name} item={skill.name} dots={skill.years} />
   ));
 };
 
