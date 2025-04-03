@@ -33,7 +33,7 @@ export const metadata: Metadata = {
  * @returns {JSX.Element} The layout structure of the app
  *
  * @author Ralph Woiwode
- * @version 0.4.0
+ * @version 0.4.2
  */
 export default function RootLayout({
   children,
@@ -45,7 +45,7 @@ export default function RootLayout({
       <body className="bg-background/90 text-text">
         <div className="bg-background/80 mx-auto flex max-w-screen-xl justify-evenly lg:min-h-screen">
           <SideNav />
-          <main className="flex flex-col space-y-4 py-24 pr-16 pl-4 lg:w-[50%] lg:px-0">
+          <main className="flex flex-col space-y-4 px-12 py-24 md:px-16 lg:w-[50%] lg:px-0 lg:pr-16 lg:pl-4">
             {children}
           </main>
         </div>
