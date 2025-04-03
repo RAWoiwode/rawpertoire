@@ -1,17 +1,11 @@
-"use client";
-
-import { useState } from "react";
-
-import SkillPills from "./SkillPills";
-
 /**
  * Represents a skill associated with a job experience.
  * @interface Skill
- * @property {string} skill - The name of the skill.
+ * @property {string} name - The name of the skill.
  * @property {number} years - The number of years of experience with the skill.
  */
 interface Skill {
-  skill: string;
+  name: string;
   years: number;
 }
 
@@ -63,49 +57,29 @@ interface JobCardProps {
  * @returns {JSX.Element} A job card displaying job details and skills.
  *
  * @author Ralph Woiwode
- * @version 0.2.2
+ * @version 0.3.0
  */
 const JobCard = ({ title, date, desc, skills }: JobCardProps): JSX.Element => {
-  const [isVisible, setIsVisible] = useState(false); // Controls animation visibility
-
-  /**
-   * Handles mouse enter event to show skills on desktop.
-   */
-  const handleJobMouseEnter = () => {
-    setIsVisible(true);
-  };
-
-  /**
-   * Handles mouse leave event to hide skills on desktop.
-   */
-  const handleJobMouseLeave = () => {
-    setIsVisible(false);
-  };
-
   return (
     <div className="flex flex-col justify-center xl:flex-row xl:space-x-4">
-      <section
-        className="lg:hover:bg-secondary-100/90 bg-secondary-50 text-text-50 xl:active:outline-accent-500 xl:hover:outline-accent-500 shadow-secondary-100 mb-4 rounded-sm p-6 outline-4 outline-transparent transition-all xl:mb-0 xl:w-1/2 xl:px-4 xl:hover:shadow-lg"
-        onMouseEnter={handleJobMouseEnter}
-        onMouseLeave={handleJobMouseLeave}
-      >
-        <h3 className="text-pretty">{title}</h3>
-        <h4 className="uppercase italic">{date}</h4>
+      <section className="text-text mb-4 rounded-sm">
+        <h3 className="text-primary">{title}</h3>
+        <h4 className="italic">{date}</h4>
         <p
-          className="pt-4 text-justify whitespace-normal"
+          className="pt-4 whitespace-normal"
           dangerouslySetInnerHTML={{ __html: desc }}
         />
+        <div className="mt-4 flex flex-wrap justify-center gap-4">
+          {skills.map((skill) => (
+            <p
+              key={skill.name}
+              className="text-text rounded-sm text-center underline"
+            >
+              {skill.name}
+            </p>
+          ))}
+        </div>
       </section>
-      {/* MOBILE */}
-      <div className="flex flex-wrap justify-center gap-2 xl:hidden">
-        <SkillPills skills={skills} />
-      </div>
-      {/* DESKTOP */}
-      <div
-        className={`bg-secondary-100/80 outline-accent-500 shadow-secondary-100 hidden items-center gap-2 rounded-sm p-4 shadow-lg outline-4 transition-all xl:grid xl:h-fit xl:auto-rows-max xl:grid-cols-2 xl:self-center ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-4 opacity-0"}`}
-      >
-        <SkillPills skills={skills} />
-      </div>
     </div>
   );
 };

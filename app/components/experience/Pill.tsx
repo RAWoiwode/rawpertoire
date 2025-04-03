@@ -31,18 +31,18 @@ interface PillProps {
  * @returns {JSX.Element} A styled pill w/ dots below the text.
  *
  * @author Ralph Woiwode
- * @version 0.2.2
+ * @version 0.3.0
  */
 const Pill = ({ item, dots }: PillProps): JSX.Element => {
   return (
-    <div className="bg-secondary-50 w-24 rounded-sm px-3 py-1">
-      <div className="text-text-50 text-center">{item}</div>
+    <div className="w-24 rounded-sm px-3 py-1">
+      <div className="text-text text-center">{item}</div>
       {dots > 0 && (
         <div className="mt-0.5 flex justify-center">
           {Array.from({ length: dots }, (_, index) => (
             <div
               key={index}
-              className="bg-secondary-600 mx-0.5 h-1 w-1 rounded-full"
+              className="bg-primary mx-0.5 h-1 w-1 rounded-full"
             />
           ))}
         </div>

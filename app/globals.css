@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 @theme {
-  --color-text: oklch(96.2% 0.034 145.31);
-  --color-background: oklch(24.34% 0.083 142.5);
-  --color-primary: oklch(81.58% 0.068 144.92);
-  --color-secondary: oklch(42.93% 0.066 316.36);
-  --color-accent: oklch(71.23% 0.2 143.11);
+  --color-text: oklch(95.21% 0.019 227.28);
+  --color-background: oklch(14.13% 0.017 218.61);
+  --color-primary: oklch(73.41% 0.136 233.87);
+  --color-secondary: oklch(39.15% 0.11 304.56);
+  --color-accent: oklch(73.23% 0.249 142.5);
 
   --shadow-project-card: 2px 4px 10px;
 
