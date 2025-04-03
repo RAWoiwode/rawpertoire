@@ -21,20 +21,28 @@ import ProjectContent from "./components/projects/ProjectContent";
  * @returns {JSX.Element} The Home page content for the app
  *
  * @author Ralph Woiwode
- * @version 0.3.0
+ * @version 0.3.1
  */
 const Home = (): JSX.Element => {
   return (
-    <div className="flex flex-col space-y-20">
-      <section id="home" className="">
+    <div className="flex flex-col space-y-32">
+      <section id="home">
         <HomeContent />
       </section>
-      <section id="experience" className="">
+      <section id="experience">
         <ExperienceContent />
       </section>
-      <section id="projects" className="">
+      <section id="projects">
         <ProjectContent />
       </section>
+      <div>
+        <p>
+          This site was partially drafted in Figma and coded in Visual Studio
+          Code by myself.
+          <br />
+          Built with NextJS, TypeScript, and TilwindCSS, deployed with Vercel.
+        </p>
+      </div>
     </div>
   );
 };
