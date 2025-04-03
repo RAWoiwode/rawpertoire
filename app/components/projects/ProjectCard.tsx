@@ -37,27 +37,25 @@ import { Project } from "@/app/types/projectTypes";
  * export default App;
  * ```
  *
- * TODO: Add blur effect around image borders.
- * TODO: Improve layout to avoid using the `1px margin-bottom` trick for shifting elements.
+ * TODO: Improve title/repo link layout. Shift of .88px between projects w/links vs w/o links
  *
  * @component
  * @param {Project} props
  * @returns {JSX.Element} A project card displaying project details, an optional image, and a clickable title (if a URL is provided).
  *
  * @author Ralph Woiwode
- * @version 0.3.3
+ * @version 0.4.0
  */
 const ProjectCard = ({
   title,
   url,
   description,
-  timeEstimate,
   image,
   gitHubUrl,
 }: Project): JSX.Element => {
   let titleDisplay = (
-    <div className="relative mb-[1px]">
-      <h3>{title}</h3>
+    <div>
+      <h4>{title}</h4>
     </div>
   );
 
@@ -65,56 +63,57 @@ const ProjectCard = ({
     titleDisplay = (
       <Link
         href={url}
-        className="text-primary-600 before:bg-primary-600 relative text-lg transition-all duration-300 ease-out before:absolute before:inset-x-0 before:-bottom-0.5 before:h-[2px] before:w-0 before:transition-all before:duration-300 before:ease-out hover:before:w-full"
+        className="text-accent before:bg-accent relative text-lg transition-all duration-300 ease-out before:absolute before:inset-x-0 before:-bottom-0.5 before:h-[2px] before:w-0 before:transition-all before:duration-300 before:ease-out hover:before:w-full"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <h3>{title}</h3>
+        <h4>{title}</h4>
       </Link>
     );
   }
 
   return (
-    <div className="bg-secondary-100/75 text-secondary-600 shadow-secondary-100 shadow-project-card flex h-full flex-col justify-between p-6">
-      <div className="flex flex-col items-center space-y-2">
-        {image && (
+    <div className="border-secondary flex h-full flex-col border p-6">
+      <div className="flex flex-col">
+        <div className="flex w-2/3 justify-between self-center xl:w-full xl:px-4">
           <Image
             alt={`${title} preview`}
             src={IMAGE_DIRECTORY + image}
-            width={250}
-            height={250}
+            width={128}
+            height={128}
             priority
             placeholder="blur"
-            className="h-auto w-auto max-w-full object-cover"
+            className="object-cover"
             blurDataURL="/images/blur.png"
           />
-        )}
-        <div className="flex w-full flex-col p-4 text-center xl:text-left">
-          {titleDisplay}
-          <div className="flex flex-row items-center justify-evenly">
-            <hr className="text-accent-300 my-4 w-1/2 border-t-2" />
-            <p className="text-accent-300 text-sm">{timeEstimate} hours</p>
+          <div className="flex flex-col space-y-8 text-end">
+            {titleDisplay}
+            <Link
+              href={gitHubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={`${title} Repo`}
+              className="text-accent before:bg-accent relative flex flex-row flex-wrap items-center gap-2 self-end text-sm transition-all duration-300 ease-out before:absolute before:inset-x-0 before:-bottom-0.5 before:h-[2px] before:w-0 before:transition-all before:duration-300 before:ease-out hover:before:w-full"
+            >
+              Repo
+              <IconContext.Provider
+                value={{
+                  className: "text-accent",
+                  size: "16",
+                }}
+              >
+                <GoRepo />
+              </IconContext.Provider>
+            </Link>
           </div>
-          <p className="text-md">{description}</p>
+        </div>
+        <div className="flex w-full flex-col p-4 text-center xl:text-left">
+          <div className="flex flex-row items-center justify-evenly">
+            <hr className="text-secondary my-3 w-3/4 border-t-1" />
+          </div>
+          <p className="text-sm">{description}</p>
         </div>
       </div>
-      <Link
-        href={gitHubUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        title={`${title} Repo`}
-        className="self-end pt-2"
-      >
-        <IconContext.Provider
-          value={{
-            className:
-              "text-secondary-400 hover:text-secondary-200 transition-colors",
-            size: "32",
-          }}
-        >
-          <GoRepo />
-        </IconContext.Provider>
-      </Link>
     </div>
   );
 };
