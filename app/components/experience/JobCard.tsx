@@ -57,12 +57,12 @@ interface JobCardProps {
  * @returns {JSX.Element} A job card displaying job details and skills.
  *
  * @author Ralph Woiwode
- * @version 0.3.0
+ * @version 0.3.1
  */
 const JobCard = ({ title, date, desc, skills }: JobCardProps): JSX.Element => {
   return (
     <div className="flex flex-col justify-center xl:flex-row xl:space-x-4">
-      <section className="text-text mb-4 rounded-sm">
+      <section className="mb-4 rounded-sm">
         <h3 className="text-primary">{title}</h3>
         <h4 className="italic">{date}</h4>
         <p
@@ -71,10 +71,7 @@ const JobCard = ({ title, date, desc, skills }: JobCardProps): JSX.Element => {
         />
         <div className="mt-4 flex flex-wrap justify-center gap-4">
           {skills.map((skill) => (
-            <p
-              key={skill.name}
-              className="text-text rounded-sm text-center underline"
-            >
+            <p key={skill.name} className="bg-secondary rounded-full px-2 py-1">
               {skill.name}
             </p>
           ))}
