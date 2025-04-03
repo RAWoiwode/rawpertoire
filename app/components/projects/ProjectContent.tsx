@@ -16,31 +16,36 @@ const fetchProjectData = async (): Promise<Project[]> => {
     setTimeout(() => {
       resolve([
         {
-          title: "This",
+          title: "Portfolio",
           url: "http://localhost:3000/projects",
           description:
-            "A modern, responsive portfolio showcasing my front-end development skills, projects, and experience through a dynamic, well-structured UI. ༼ つ ◕_◕ ༽つ",
-          timeEstimate: 20,
+            "A modern, responsive portfolio showcasing my front-end development skills, projects, and experience through a dynamic, well-structured UI.",
           image: "RAWpertoire.png",
           gitHubUrl: "https://github.com/RAWoiwode/rawpertoire",
         },
         {
-          title: "Wedding Site",
+          title: "Friends' Wedding",
           url: "https://betoycaty.mx/",
           description:
             "A multi-page wedding website designed for a seamless guest experience, featuring the couple's story, schedule, travel details, registry, local recommendations, FAQs, and an interactive RSVP system for status lookup and updates.",
-          timeEstimate: 40,
           image: "WeddingSite.png",
           gitHubUrl: "https://github.com/RAWoiwode/wedding-joika",
         },
         {
-          title: "Appointment App (WIP)",
+          title: "Appointment App",
           url: "",
           description:
             "A work-in-progress appointment management app designed for tattoo artists and stylists, providing a streamlined way to review client requests, quickly assess messages, and efficiently accept or deny appointments.",
-          timeEstimate: 100,
           image: "Tapt.png",
           gitHubUrl: "https://github.com/hrtejada/tapt",
+        },
+        {
+          title: "Identicon",
+          url: "",
+          description:
+            "A small Elixir project that creates Identicons based off a string input. I used it to create the images for each of the projects on this portfolio.",
+          image: "Identicon.png",
+          gitHubUrl: "https://github.com/RAWoiwode/identicon",
         },
       ]);
     }, 500);
@@ -67,7 +72,7 @@ const fetchProjectData = async (): Promise<Project[]> => {
  * @returns {Promise<JSX.Element>} A section displaying a list of projects.
  *
  * @author Ralph Woiwode
- * @version 0.3.1
+ * @version 0.4.0
  */
 const ProjectContent = async (): Promise<JSX.Element> => {
   const projects = await fetchProjectData();

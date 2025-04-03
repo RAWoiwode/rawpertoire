@@ -26,10 +26,10 @@
   @keyframes blue-flash {
     0%,
     100% {
-      background-color: oklch(16.69% 0.028 227.22);
+      background-color: oklch(39.15% 0.11 304.56);
     }
     10% {
-      background-color: oklch(97.43% 0.038 146.49);
+      background-color: oklch(73.41% 0.136 233.87);
     }
   }
 }
