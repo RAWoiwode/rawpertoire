@@ -37,7 +37,7 @@ interface ProjectDisplayProps {
  * @returns {JSX.Element} The project display layout with interactive selection.
  *
  * @author Ralph Woiwode
- * @version 0.4.0
+ * @version 0.4.1
  */
 const ProjectDisplay = ({ projects }: ProjectDisplayProps): JSX.Element => {
   const [selectedProject, setSelectedProject] = useState<Project>(projects[0]);
@@ -71,8 +71,8 @@ const ProjectDisplay = ({ projects }: ProjectDisplayProps): JSX.Element => {
               onClick={() => handleClick(project)}
               className={`w-full cursor-pointer rounded-xs px-4 py-2 text-start text-sm tracking-wider transition-colors ${animatingLink === project.title ? "animate-blue-flash" : ""} ${
                 selectedProject.title === project.title
-                  ? "bg-secondary/90"
-                  : "hover:bg-secondary bg-secondary/30"
+                  ? "bg-primary/90"
+                  : "hover:bg-primary bg-primary/30"
               }`}
             >
               {project.title}
@@ -80,15 +80,15 @@ const ProjectDisplay = ({ projects }: ProjectDisplayProps): JSX.Element => {
           ))}
         </div>
         <div className="flex w-2/3 items-start">
-          <div className="h-80 w-full">
+          <div className="h-96 w-full">
             <ProjectCard {...selectedProject} key={selectedProject.title} />
           </div>
         </div>
       </div>
       {/* MOBILE */}
-      <div className="flex w-full flex-col items-center gap-6 xl:hidden">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-1 xl:hidden">
         {projects.map((project) => (
-          <div key={project.title} className="w-full">
+          <div key={project.title} className="">
             <ProjectCard {...project} />
           </div>
         ))}

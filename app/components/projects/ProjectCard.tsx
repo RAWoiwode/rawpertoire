@@ -37,14 +37,12 @@ import { Project } from "@/app/types/projectTypes";
  * export default App;
  * ```
  *
- * TODO: Improve title/repo link layout. Shift of .88px between projects w/links vs w/o links
- *
  * @component
  * @param {Project} props
  * @returns {JSX.Element} A project card displaying project details, an optional image, and a clickable title (if a URL is provided).
  *
  * @author Ralph Woiwode
- * @version 0.4.0
+ * @version 0.4.1
  */
 const ProjectCard = ({
   title,
@@ -73,9 +71,9 @@ const ProjectCard = ({
   }
 
   return (
-    <div className="border-secondary flex h-full flex-col border p-6">
+    <div className="border-primary flex h-full border p-6 lg:flex-col">
       <div className="flex flex-col">
-        <div className="flex w-2/3 justify-between self-center xl:w-full xl:px-4">
+        <div className="flex w-full justify-between self-center sm:w-3/4 md:w-full lg:w-3/4 xl:w-full xl:px-4">
           <Image
             alt={`${title} preview`}
             src={IMAGE_DIRECTORY + image}
@@ -86,7 +84,7 @@ const ProjectCard = ({
             className="object-cover"
             blurDataURL="/images/blur.png"
           />
-          <div className="flex flex-col space-y-8 text-end">
+          <div className="flex flex-col justify-between space-y-8 text-end">
             {titleDisplay}
             <Link
               href={gitHubUrl}
