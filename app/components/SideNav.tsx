@@ -43,42 +43,15 @@ const navItems = [
  * @returns {JSX.Element} A responsive sidebar navigation with links and social icons.
  *
  * @author Ralph Woiwode
- * @version 0.3.0
+ * @version 0.3.1
  */
 const SideNav = (): JSX.Element => {
-  // const pathname = usePathname();
-  // const router = useRouter();
-  // const [animatingLink, setAnimatingLink] = useState<string | null>(null);
-
-  // useEffect(() => {
-  //   navItems.forEach((item) => {
-  //     router.prefetch(item.path);
-  //   });
-  // }, [router]);
-
   /**
    * Handles navigation clicks with animation.
    *
    * @param {React.MouseEvent<HTMLAnchorElement>} e - Click event
    * @param {string} path - Path to navigate to
    */
-  // const handleNavClick = (
-  //   e: React.MouseEvent<HTMLAnchorElement>,
-  //   path: string,
-  // ) => {
-  //   e.preventDefault();
-
-  //   if (animatingLink || path === pathname) return; // Prevent multiple clicks while animating
-
-  //   setAnimatingLink(path);
-  //   router.prefetch(path); // Enusre latest data; Future proofing
-
-  //   // Wait for animation to complete before navigating
-  //   setTimeout(() => {
-  //     router.push(path);
-  //     setAnimatingLink(null);
-  //   }, 400);
-  // };
 
   // Handle initial page load with hash
   useEffect(() => {
@@ -118,7 +91,7 @@ const SideNav = (): JSX.Element => {
   };
 
   return (
-    <aside className="flex w-[40%] flex-col justify-between px-16 lg:sticky lg:top-0 lg:max-h-screen lg:py-24">
+    <aside className="hidden w-[40%] flex-col justify-between px-16 lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:py-24">
       <div>
         <nav className="hidden w-max flex-col space-y-4 lg:flex">
           {navItems.map((item) => (
