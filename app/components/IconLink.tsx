@@ -45,14 +45,15 @@ interface IconLinkProps {
  * @returns {JSX.Element} A styled link containg a ReactIcon
  *
  * @author Ralph Woiwode
- * @version 0.1.1
+ * @version 0.2.0
  */
 const IconLink = ({ url, title, children }: IconLinkProps): JSX.Element => {
   return (
     <Link href={url} target="_blank" rel="noopener noreferrer" title={title}>
       <IconContext.Provider
         value={{
-          className: "text-text hover:text-accent transition-colors",
+          className:
+            "text-accent hover:text-accent/50 hover:scale-90 transition-all",
           size: "32",
         }}
       >

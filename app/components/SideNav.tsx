@@ -2,7 +2,7 @@
 
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import IconLink from "./IconLink";
 
 const navItems = [
@@ -46,26 +46,14 @@ const navItems = [
  * @version 0.3.1
  */
 const SideNav = (): JSX.Element => {
+  const [activeSection, setActiveSection] = useState<string>("");
+
   /**
    * Handles navigation clicks with animation.
    *
    * @param {React.MouseEvent<HTMLAnchorElement>} e - Click event
    * @param {string} path - Path to navigate to
    */
-
-  // Handle initial page load with hash
-  useEffect(() => {
-    // Check if there's a hash in the URL on page load
-    if (window.location.hash) {
-      const id = window.location.hash.substring(1);
-      setTimeout(() => {
-        const element = document.getElementById(id);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      }, 100);
-    }
-  }, []);
 
   /**
    * Handles smooth scrolling when clicking navigation links
@@ -90,20 +78,82 @@ const SideNav = (): JSX.Element => {
     }
   };
 
+  // Handle initial page load with hash
+  useEffect(() => {
+    // Check if there's a hash in the URL on page load
+    if (window.location.hash) {
+      const id = window.location.hash.substring(1);
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+          setActiveSection(id);
+        }
+      }, 100);
+    } else {
+      setActiveSection("home");
+    }
+
+    // Observer
+    const observerOptions = {
+      root: null,
+      rootMargin: "-10% 0px -40% 0px",
+      threshold: [0.1, 0.5],
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+
+          if (
+            typeof window !== "undefined" &&
+            window.location.hash !== `#${entry.target.id}`
+          ) {
+            window.history.pushState({}, "", `#${entry.target.id}`);
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions,
+    );
+
+    // Observe all sections
+    navItems.forEach((item) => {
+      const element = document.getElementById(item.name.toLowerCase());
+      if (element) observer.observe(element);
+    });
+
+    return () => {
+      navItems.forEach((item) => {
+        const element = document.getElementById(item.name.toLowerCase());
+        if (element) observer.unobserve(element);
+      });
+    };
+  }, []);
+
   return (
     <aside className="hidden w-[40%] flex-col justify-between px-16 lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:py-24">
       <div>
         <nav className="hidden w-max flex-col space-y-4 lg:flex">
-          {navItems.map((item) => (
-            <a
-              key={item.name}
-              href={`#${item.name.toLowerCase()}`}
-              onClick={(e) => handleSmoothScroll(e, item.name.toLowerCase())}
-              className={`text-text hover:text-accent px-2 py-2 text-lg tracking-widest uppercase transition-all duration-200 hover:translate-x-4`}
-            >
-              {item.name.toUpperCase()}
-            </a>
-          ))}
+          {navItems.map((item) => {
+            const id = item.name.toLowerCase();
+            const isActive = activeSection === id;
+
+            return (
+              <a
+                key={item.name}
+                href={`#${id}`}
+                onClick={(e) => handleSmoothScroll(e, id)}
+                className={`text-accent px-2 py-2 text-lg tracking-widest uppercase transition-all duration-200 hover:translate-x-4 ${isActive ? "pl-6" : "hover:text-accent/75"}`}
+              >
+                {item.name.toUpperCase()}
+              </a>
+            );
+          })}
         </nav>
       </div>
       <div className="space-y-4">
@@ -126,7 +176,7 @@ const SideNav = (): JSX.Element => {
           href="/files/RAW_Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:outline-accent hover:text-accent flex w-max p-2 outline"
+          className="text-accent hover:outline-accent/75 hover:text-accent/75 flex w-max p-2 outline transition-all hover:scale-90"
         >
           Resume
         </a>
