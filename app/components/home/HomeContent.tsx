@@ -1,7 +1,3 @@
-import React from "react";
-
-import Header from "../Header";
-
 /**
  * The HomeContent component displays the welcome data.
  *
@@ -9,35 +5,33 @@ import Header from "../Header";
  * @returns {JSX.Element}
  *
  * @author Ralph Woiwode
- * @version 0.1.0
+ * @version 0.2.0
  */
 const HomeContent = (): JSX.Element => {
   return (
-    <>
-      <div className="flex w-full justify-center">
-        <Header />
-      </div>
-      <div className="mt-12 space-y-4">
-        <p>
-          I&apos;m a passionate developer with over 6 years of experience
-          crafting engaging and intuitive web applications. I specialize in
-          creating visually appealing and user-centric interfaces that elevate
-          the digital experience.
-        </p>
-        <p>
-          Although my career path has taken me in various directions, my
-          enthusiasm for front-end development remains strong. I continually
-          refine my skills through professional projects, hands-on tutorials,
-          and collaborative endeavors.
-        </p>
-        <p>
-          This portfolio is a testament to my expertise and ongoing commitment
-          to innovation in front-end development. It showcases my ability to
-          combine technical proficiency with creative design to build meaningful
-          digital solutions.
-        </p>
-      </div>
-    </>
+    <div className="space-y-4">
+      <p className="text-base">
+        I&apos;m a creative developer with six years of experience exploring how
+        thoughtful interfaces can elevate digital experiences. I love the
+        challenge of making things not just functional, but genuinely enjoyable
+        to use.
+        <br />
+        <br />
+        While my path has taken a few turns, front-end development has always
+        been the constant. It&apos;s the work I come back to—whether through
+        projects, collaboration, or just experimenting to learn.
+        <br />
+        <br />
+        This portfolio is my way of tying those threads together—a space to
+        share what I&apos;ve built, how I think, and how I&apos;m continuing to
+        grow as a developer and designer.
+        <br />
+        <br />
+        Outside of code, you can find me reading, cooking, golfing, saving
+        Hyrule or mining/crafting, or hanging out with my gf and our two spoiled
+        corgis.
+      </p>
+    </div>
   );
 };
 
