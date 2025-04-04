@@ -42,10 +42,10 @@ export default function RootLayout({
 }>): JSX.Element {
   return (
     <html lang="en" className={noto_sans.className}>
-      <body className="bg-background/90 text-text">
-        <div className="bg-background/80 mx-auto flex max-w-screen-xl justify-evenly lg:min-h-screen">
+      <body className="bg-background text-text/90">
+        <div className="mx-auto flex max-w-screen-xl justify-evenly lg:min-h-screen">
           <SideNav />
-          <main className="flex flex-col space-y-4 px-12 py-24 md:px-16 lg:w-[50%] lg:px-0 lg:pr-16 lg:pl-4">
+          <main className="flex flex-col space-y-4 px-8 py-24 md:px-16 lg:w-[50%] lg:px-0 lg:pr-16 lg:pl-4">
             {children}
           </main>
         </div>
