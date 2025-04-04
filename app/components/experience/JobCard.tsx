@@ -1,3 +1,5 @@
+import Pill from "./Pill";
+
 /**
  * Represents a skill associated with a job experience.
  * @interface Skill
@@ -57,7 +59,7 @@ interface JobCardProps {
  * @returns {JSX.Element} A job card displaying job details and skills.
  *
  * @author Ralph Woiwode
- * @version 0.3.1
+ * @version 0.4.0
  */
 const JobCard = ({ title, date, desc, skills }: JobCardProps): JSX.Element => {
   return (
@@ -69,11 +71,9 @@ const JobCard = ({ title, date, desc, skills }: JobCardProps): JSX.Element => {
           className="pt-4 whitespace-normal"
           dangerouslySetInnerHTML={{ __html: desc }}
         />
-        <div className="mt-4 flex flex-wrap justify-center gap-4">
+        <div className="mt-4 flex flex-wrap justify-center gap-2">
           {skills.map((skill) => (
-            <p key={skill.name} className="bg-secondary rounded-full px-2 py-1">
-              {skill.name}
-            </p>
+            <Pill key={skill.name} item={skill.name} />
           ))}
         </div>
       </section>
