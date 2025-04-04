@@ -20,13 +20,16 @@
  * @returns {JSX.Element} The header element displaying the app title
  *
  * @author Ralph Woiwode
- * @version 0.3.1
+ * @version 0.4.0
  */
 const Header = (): JSX.Element => {
   return (
-    <div className="lg:w-3/5 xl:w-2/5">
-      <h1 className="text-text text-3xl font-bold">RAWpertoire</h1>
-      <p className="text-right">by: Ralph Alex Woiwode</p>
+    <div className="w-full sm:w-1/2 lg:w-3/4 xl:w-1/2">
+      <h1 className="text-primary text-4xl font-bold">RAWpertoire</h1>
+      <div className="text-right">
+        <h2>by: Ralph Alex Woiwode</h2>
+        <h4 className="text-primary/90">Front End Engineer</h4>
+      </div>
     </div>
   );
 };
