@@ -30,15 +30,15 @@ const Home = (): JSX.Element => {
       <div className="mb-8 flex w-full justify-center">
         <Header />
       </div>
-      <div className="mt-16 space-y-32">
-        <section id="home">
+      <div className="mt-16 space-y-36">
+        <section id="home" className="scroll-mt-56">
           <h3 className="lg:hidden">Home</h3>
           <HomeContent />
         </section>
-        <section id="experience">
+        <section id="experience" className="scroll-mt-24">
           <ExperienceContent />
         </section>
-        <section id="projects">
+        <section id="projects" className="scroll-mt-24">
           <ProjectContent />
         </section>
       </div>

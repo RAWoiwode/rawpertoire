@@ -53,7 +53,7 @@ const IconLink = ({ url, title, children }: IconLinkProps): JSX.Element => {
       <IconContext.Provider
         value={{
           className:
-            "text-accent hover:text-accent/50 hover:scale-90 transition-all",
+            "text-accent/75 hover:text-accent hover:scale-110 transition-all",
           size: "32",
         }}
       >
