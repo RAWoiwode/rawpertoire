@@ -68,7 +68,7 @@ const JobCard = ({ title, date, desc, skills }: JobCardProps): JSX.Element => {
         <h3 className="text-primary">{title}</h3>
         <h4 className="italic">{date}</h4>
         <p
-          className="pt-4 whitespace-normal"
+          className="pt-4 tracking-wider whitespace-normal"
           dangerouslySetInnerHTML={{ __html: desc }}
         />
         <div className="mt-4 flex flex-wrap justify-center gap-2">
