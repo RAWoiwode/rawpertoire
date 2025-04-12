@@ -1,36 +1,34 @@
 @import "tailwindcss";
 
-@tailwind utilities;
-
 @theme {
   --color-text: oklch(95.21% 0.019 227.28);
   --color-background: oklch(14.13% 0.017 218.61);
   --color-primary: oklch(73.41% 0.136 233.87);
   --color-secondary: oklch(39.15% 0.11 304.56);
   --color-accent: oklch(73.23% 0.249 142.5);
+}
 
-  --shadow-project-card: 2px 4px 10px;
-
-  --animate-flash: flash 0.5s ease-in forwards;
-  @keyframes flash {
-    0%,
-    100% {
-      background-color: oklch(16.69% 0.028 227.22);
-    }
-    10% {
-      background-color: oklch(74.57% 0.132 232.71);
-    }
+@layer components {
+  .underline-link {
+    @apply text-accent relative flex items-center gap-2 transition-colors duration-300;
+    @apply before:bg-accent before:absolute before:inset-x-0 before:-bottom-0.5 before:h-[2px];
+    @apply before:transition-transform before:duration-300 before:ease-out before:will-change-transform;
   }
 
-  --animate-blue-flash: flash 0.5s ease-in forwards;
-  @keyframes blue-flash {
-    0%,
-    100% {
-      background-color: oklch(39.15% 0.11 304.56);
-    }
-    10% {
-      background-color: oklch(73.41% 0.136 233.87);
-    }
+  .underline-link-left {
+    @apply before:origin-left before:scale-x-0 hover:before:scale-x-100;
+  }
+
+  .underline-link-right {
+    @apply before:origin-right;
+  }
+
+  .underline-link-hover {
+    @apply text-accent/90 hover:text-accent before:scale-x-0 hover:before:scale-x-100;
+  }
+
+  .underline-link-active {
+    @apply text-accent before:scale-x-100;
   }
 }
 

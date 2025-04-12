@@ -17,7 +17,7 @@ const fetchProjectData = async (): Promise<Project[]> => {
       resolve([
         {
           title: "Portfolio",
-          url: "http://localhost:3000/projects",
+          url: "http://localhost:3000/#projects",
           description:
             "A modern, responsive portfolio showcasing my front-end development skills, projects, and experience through a dynamic, well-structured UI.",
           image: "RAWpertoire.png",
@@ -72,7 +72,7 @@ const fetchProjectData = async (): Promise<Project[]> => {
  * @returns {Promise<JSX.Element>} A section displaying a list of projects.
  *
  * @author Ralph Woiwode
- * @version 0.4.0
+ * @version 0.4.1
  */
 const ProjectContent = async (): Promise<JSX.Element> => {
   const projects = await fetchProjectData();

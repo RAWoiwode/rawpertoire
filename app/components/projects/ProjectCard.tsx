@@ -1,12 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { IconContext } from "react-icons";
 import { GoRepo } from "react-icons/go";
 
 import { IMAGE_DIRECTORY } from "@/app/constants";
 import { Project } from "@/app/types/projectTypes";
+import { ExternalLink } from "./ExternalLink";
 
 /**
  * The ProjectCard component renders an individual project's details, including:
@@ -57,14 +57,9 @@ const ProjectCard = ({
 
   if (url) {
     titleDisplay = (
-      <Link
-        href={url}
-        className="text-accent before:bg-accent relative flex transition-all duration-300 ease-out before:absolute before:inset-x-0 before:-bottom-0.5 before:h-[2px] before:w-0 before:transition-all before:duration-300 before:ease-out hover:before:w-full"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <ExternalLink href={url} title={title}>
         <h4>{title}</h4>
-      </Link>
+      </ExternalLink>
     );
   }
 
@@ -74,12 +69,10 @@ const ProjectCard = ({
         <div className="flex w-full flex-col">
           <div className="flex justify-between">
             {titleDisplay}
-            <Link
+            <ExternalLink
               href={gitHubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
               title={`${title} Repo`}
-              className="text-accent before:bg-accent relative flex items-center gap-2 text-sm transition-all duration-300 ease-out before:absolute before:inset-x-0 before:-bottom-0.5 before:h-[2px] before:w-0 before:transition-all before:duration-300 before:ease-out hover:before:w-full"
+              direction="right"
             >
               Repo
               <IconContext.Provider
@@ -90,7 +83,7 @@ const ProjectCard = ({
               >
                 <GoRepo />
               </IconContext.Provider>
-            </Link>
+            </ExternalLink>
           </div>
           <hr className="text-secondary mx-auto my-4 w-3/4 border-t-1" />
         </div>
