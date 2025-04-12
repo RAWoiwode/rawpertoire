@@ -32,13 +32,19 @@ const Home = (): JSX.Element => {
       </div>
       <div className="mt-16 space-y-36">
         <section id="home" className="scroll-mt-56">
-          <h3 className="lg:hidden">Home</h3>
+          <h2 className="mb-4 w-full border-b-2 uppercase lg:hidden">Home</h2>
           <HomeContent />
         </section>
         <section id="experience" className="scroll-mt-24">
+          <h2 className="mb-4 w-full border-b-2 uppercase lg:hidden">
+            Experience
+          </h2>
           <ExperienceContent />
         </section>
         <section id="projects" className="scroll-mt-24">
+          <h2 className="mb-4 w-full border-b-2 uppercase lg:hidden">
+            Projects
+          </h2>
           <ProjectContent />
         </section>
       </div>
