@@ -110,6 +110,27 @@ const ExperienceContent = async (): Promise<JSX.Element> => {
           skills={experience.skills}
         />
       ))}
+      <div className="flex">
+        <div className="border-r-secondary mr-4 border-r-2 pr-4">
+          <h3 className="text-primary uppercase">Current tech</h3>
+        </div>
+        <ul className="flex flex-wrap space-x-2.5">
+          <li>React</li>
+          <li>TailwindCSS</li>
+          <li>NextJS</li>
+          <li>ReactNative</li>
+          <li>Elixir</li>
+        </ul>
+      </div>
+      <div className="flex">
+        <div className="border-r-secondary mr-4 border-r-2 pr-4">
+          <h3 className="text-primary uppercase">Misc</h3>
+        </div>
+        <ul className="flex flex-wrap space-x-2.5">
+          <li>AWS Certified Cloud Practitioner</li>
+          <li>M.S. Software Engineering</li>
+        </ul>
+      </div>
     </div>
   );
 };
