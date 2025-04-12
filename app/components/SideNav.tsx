@@ -4,6 +4,7 @@ import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 
 import { useEffect, useState } from "react";
 import IconLink from "./IconLink";
+import SideNavLink from "./SideNavLink";
 
 const navItems = [
   {
@@ -43,7 +44,7 @@ const navItems = [
  * @returns {JSX.Element} A responsive sidebar navigation with links and social icons.
  *
  * @author Ralph Woiwode
- * @version 0.4.0
+ * @version 0.5.0
  */
 const SideNav = (): JSX.Element => {
   const [activeSection, setActiveSection] = useState<string>("");
@@ -123,18 +124,14 @@ const SideNav = (): JSX.Element => {
             const isActive = activeSection === id;
 
             return (
-              <a
+              <SideNavLink
                 key={item.name}
-                href={`#${id}`}
+                id={id}
                 onClick={(e) => handleSmoothScroll(e, id)}
-                className={`text-accent/90 before:bg-accent relative flex items-center gap-2 px-2 py-2 text-lg tracking-widest uppercase transition-all duration-300 ease-out before:absolute before:inset-x-0 before:-bottom-0.5 before:h-[2px] ${
-                  isActive
-                    ? "text-accent before:w-full"
-                    : "hover:text-accent before:w-0 hover:before:w-full"
-                } before:transition-all before:duration-300 before:ease-out`}
+                isActive={isActive}
               >
                 {item.name.toUpperCase()}
-              </a>
+              </SideNavLink>
             );
           })}
         </nav>
