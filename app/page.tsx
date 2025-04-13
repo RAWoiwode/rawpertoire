@@ -2,6 +2,7 @@ import HomeContent from "./components/home/HomeContent";
 import ExperienceContent from "./components/experience/ExperienceContent";
 import ProjectContent from "./components/projects/ProjectContent";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 /**
  * The Home component serves as the introduction page fo the app.
@@ -22,15 +23,15 @@ import Header from "./components/Header";
  * @returns {JSX.Element} The Home page content for the app
  *
  * @author Ralph Woiwode
- * @version 0.3.2
+ * @version 0.3.3
  */
 const Home = (): JSX.Element => {
   return (
     <div className="flex flex-col">
-      <div className="mb-8 flex w-full justify-center">
+      <div className="flex w-full justify-center md:mb-8">
         <Header />
       </div>
-      <div className="mt-16 space-y-36">
+      <div className="mt-12 space-y-36 md:mt-16">
         <section id="home" className="scroll-mt-56">
           <h2 className="mb-4 w-full border-b-2 uppercase lg:hidden">Home</h2>
           <HomeContent />
@@ -48,14 +49,7 @@ const Home = (): JSX.Element => {
           <ProjectContent />
         </section>
       </div>
-      <div className="mt-24">
-        <p className="text-xs">
-          This site was partially drafted in Figma and coded in Visual Studio
-          Code by myself.
-          <br />
-          Built with NextJS, TypeScript, and TilwindCSS, deployed with Vercel.
-        </p>
-      </div>
+      <Footer />
     </div>
   );
 };
