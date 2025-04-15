@@ -1,17 +1,17 @@
 # **RAWpertoire**
 
-This serves as my main portfolio for my **Front-End Development** work (and possibly other things in the future).
+This is my personal portfolio for showcasing **Front-End Development** projects, work experience, and UI craftsmanship. It features a clean design, modular architecture, and thoughtful storytelling through code.
 
-I will update this README as I progress.
+I’ll continue updating this README as the portfolio evolves.
 
 ## **Features**
 
-- **Project Showcase** - Display of personal and professional projects.
-- **Experience Timeline** - Work history with associated skills.
-- **Responsive Design** - Mobile-friendly layout with adaptive navigation.
-- **Dynamic Navigation** - Smooth page transitions and preloading via Next.js.
-- **Custom Components** - Modular, well-documented, and reusable UI components.
-- **Optimized Performance** - Lazy loading, prefetching, and optimized assets.
+- **Project Showcase** – Interactive cards with repo links, images, and descriptions
+- **Experience Timeline** – Work history with tech stacks and skill tags
+- **Responsive Design** – Optimized for desktop and mobile
+- **Animated Navigation** – Smooth scroll, section highlighting, and dynamic routing
+- **Custom Components** – Well-documented, reusable components (`ProjectCard`, `JobCard`, `SideNavLink`, etc.)
+- **Performance-Focused** – Lazy loading, image optimization, and SSR-friendly
 
 ---
 
@@ -19,59 +19,66 @@ I will update this README as I progress.
 
 ### **Next.js & React**
 
-- **App Router** (`app/` structure) for optimized navigation.
-- **Server & Client Components** for efficiency.
-- **Dynamic Routing** with `next/navigation`.
-- **Metadata API** for SEO enhancements.
+- App Router with `app/` directory structure
+- Server & Client Components hybrid rendering
+- Dynamic metadata configuration
+- Scroll-to-section routing with `IntersectionObserver`
 
 ### **TypeScript**
 
-- Strongly typed components for better maintainability.
-- Modular interfaces (`projectTypes.ts`, etc.).
+- Strict typing across props and interfaces
+- Centralized types (e.g. `projectTypes.ts`)
 
-### **State Management**
+### **Tailwind CSS 4**
 
-- `useState` for UI interactions.
-- `useEffect` for event-driven updates.
-- Async data fetching within Server Components.
+- Utility-first styling with a custom color palette
+- Custom animation utilities (`.underline-link-*`)
+- Component classes via `@layer components`
+- Prettier-integrated class sorting
 
-### **Performance & Optimization**
+### **Component Architecture**
 
-- **Next.js Image Optimization** (`next/image`).
-- **Lazy Loading & Suspense** for assets & components.
-- **Preloading & Prefetching** via `router.prefetch()`.
-- **Prettier + ESLint** for consistent code quality.
+- `PageWrapper` – Animates route changes and displays mobile section headers
+- `ProjectCard` / `JobCard` – Content-driven UI components for key sections
+- `ExternalLink`, `IconLink` – Semantic, animated external anchors
+- `SideNavLink` – Scroll-aware section link component
+- `Pill` – Simple badge/tag element for skills
 
-### **Styling & UI**
+### **UX & Accessibility**
 
-- **Tailwind CSS** - Utility-first styling approach.
-- **Prettier Plugin for Tailwind** for auto-sorted class names.
-- **Component-Driven Design** with reusable UI elements (`JobCard`, `SkillPills`, etc.).
+- Semantic structure & keyboard-friendly navigation
+- Accessible links with tooltips and ARIA support
+- Logical tab order and minimal motion design
 
-### **Accessibility & UX**
+### **Performance & Tooling**
 
-- Semantic HTML for better screen reader support.
-- Keyboard-friendly navigation patterns.
+- Optimized image loading with `next/image`
+- Lazy-loaded components and section transitions
+- Deployed via [Vercel](https://vercel.com)
+- Font: [Google Noto Sans](https://fonts.google.com/specimen/Noto+Sans)
 
 ---
 
 ## **Inspiration**
 
-- [Brittany Chiang](https://brittanychiang.com/)
+- [Brittany Chiang](https://brittanychiang.com)
 
-## **Extra Plugins Used**
+---
+
+## **Plugins & Utilities**
 
 - [`prettier-plugin-tailwindcss`](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)
 - [`react-icons`](https://react-icons.github.io/react-icons/)
+- [`eslint-config-next`](https://nextjs.org/docs/app/building-your-application/configuring/eslint)
 
 ---
 
-## **Humble Beginnings**
+## **Getting Started**
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This project was bootstrapped with:
 
----
-
-### **Next Steps & Future Enhancements**
-
-- WIP
+```bash
+npx create-next-app@latest
+npm install
+npm run dev
+```

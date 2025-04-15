@@ -1,13 +1,8 @@
 import type { Metadata } from "next";
 import { Noto_Sans } from "next/font/google";
-import { Suspense } from "react";
 
 import SideNav from "./components/SideNav";
-import Experience from "./experience/page";
 import "./globals.css";
-import Loading from "./loading";
-import Home from "./page";
-import Projects from "./projects/page";
 
 /* Chosen font for most of the site */
 const noto_sans = Noto_Sans({
@@ -16,7 +11,8 @@ const noto_sans = Noto_Sans({
 });
 
 /**
- * Metdata for the application, used to configure SEO and document headers
+ * Metdata for the application, used to configure SEO and document headers.
+ *
  * @type {Metadata}
  */
 export const metadata: Metadata = {
@@ -25,20 +21,15 @@ export const metadata: Metadata = {
 };
 
 /**
- * The RootLayout component serves as the global layour for the app
- *
- * It provides a responsive structure w/:
- * - Global font styling
- * - Side navigation for desktop
- * - Dynamic content rendering
+ * The RootLayout component defines the global layout structure of the app.
  *
  * TODO: Update Metatags for each page
  *
  * @component
- * @returns {JSX.Element} The layout structure of the app
+ * @returns {JSX.Element} The global layout wrapper for all routes
  *
  * @author Ralph Woiwode
- * @version 0.2.1
+ * @version 0.4.4
  */
 export default function RootLayout({
   children,
@@ -47,20 +38,13 @@ export default function RootLayout({
 }>): JSX.Element {
   return (
     <html lang="en" className={noto_sans.className}>
-      <body className="bg-background-500/30 text-text-950 lg:mx-auto lg:flex lg:min-h-screen lg:p-4">
-        <SideNav />
-        <main className="flex flex-col justify-center space-y-4 overflow-auto py-6 lg:w-5/6">
-          <Suspense fallback={<Loading />}>
-            {/* Desktop */}
-            <div className="hidden lg:block">{children}</div>
-            {/* Mobile */}
-            <div className="lg:hidden">
-              <Home />
-              <Experience />
-              <Projects />
-            </div>
-          </Suspense>
-        </main>
+      <body className="bg-background text-text/75">
+        <div className="mx-auto flex max-w-screen-xl justify-evenly lg:min-h-screen">
+          <SideNav />
+          <main className="flex flex-col space-y-4 px-8 py-20 md:px-16 lg:w-[50%] lg:px-0 lg:pr-16 lg:pl-4">
+            {children}
+          </main>
+        </div>
       </body>
     </html>
   );

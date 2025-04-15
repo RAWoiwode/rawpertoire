@@ -1,33 +1,25 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
-import { FaFilePdf, FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 
-import Header from "./Header";
+import { useEffect, useState } from "react";
 import IconLink from "./IconLink";
+import SideNavLink from "./SideNavLink";
 
 const navItems = [
   {
     name: "Home",
-    path: "/",
   },
   {
     name: "Experience",
-    path: "/experience",
   },
   {
     name: "Projects",
-    path: "/projects",
   },
 ];
 
 /**
  * The SideNav component renders the sidebar navigation for the app.
- *
- * - Provides quick access to the main sections of the porfolio
- * - Displays social media icons for GitHub, LinkedIn and a resume download.
  *
  * TODO: Separate data (navItems) from the UI for improved maintainability.
  *
@@ -41,72 +33,106 @@ const navItems = [
  *     <main>Content goes here</main>
  *   </div>
  * );
- *
- * export default App;
  * ```
  *
  * @component
- * @returns {JSX.Element} A responsive sidebar navigation with links and social icons.
+ * @returns {JSX.Element} The responsive sidebar with section links and social icons
  *
  * @author Ralph Woiwode
- * @version 0.2.4
+ * @version 0.5.0
  */
 const SideNav = (): JSX.Element => {
-  const pathname = usePathname();
-  const router = useRouter();
-  const [animatingLink, setAnimatingLink] = useState<string | null>(null);
-
-  useEffect(() => {
-    navItems.forEach((item) => {
-      router.prefetch(item.path);
-    });
-  }, [router]);
+  const [activeSection, setActiveSection] = useState<string>("");
 
   /**
-   * Handles navigation clicks with animation.
+   * Handles smooth scrolling when clicking navigation links
    *
-   * @param {React.MouseEvent<HTMLAnchorElement>} e - Click event
-   * @param {string} path - Path to navigate to
+   * @param {React.MouseEvent} e - The click event
+   * @param {string} id - The ID of the target section
    */
-  const handleNavClick = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    path: string,
-  ) => {
+  const handleSmoothScroll = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
 
-    if (animatingLink || path === pathname) return; // Prevent multiple clicks while animating
+    const target = document.getElementById(id);
 
-    setAnimatingLink(path);
-    router.prefetch(path); // Enusre latest data; Future proofing
-
-    // Wait for animation to complete before navigating
-    setTimeout(() => {
-      router.push(path);
-      setAnimatingLink(null);
-    }, 400);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
+  // Handle initial page load with hash
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.6,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      const visibleSections = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+      if (visibleSections.length > 0) {
+        const sectionId = visibleSections[0].target.id;
+        setActiveSection(sectionId);
+
+        if (window.location.hash !== `#${sectionId}`) {
+          window.history.replaceState({}, "", `#${sectionId}`);
+        }
+      }
+    }, observerOptions);
+
+    const sectionElements = navItems.map((item) => {
+      const el = document.getElementById(item.name.toLowerCase());
+      if (el) observer.observe(el);
+      return el;
+    });
+
+    // Initial scroll on load
+    const hash = window.location.hash.substring(1);
+    if (hash) {
+      setTimeout(() => {
+        const el = document.getElementById(hash);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+          setActiveSection(hash);
+        }
+      }, 100);
+    } else {
+      setActiveSection("home");
+    }
+
+    return () => {
+      sectionElements.forEach((el) => {
+        if (el) observer.unobserve(el);
+      });
+    };
+  }, []);
+
   return (
-    <aside className="relative flex flex-auto flex-col lg:my-12 lg:ml-12">
-      <div className="bg-secondary-50/50 relative flex flex-1 flex-col py-8 backdrop-blur-lg">
-        <Header />
-        <nav className="hidden flex-1 flex-col space-y-4 py-4 lg:flex">
-          {navItems.map((item) => (
-            <Link
-              key={item.path}
-              href={item.path}
-              onClick={(e) => handleNavClick(e, item.path)}
-              className={`text-text-50 mx-auto w-4/5 rounded-xs py-2 text-center text-xl tracking-widest transition-all duration-200 ${animatingLink === item.path ? "animate-flash" : ""} ${
-                item.path === pathname
-                  ? "bg-secondary-950 text-text-950 outline-accent-400 font-bold outline-4"
-                  : "hover:outline-accent-600 bg-secondary-50/90 outline-4 outline-transparent"
-              }`}
-            >
-              {item.name}
-            </Link>
-          ))}
+    <aside className="hidden w-[40%] flex-col justify-between px-16 lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:py-24">
+      <div>
+        <nav className="hidden w-max flex-col space-y-4 lg:flex">
+          {navItems.map((item) => {
+            const id = item.name.toLowerCase();
+            const isActive = activeSection === id;
+
+            return (
+              <SideNavLink
+                key={item.name}
+                id={id}
+                onClick={(e) => handleSmoothScroll(e, id)}
+                isActive={isActive}
+              >
+                {item.name.toUpperCase()}
+              </SideNavLink>
+            );
+          })}
         </nav>
-        <ul className="flex justify-center space-x-4">
+      </div>
+      <div className="space-y-4">
+        <ul className="flex space-x-4">
           <li>
             <IconLink url="https://github.com/RAWoiwode" title="GitHub Profile">
               <FaGithub />
@@ -120,12 +146,15 @@ const SideNav = (): JSX.Element => {
               <FaLinkedinIn />
             </IconLink>
           </li>
-          <li>
-            <IconLink url="/files/RAW_Resume.pdf" title="Resume">
-              <FaFilePdf />
-            </IconLink>
-          </li>
         </ul>
+        <a
+          href="/files/RAW_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-accent/90 hover:outline-accent hover:text-accent flex w-max p-2 outline transition-all hover:scale-110"
+        >
+          Resume
+        </a>
       </div>
     </aside>
   );
