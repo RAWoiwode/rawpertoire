@@ -9,39 +9,26 @@ import { Project } from "@/app/types/projectTypes";
 import { ExternalLink } from "./ExternalLink";
 
 /**
- * The ProjectCard component renders an individual project's details, including:
- * - Title (with optional clickable link)
- * - Description
- * - Estimated time to complete
- * - An optional image preview
- * - A GitHub repository link (if provided)
+ * The ProjectCard component displays information about a single project.
  *
- * ## Features:
- * - If `url` is provided, the title is wrapped in a hyperlink.
- * - Displays an image preview if `image` is available.
- * - Includes a GitHub repository icon linking to the project's repo.
- *
- * ## Example Usage:
+ * ## Example:
  * ```tsx
  * import ProjectCard from "@/app/projects/components/ProjectCard";
  *
- * const exampleProject = {
+ * const project = {
  *   title: "My Portfolio",
  *   url: "https://example.com",
  *   description: "A showcase of my work as a front-end developer.",
- *   timeEstimate: 30,
  *   image: "portfolio-preview.png",
  *   gitHubUrl: "https://github.com/RAWoiwode/portfolio",
  * };
  *
- * const App = () => <ProjectCard {...exampleProject} />;
- *
- * export default App;
+ * const App = () => <ProjectCard {...project} />;
  * ```
  *
  * @component
  * @param {Project} props
- * @returns {JSX.Element} A project card displaying project details, an optional image, and a clickable title (if a URL is provided).
+ * @returns {JSX.Element} A card displaying the project's title, description, image, and GitHub link
  *
  * @author Ralph Woiwode
  * @version 0.5.0
