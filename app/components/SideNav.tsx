@@ -21,9 +21,6 @@ const navItems = [
 /**
  * The SideNav component renders the sidebar navigation for the app.
  *
- * - Provides quick access to the main sections of the porfolio
- * - Displays social media icons for GitHub, LinkedIn and a resume download.
- *
  * TODO: Separate data (navItems) from the UI for improved maintainability.
  *
  * ## Example:
@@ -36,12 +33,10 @@ const navItems = [
  *     <main>Content goes here</main>
  *   </div>
  * );
- *
- * export default App;
  * ```
  *
  * @component
- * @returns {JSX.Element} A responsive sidebar navigation with links and social icons.
+ * @returns {JSX.Element} The responsive sidebar with section links and social icons
  *
  * @author Ralph Woiwode
  * @version 0.5.0

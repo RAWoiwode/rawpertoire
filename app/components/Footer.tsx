@@ -1,3 +1,23 @@
+/**
+ * The Footer component renders the site credits and build details.
+ *
+ * ## Example:
+ * ```tsx
+ * import Footer from "@/app/components/Footer";
+ *
+ * const App = () => (
+ *   <div>
+ *     <Footer />
+ *   </div>
+ * );
+ * ```
+ *
+ * @component
+ * @returns {JSX.Element} The footer section with site credits
+ *
+ * @author Ralph Woiwode
+ * @version 0.1.0
+ */
 const Footer = () => {
   return (
     <div className="mt-24">
@@ -15,7 +35,8 @@ const Footer = () => {
         <i>Visual Studio Code</i> using <i>Next.js</i>, <i>TypeScript</i>, and{" "}
         <i>Tailwind CSS</i>.
         <br />
-        It’s set in <i>Google’s Noto Sans</i> and deployed on <i>Vercel</i>.
+        It&apos;s set in <i>Google&apos;s Noto Sans</i> and deployed on{" "}
+        <i>Vercel</i>.
       </p>
     </div>
   );

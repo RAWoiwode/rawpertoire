@@ -1,23 +1,19 @@
 /**
- * The Header component renders the main title of the app.
- *
- * It is a simple responsive heading that displays the app name.
+ * The Header component renders the main title and author information.
  *
  * ## Example:
  * ```tsx
  * import Header from "@/app/components/Header";
  *
  * const App = () => (
- *    <div>
- *      <Header />
- *    </div>
+ *   <div>
+ *     <Header />
+ *   </div>
  * );
- *
- * export default App;
  * ```
  *
  * @component
- * @returns {JSX.Element} The header element displaying the app title
+ * @returns {JSX.Element} The header element for the app
  *
  * @author Ralph Woiwode
  * @version 0.4.0
