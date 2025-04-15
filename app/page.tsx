@@ -1,14 +1,11 @@
-import HomeContent from "./components/home/HomeContent";
 import ExperienceContent from "./components/experience/ExperienceContent";
-import ProjectContent from "./components/projects/ProjectContent";
-import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
+import HomeContent from "./components/home/HomeContent";
+import ProjectContent from "./components/projects/ProjectContent";
 
 /**
- * The Home component serves as the introduction page fo the app.
- *
- * This component introduces the developer, highlights their overall experience,
- * and provides a brief explanation of the purpose behind the portfolio.
+ * The Home component renders the main content of the homepage.
  *
  * ## Example:
  * ```tsx
@@ -20,7 +17,7 @@ import Footer from "./components/Footer";
  * ```
  *
  * @component
- * @returns {JSX.Element} The Home page content for the app
+ * @returns {JSX.Element} The homepage layout
  *
  * @author Ralph Woiwode
  * @version 0.3.3

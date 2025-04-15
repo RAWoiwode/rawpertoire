@@ -2,14 +2,11 @@ import { Project } from "@/app/types/projectTypes";
 import ProjectDisplay from "./ProjectDisplay";
 
 /**
- * Fetches project data asynchronously.
- *
- * This function simulates an API call using `setTimeout` to return
- * an array of project objects.
+ * Simulates fetching project data asynchronously.
  *
  * @async
  * @function
- * @returns {Promise<Project[]>} A promise that resolves with an array of project data.
+ * @returns {Promise<Project[]>} A promise resolving to an array of project objects
  */
 const fetchProjectData = async (): Promise<Project[]> => {
   return new Promise((resolve) => {
@@ -55,21 +52,16 @@ const fetchProjectData = async (): Promise<Project[]> => {
 /**
  * The ProjectContent component fetches and displays a list of projects.
  *
- * - Fetches project data asynchronously using `fetchProjectData`.
- * - Passes the retrieved project data to the `ProjectDisplay` component.
- *
- * ## Example Usage:
+ * ## Example:
  * ```tsx
  * import ProjectContent from "@/app/projects/components/ProjectContent";
  *
  * const App = () => <ProjectContent />;
- *
- * export default App;
  * ```
  *
  * @component
  * @async
- * @returns {Promise<JSX.Element>} A section displaying a list of projects.
+ * @returns {Promise<JSX.Element>} A section displaying project cards
  *
  * @author Ralph Woiwode
  * @version 0.4.1

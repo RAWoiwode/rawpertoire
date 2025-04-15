@@ -3,10 +3,11 @@ import { IconContext } from "react-icons";
 
 /**
  * Props for the IconLink component.
+ *
  * @interface IconLinkProps
- * @property {string} link - The URL to navigate to when the link is clicked.
- * @property {string} title - The tooltip text displayed on hover.
- * @property {React.ReactNode} children - The React Icon component to render inside the link.
+ * @property {string} url - The URL the link navigates to.
+ * @property {string} title - The tooltip text shown on hover.
+ * @property {React.ReactNode} children - The icon component rendered inside the link.
  */
 interface IconLinkProps {
   url: string;
@@ -15,11 +16,9 @@ interface IconLinkProps {
 }
 
 /**
- * The IconLink component creates an accessible hyperlink that wraps React Icons.
+ * The IconLink component renders an accessible external link around a React Icon.
  *
- * It uses 'next/link' for routing and supports external links w/ appropriate
- * security attributes.
- *
+ * It uses `next/link` for navigation and includes proper security attributes for external URLs.
  *
  * ## Example:
  * ```tsx
@@ -27,22 +26,21 @@ interface IconLinkProps {
  * import IconLink from "@/app/components/IconLink";
  *
  * const App = () => (
- *   <IconLink link="https://github.com" title="GitHub">
+ *   <IconLink url="https://github.com" title="GitHub">
  *     <FaGithub />
  *   </IconLink>
  * );
- *
- * export default App;
  * ```
  *
- * ## Notes
- * - The 'IconContext.Provider' is used to style the icon globally w/in this component.
+ * ## Notes:
+ * - Uses `IconContext.Provider` to apply global icon styles within this component.
+ *
  * TODO: Constantize the size of the icons (☞ﾟヮﾟ)☞
  * TODO: Learn how to use layer utilities to properly pass classes to react-icons
  *
  * @component
  * @param {IconLinkProps} props
- * @returns {JSX.Element} A styled link containg a ReactIcon
+ * @returns {JSX.Element} A styled link containing a React icon
  *
  * @author Ralph Woiwode
  * @version 0.2.0

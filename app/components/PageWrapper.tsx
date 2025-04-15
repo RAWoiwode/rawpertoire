@@ -3,10 +3,11 @@
 import { useEffect, useState } from "react";
 
 /**
- * Props for the MobileHeader component.
+ * Props for the PageWrapper component.
+ *
  * @interface PageWrapperProps
- * @property {React.ReactNode} sectionTitle - The string to display inside the header tag.
- * @property {React.ReactNode} children - The page content to display.
+ * @property {string} sectionTitle - The heading text shown on mobile.
+ * @property {React.ReactNode} children - The content of the page.
  */
 interface PageWrapperProps {
   sectionTitle: string;
@@ -14,24 +15,24 @@ interface PageWrapperProps {
 }
 
 /**
- * Provides a smooth transition effect when switching between pages, consistent mobile padding,
- * and a mobile friendly header.
- *
+ * The PageWrapper component adds a transition effect, mobile-friendly header, and consistent padding.
  *
  * ## Example:
  * ```tsx
  * import PageWrapper from "@/app/components/PageWrapper";
  *
  * export default function App() {
- *   return <PageWrapper sectionTitle={"About"}>
- *            <div>Content...</div>
- *          </PageWrapper>
+ *   return (
+ *     <PageWrapper sectionTitle="About">
+ *       <div>Content...</div>
+ *     </PageWrapper>
+ *   );
  * }
  * ```
  *
  * @component
  * @param {PageWrapperProps} props
- * @returns {JSX.Element} The animated page transition
+ * @returns {JSX.Element} The animated page container
  *
  * @author Ralph Woiwode
  * @version 0.2.0

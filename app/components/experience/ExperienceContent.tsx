@@ -1,10 +1,11 @@
 import JobCard from "./JobCard";
 
 /**
- * Represents a skill associated with an experience item.
+ * A technology or tool used in a professional experience.
+ *
  * @interface Skill
- * @property {string} name - The name of the skill.
- * @property {number} years - The number of years of experience with the skill.
+ * @property {string} name - The skill or technology name.
+ * @property {number} years - Years of experience with the skill.
  */
 interface Skill {
   name: string;
@@ -12,12 +13,13 @@ interface Skill {
 }
 
 /**
- * Represents an individual work experience entry.
+ * A single job entry containing position details and associated skills.
+ *
  * @interface Experience
  * @property {string} title - The job title and company.
- * @property {string} date - The date range of employment.
- * @property {string} desc - A description of responsibilities and achievements.
- * @property {Skill[]} skills - An array of skills relevant to the job.
+ * @property {string} date - The employment date range.
+ * @property {string} desc - A short description of responsibilities or impact.
+ * @property {Skill[]} skills - A list of skills used in the role.
  */
 interface Experience {
   title: string;
@@ -27,14 +29,11 @@ interface Experience {
 }
 
 /**
- * Fetches work experience data asynchronously.
- *
- * This function simulates an API call using `setTimeout` to return
- * an array of experience objects.
+ * Simulates fetching work experience data asynchronously.
  *
  * @async
  * @function
- * @returns {Promise<Experience[]>} A promise that resolves with an array of experience data.
+ * @returns {Promise<Experience[]>} A promise resolving to an array of experience data.
  */
 const fetchExperienceData = async (): Promise<Experience[]> => {
   return new Promise((resolve) => {
@@ -87,11 +86,16 @@ const fetchExperienceData = async (): Promise<Experience[]> => {
 /**
  * The ExperienceContent component fetches and displays job experience data.
  *
- * - Fetches experience data asynchronously using `fetchExperienceData`.
+ * ## Example:
+ * ```tsx
+ * import ExperienceContent from "@/app/components/experience/ExperienceContent";
+ *
+ * const App = () => <ExperienceContent />;
+ * ```
  *
  * @component
  * @async
- * @returns {Promise<JSX.Element>} A section containing job experience cards.
+ * @returns {Promise<JSX.Element>} A section containing job experience cards
  *
  * @author Ralph Woiwode
  * @version 0.3.0

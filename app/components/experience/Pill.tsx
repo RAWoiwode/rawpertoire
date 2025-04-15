@@ -1,14 +1,15 @@
 /**
  * Props for the Pill component.
+ *
  * @interface PillProps
- * @property {string} item - The text or label to display inside the pill.
+ * @property {string} item - The text label displayed inside the pill.
  */
 interface PillProps {
   item: string;
 }
 
 /**
- * The Pill component renders a styled pill-like element with an row of informative dots.
+ * The Pill component renders a styled label element with rounded edges.
  *
  * ## Example:
  * ```tsx
@@ -16,17 +17,15 @@ interface PillProps {
  *
  * const App = () => (
  *   <div>
- *     <Pill item="React" dots={3} />
- *     <Pill item="JavaScript" dots={2} />
+ *     <Pill item="React" />
+ *     <Pill item="JavaScript" />
  *   </div>
  * );
- *
- * export default App;
  * ```
  *
  * @component
  * @param {PillProps} props
- * @returns {JSX.Element} A styled pill w/ dots below the text.
+ * @returns {JSX.Element} A styled pill containing a text label
  *
  * @author Ralph Woiwode
  * @version 0.4.0

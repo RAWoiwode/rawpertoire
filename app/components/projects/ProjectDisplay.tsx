@@ -3,34 +3,31 @@ import ProjectCard from "./ProjectCard";
 
 /**
  * Props for the ProjectDisplay component.
+ *
  * @interface ProjectDisplayProps
- * @property {Project[]} projects - An array of project data to be displayed.
+ * @property {Project[]} projects - The array of project data to render.
  */
 interface ProjectDisplayProps {
   projects: Project[];
 }
 
 /**
- * The ProjectDisplay component handles the layout and selection logic for displaying projects.
+ * The ProjectDisplay component renders a list of project cards in a responsive layout.
  *
- * ## Example Usage:
+ * ## Example:
  * ```tsx
- * import ProjectDisplay from "@/app/components/ProjectDisplay";
- * import { Project } from "@/app/types/projectTypes";
+ * import ProjectDisplay from "@/app/projects/components/ProjectDisplay";
  *
- * const projects: Project[] = [
- *   { title: "Project A", url: "", description: "Sample project", timeEstimate: 10, image: "", gitHubUrl: "" },
- *   { title: "Project B", url: "", description: "Another project", timeEstimate: 20, image: "", gitHubUrl: "" }
+ * const projects = [
+ *   { title: "Project A", url: "", description: "...", image: "", gitHubUrl: "" },
  * ];
  *
  * const App = () => <ProjectDisplay projects={projects} />;
- *
- * export default App;
  * ```
  *
  * @component
  * @param {ProjectDisplayProps} props
- * @returns {JSX.Element} The project display layout with interactive selection.
+ * @returns {JSX.Element} A responsive project grid layout
  *
  * @author Ralph Woiwode
  * @version 0.5.0

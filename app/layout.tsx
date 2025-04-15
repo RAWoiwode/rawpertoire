@@ -11,7 +11,8 @@ const noto_sans = Noto_Sans({
 });
 
 /**
- * Metdata for the application, used to configure SEO and document headers
+ * Metdata for the application, used to configure SEO and document headers.
+ *
  * @type {Metadata}
  */
 export const metadata: Metadata = {
@@ -20,17 +21,12 @@ export const metadata: Metadata = {
 };
 
 /**
- * The RootLayout component serves as the global layour for the app
- *
- * It provides a responsive structure w/:
- * - Global font styling
- * - Side navigation for desktop
- * - Dynamic content rendering
+ * The RootLayout component defines the global layout structure of the app.
  *
  * TODO: Update Metatags for each page
  *
  * @component
- * @returns {JSX.Element} The layout structure of the app
+ * @returns {JSX.Element} The global layout wrapper for all routes
  *
  * @author Ralph Woiwode
  * @version 0.4.4
