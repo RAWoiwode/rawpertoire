@@ -1,8 +1,17 @@
 /**
- * The HomeContent component displays the welcome data.
+ * The HomeContent component renders the introductory text on the homepage.
+ *
+ * ## Example:
+ * ```tsx
+ * import HomeContent from "@/app/components/home/HomeContent";
+ *
+ * export default function Section() {
+ *   return <HomeContent />;
+ * }
+ * ```
  *
  * @component
- * @returns {JSX.Element}
+ * @returns {JSX.Element} The introductory section content
  *
  * @author Ralph Woiwode
  * @version 0.3.0
