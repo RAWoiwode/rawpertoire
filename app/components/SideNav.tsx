@@ -147,14 +147,16 @@ const SideNav = (): JSX.Element => {
             </IconLink>
           </li>
         </ul>
-        <a
-          href="/files/RAW_Resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-accent/90 hover:outline-accent hover:text-accent flex w-max p-2 outline transition-all hover:scale-110"
-        >
-          Resume
-        </a>
+        <div className="border-accent w-fit border p-1.5">
+          <a
+            href="/files/RAW_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline-link underline-link-left underline-link-hover flex w-max p-1 transition-all"
+          >
+            Resume
+          </a>
+        </div>
       </div>
     </aside>
   );
