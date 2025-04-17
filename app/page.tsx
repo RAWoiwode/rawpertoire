@@ -25,21 +25,21 @@ import ProjectContent from "./components/projects/ProjectContent";
 const Home = (): JSX.Element => {
   return (
     <div className="flex flex-col">
-      <div className="flex w-full justify-center md:mb-8">
-        <Header />
-      </div>
-      <div className="mt-12 space-y-36 md:mt-16">
-        <section id="home" className="scroll-mt-56">
+      <div className="space-y-40">
+        <section id="home" className="scroll-mt-20">
+          <div className="flex w-full justify-center md:mb-8">
+            <Header />
+          </div>
           <h2 className="mb-4 w-full border-b-2 uppercase lg:hidden">Home</h2>
           <HomeContent />
         </section>
-        <section id="experience" className="scroll-mt-24">
+        <section id="experience" className="scroll-mt-20">
           <h2 className="mb-4 w-full border-b-2 uppercase lg:hidden">
             Experience
           </h2>
           <ExperienceContent />
         </section>
-        <section id="projects" className="scroll-mt-24">
+        <section id="projects" className="scroll-mt-20">
           <h2 className="mb-4 w-full border-b-2 uppercase lg:hidden">
             Projects
           </h2>

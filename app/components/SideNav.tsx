@@ -2,10 +2,11 @@
 
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 
-import { useEffect, useState } from "react";
+import { useActiveSection } from "../hooks/useActiveSection";
 import IconLink from "./IconLink";
 import SideNavLink from "./SideNavLink";
 
+const sectionIds = ["home", "experience", "projects"];
 const navItems = [
   {
     name: "Home",
@@ -39,10 +40,10 @@ const navItems = [
  * @returns {JSX.Element} The responsive sidebar with section links and social icons
  *
  * @author Ralph Woiwode
- * @version 0.5.0
+ * @version 0.6.0
  */
 const SideNav = (): JSX.Element => {
-  const [activeSection, setActiveSection] = useState<string>("");
+  const activeSection = useActiveSection(sectionIds);
 
   /**
    * Handles smooth scrolling when clicking navigation links
@@ -59,56 +60,6 @@ const SideNav = (): JSX.Element => {
       target.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
-
-  // Handle initial page load with hash
-  useEffect(() => {
-    const observerOptions = {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.6,
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      const visibleSections = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-
-      if (visibleSections.length > 0) {
-        const sectionId = visibleSections[0].target.id;
-        setActiveSection(sectionId);
-
-        if (window.location.hash !== `#${sectionId}`) {
-          window.history.replaceState({}, "", `#${sectionId}`);
-        }
-      }
-    }, observerOptions);
-
-    const sectionElements = navItems.map((item) => {
-      const el = document.getElementById(item.name.toLowerCase());
-      if (el) observer.observe(el);
-      return el;
-    });
-
-    // Initial scroll on load
-    const hash = window.location.hash.substring(1);
-    if (hash) {
-      setTimeout(() => {
-        const el = document.getElementById(hash);
-        if (el) {
-          el.scrollIntoView({ behavior: "smooth", block: "start" });
-          setActiveSection(hash);
-        }
-      }, 100);
-    } else {
-      setActiveSection("home");
-    }
-
-    return () => {
-      sectionElements.forEach((el) => {
-        if (el) observer.unobserve(el);
-      });
-    };
-  }, []);
 
   return (
     <aside className="hidden w-[40%] flex-col justify-between px-16 lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:py-24">

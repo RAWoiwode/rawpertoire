@@ -41,7 +41,7 @@ export default function RootLayout({
       <body className="bg-background text-text/75">
         <div className="mx-auto flex max-w-screen-xl justify-evenly lg:min-h-screen">
           <SideNav />
-          <main className="flex flex-col space-y-4 px-8 py-20 md:px-16 lg:w-[50%] lg:px-0 lg:pr-16 lg:pl-4">
+          <main className="flex flex-col space-y-4 px-8 py-20 md:px-16 lg:w-[50%] lg:px-0">
             {children}
           </main>
         </div>
