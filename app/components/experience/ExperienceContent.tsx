@@ -47,7 +47,7 @@ const fetchExperienceData = async (): Promise<Experience[]> => {
             { name: "Docker", years: 2 },
             { name: "Git", years: 3 },
             { name: "Hadoop", years: 2 },
-            { name: "k8s", years: 2 },
+            { name: "Kubernetes", years: 2 },
             { name: "SQL", years: 4 },
             { name: "Spark", years: 2 },
             { name: "Python", years: 3 },
