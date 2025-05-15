@@ -37,7 +37,7 @@ const HomeContent = (): JSX.Element => {
       </p>
       <p className="text-base">
         Outside of code, you can find me reading, cooking, golfing, saving
-        Hyrule, or hanging out with my gf and our two spoiled corgis.
+        Hyrule, or hanging out with my girlfriend and our two spoiled corgis.
       </p>
     </div>
   );
