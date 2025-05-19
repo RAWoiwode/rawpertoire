@@ -62,7 +62,10 @@ export const useActiveSection = (sectionIds: string[]): string => {
       });
 
       // SEOOOOOOOOOOOOOOOOOO
-      if (document.title !== `RAWpertoire | ${closestSection}`) {
+      if (
+        closestSection &&
+        document.title !== `RAWpertoire | ${closestSection}`
+      ) {
         document.title = `RAWpertoire | ${closestSection.charAt(0).toUpperCase() + closestSection.slice(1)}`;
       }
     };
