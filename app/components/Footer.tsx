@@ -16,11 +16,15 @@
  * @returns {JSX.Element} The footer section with site credits
  *
  * @author Ralph Woiwode
- * @version 0.1.0
+ * @version 0.2.0
  */
 const Footer = () => {
   return (
-    <div className="mt-24">
+    <footer
+      className="mt-24"
+      role="contentinfo"
+      aria-label="Site credits and technology stack"
+    >
       <p className="text-xs">
         This site was inspired by{" "}
         <a
@@ -31,14 +35,19 @@ const Footer = () => {
         >
           Brittany Chiang&apos;s
         </a>{" "}
-        portfolio. I sketched the design in <i>Figma</i> and built it in{" "}
-        <i>Visual Studio Code</i> using <i>Next.js</i>, <i>TypeScript</i>, and{" "}
-        <i>Tailwind CSS</i>.
+        portfolio. I sketched the design in{" "}
+        <span className="italic">Figma</span> and built it in{" "}
+        <span className="italic">Visual Studio Code</span> using{" "}
+        <span className="italic">Next.js</span>,{" "}
+        <span className="italic">TypeScript</span>, and{" "}
+        <span className="italic">Tailwind CSS</span>.
         <br />
-        It&apos;s set in <i>Google&apos;s Noto Sans</i> and deployed on{" "}
-        <i>Vercel</i>.
+        It&apos;s set in <span className="italic">
+          Google&apos;s Noto Sans
+        </span>{" "}
+        and deployed on <span className="italic">Vercel</span>.
       </p>
-    </div>
+    </footer>
   );
 };
 

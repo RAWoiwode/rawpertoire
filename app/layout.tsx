@@ -13,6 +13,7 @@ const noto_sans = Noto_Sans({
 /**
  * Metdata for the application, used to configure SEO and document headers.
  *
+ * @constant
  * @type {Metadata}
  */
 export const metadata: Metadata = {
@@ -23,13 +24,13 @@ export const metadata: Metadata = {
 /**
  * The RootLayout component defines the global layout structure of the app.
  *
- * TODO: Update Metatags for each page
+ * TODO: Update Metatags
  *
  * @component
  * @returns {JSX.Element} The global layout wrapper for all routes
  *
  * @author Ralph Woiwode
- * @version 0.4.4
+ * @version 0.4.5
  */
 export default function RootLayout({
   children,
@@ -37,11 +38,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>): JSX.Element {
   return (
-    <html lang="en" className={noto_sans.className}>
+    <html lang="en" className={noto_sans.className} suppressHydrationWarning>
       <body className="bg-background text-text/75">
         <div className="mx-auto flex max-w-screen-xl justify-evenly lg:min-h-screen">
           <SideNav />
-          <main className="flex flex-col space-y-4 px-8 py-20 md:px-16 lg:w-[50%] lg:px-0">
+          <main
+            role="main"
+            className="flex flex-col space-y-4 px-8 py-20 md:px-16 lg:w-[50%] lg:px-0"
+          >
             {children}
           </main>
         </div>
