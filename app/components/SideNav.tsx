@@ -2,22 +2,10 @@
 
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 
+import { NAV_ITEMS, NAV_SECTIONS } from "../constants/navigation";
 import { useActiveSection } from "../hooks/useActiveSection";
 import IconLink from "./IconLink";
 import SideNavLink from "./SideNavLink";
-
-const sectionIds = ["home", "experience", "projects"];
-const navItems = [
-  {
-    name: "Home",
-  },
-  {
-    name: "Experience",
-  },
-  {
-    name: "Projects",
-  },
-];
 
 /**
  * The SideNav component renders the sidebar navigation for the app.
@@ -40,10 +28,10 @@ const navItems = [
  * @returns {JSX.Element} The responsive sidebar with section links and social icons
  *
  * @author Ralph Woiwode
- * @version 0.6.0
+ * @version 0.6.1
  */
 const SideNav = (): JSX.Element => {
-  const activeSection = useActiveSection(sectionIds);
+  const activeSection = useActiveSection(NAV_SECTIONS);
 
   /**
    * Handles smooth scrolling when clicking navigation links
@@ -64,8 +52,11 @@ const SideNav = (): JSX.Element => {
   return (
     <aside className="hidden w-[40%] flex-col justify-between px-16 lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:py-24">
       <div>
-        <nav className="hidden w-max flex-col space-y-4 lg:flex">
-          {navItems.map((item) => {
+        <nav
+          className="hidden w-max flex-col space-y-4 lg:flex"
+          aria-label="Primary sidebar navigation"
+        >
+          {NAV_ITEMS.map((item) => {
             const id = item.name.toLowerCase();
             const isActive = activeSection === id;
 

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { IconContext } from "react-icons";
 
 /**
@@ -43,11 +42,17 @@ interface IconLinkProps {
  * @returns {JSX.Element} A styled link containing a React icon
  *
  * @author Ralph Woiwode
- * @version 0.2.0
+ * @version 0.3.0
  */
 const IconLink = ({ url, title, children }: IconLinkProps): JSX.Element => {
   return (
-    <Link href={url} target="_blank" rel="noopener noreferrer" title={title}>
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      title={title}
+      aria-label={title}
+    >
       <IconContext.Provider
         value={{
           className:
@@ -57,7 +62,7 @@ const IconLink = ({ url, title, children }: IconLinkProps): JSX.Element => {
       >
         {children}
       </IconContext.Provider>
-    </Link>
+    </a>
   );
 };
 
