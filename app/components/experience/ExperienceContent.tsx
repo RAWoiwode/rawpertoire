@@ -1,16 +1,5 @@
+import { Skill } from "@/app/types/skillTypes";
 import JobCard from "./JobCard";
-
-/**
- * A technology or tool used in a professional experience.
- *
- * @interface Skill
- * @property {string} name - The skill or technology name.
- * @property {number} years - Years of experience with the skill.
- */
-interface Skill {
-  name: string;
-  years: number;
-}
 
 /**
  * A single job entry containing position details and associated skills.
@@ -44,13 +33,13 @@ const fetchExperienceData = async (): Promise<Experience[]> => {
           date: "2021 - 2023",
           desc: "I contributed to rewriting a cost forecasting app during a major platform migration, helping improve scalability, automate key workflows, and fine-tune system performance along the way.",
           skills: [
-            { name: "Docker", years: 2 },
-            { name: "Git", years: 3 },
-            { name: "Hadoop", years: 2 },
-            { name: "Kubernetes", years: 2 },
-            { name: "SQL", years: 4 },
-            { name: "Spark", years: 2 },
-            { name: "Python", years: 3 },
+            { name: "Docker" },
+            { name: "Git" },
+            { name: "Hadoop" },
+            { name: "Kubernetes" },
+            { name: "SQL" },
+            { name: "Spark" },
+            { name: "Python" },
           ],
         },
         {
@@ -58,11 +47,11 @@ const fetchExperienceData = async (): Promise<Experience[]> => {
           date: "2019 - 2020",
           desc: "I led the shift to a modern frontend approach for a B2B eCommerce app, improving team practices and contributing to a redesign that boosted user engagement by 30%.",
           skills: [
-            { name: "React", years: 3 },
-            { name: "JavaScript", years: 4 },
-            { name: "CSS", years: 2 },
-            { name: "HTML", years: 3 },
-            { name: "JSON", years: 2 },
+            { name: "React" },
+            { name: "JavaScript" },
+            { name: "CSS" },
+            { name: "HTML" },
+            { name: "JSON" },
           ],
         },
         {
@@ -70,12 +59,12 @@ const fetchExperienceData = async (): Promise<Experience[]> => {
           date: "2016 - 2019",
           desc: "This was my first real dive into frontend development—building internal tools that streamlined funding workflows, nearly doubled efficiency, and taught me how to blend design with function in a fast-moving team environment.",
           skills: [
-            { name: "PHP", years: 3 },
-            { name: "Bootstrap", years: 5 },
-            { name: "CSS", years: 2 },
-            { name: "HTML", years: 3 },
-            { name: "JavaScript", years: 4 },
-            { name: "AJAX", years: 2 },
+            { name: "PHP" },
+            { name: "Bootstrap" },
+            { name: "CSS" },
+            { name: "HTML" },
+            { name: "JavaScript" },
+            { name: "AJAX" },
           ],
         },
       ]);
@@ -98,7 +87,7 @@ const fetchExperienceData = async (): Promise<Experience[]> => {
  * @returns {Promise<JSX.Element>} A section containing job experience cards
  *
  * @author Ralph Woiwode
- * @version 0.3.0
+ * @version 0.3.1
  */
 const ExperienceContent = async (): Promise<JSX.Element> => {
   const experiences: Experience[] = await fetchExperienceData();
@@ -114,9 +103,15 @@ const ExperienceContent = async (): Promise<JSX.Element> => {
           skills={experience.skills}
         />
       ))}
-      <div className="flex">
+      <div
+        className="flex"
+        role="region"
+        aria-labelledby="current-tech-heading"
+      >
         <div className="border-r-secondary mr-4 border-r-2 pr-4">
-          <h3 className="text-primary uppercase">Current tech</h3>
+          <h3 id="current-tech-heading" className="text-primary uppercase">
+            Current tech
+          </h3>
         </div>
         <ul className="flex flex-wrap space-x-2.5">
           <li>React</li>
@@ -126,9 +121,15 @@ const ExperienceContent = async (): Promise<JSX.Element> => {
           <li>Elixir</li>
         </ul>
       </div>
-      <div className="flex">
+      <div
+        className="flex"
+        role="region"
+        aria-labelledby="current-misc-heading"
+      >
         <div className="border-r-secondary mr-4 border-r-2 pr-4">
-          <h3 className="text-primary uppercase">Misc</h3>
+          <h3 id="current-misc-heading" className="text-primary uppercase">
+            Misc
+          </h3>
         </div>
         <ul className="flex flex-wrap space-x-2.5">
           <li>AWS Certified Cloud Practitioner</li>
