@@ -1,8 +1,12 @@
-![Next.js](https://img.shields.io/badge/Next.js-15+-black?logo=next.js)
-![TypeScript](https://img.shields.io/badge/built%20with-TypeScript-blue?logo=typescript)
-![TailwindCSS](https://img.shields.io/badge/styled%20with-TailwindCSS-06b6d4?logo=tailwindcss)
-
 # **RAWpertoire**
+
+![Next.js](https://img.shields.io/badge/Next.js-14+-000?logo=next.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-5+-3178c6?logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-4.0-38bdf8?logo=tailwindcss&logoColor=white)
+![Prettier](https://img.shields.io/badge/Code%20Style-Prettier-f7b93e?logo=prettier&logoColor=white)
+![Deployed on Vercel](https://img.shields.io/badge/Hosted%20on-Vercel-000?logo=vercel&logoColor=white)
+
+<!-- [![Vercel](https://vercel-badge.vercel.app/api/RAWoiwode/rawpertoire)](https://vercel.com/RAWoiwode/rawpertoire) -->
 
 This is my personal portfolio for showcasing **Front-End Development** work, UI craftsmanship, and creative engineering. It features a clean, responsive design, well-structured components, and semantic accessibility — all built using modern tooling and best practices.
 
