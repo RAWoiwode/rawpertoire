@@ -18,7 +18,49 @@ const noto_sans = Noto_Sans({
  */
 export const metadata: Metadata = {
   title: "RAWpetoire",
-  description: "Portfolio for Ralph Woiwode",
+  authors: [{ name: "Ralph Alex Woiwode", url: "https://rawoiwode.ercel.app" }],
+  creator: "Ralph Alex Woiwode",
+  description:
+    "Portfolio for Ralph Alex Woiwode – Front-End Developer focused on performance and design.",
+  metadataBase: new URL("https://rawoiwode.vercel.app"),
+  openGraph: {
+    title: "RAWpertoire",
+    description:
+      "Portfolio for Ralph Alex Woiwode – Front-End Developer focused on performance and design.",
+    url: "https://rawoiwode.vercel.app", // TODO: Update
+    siteName: "RAWpertoire",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "RAWpertoire site preview",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+  },
+  keywords: [
+    "Ralph Woiwode",
+    "Ralph Alex Woiwode",
+    "RAW",
+    "Front-End Developer",
+    "React Developer",
+    "Next.js Portfolio",
+    "Tailwind CSS",
+    "UI Engineer",
+    "Web Developer",
+  ],
 };
 
 /**
