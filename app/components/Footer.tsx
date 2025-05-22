@@ -21,7 +21,7 @@
 const Footer = () => {
   return (
     <footer
-      className="mt-24"
+      className="mt-20"
       role="contentinfo"
       aria-label="Site credits and technology stack"
     >

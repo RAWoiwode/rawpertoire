@@ -1,3 +1,4 @@
+import CallToAction from "./components/CallToAction";
 import SectionHeader from "./components/common/SectionHeader";
 import ExperienceContent from "./components/experience/ExperienceContent";
 import Footer from "./components/Footer";
@@ -57,6 +58,7 @@ const Home = (): JSX.Element => {
           <SectionHeader id="projects-heading">Projects</SectionHeader>
           <ProjectContent />
         </section>
+        <CallToAction />
       </div>
       <Footer />
     </div>
