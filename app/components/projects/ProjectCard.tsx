@@ -40,22 +40,24 @@ const ProjectCard = ({
   image,
   gitHubUrl,
 }: Project): JSX.Element => {
-  let titleDisplay = <h4>{title}</h4>;
-
-  if (url) {
-    titleDisplay = (
-      <ExternalLink href={url} title={title}>
-        <h4>{title}</h4>
-      </ExternalLink>
-    );
-  }
-
   return (
-    <div className="border-primary flex h-full flex-col border p-6">
+    <div
+      className="border-primary flex h-full flex-col border p-6"
+      role="group"
+      aria-labelledby={`project-${title}`}
+    >
       <div className="flex flex-col">
         <div className="flex w-full flex-col">
           <div className="flex justify-between">
-            {titleDisplay}
+            <h4 id={`project-${title}`}>
+              {url ? (
+                <ExternalLink href={url} title={title}>
+                  {title}
+                </ExternalLink>
+              ) : (
+                title
+              )}
+            </h4>
             <ExternalLink
               href={gitHubUrl}
               title={`${title} Repo`}
@@ -81,7 +83,6 @@ const ProjectCard = ({
               src={IMAGE_DIRECTORY + image}
               width={128}
               height={128}
-              priority
               placeholder="blur"
               className="object-cover"
               blurDataURL="/images/blur.png"

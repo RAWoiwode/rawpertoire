@@ -24,7 +24,8 @@
   }
 
   .underline-link-hover {
-    @apply text-accent/90 hover:text-accent before:scale-x-0 hover:before:scale-x-100;
+    @apply text-accent/90 hover:text-accent focus-visible:text-accent;
+    @apply before:scale-x-0 hover:before:scale-x-100 focus-visible:before:scale-x-100;
   }
 
   .underline-link-active {

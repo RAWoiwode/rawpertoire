@@ -1,3 +1,5 @@
+import CallToAction from "./components/CallToAction";
+import SectionHeader from "./components/common/SectionHeader";
 import ExperienceContent from "./components/experience/ExperienceContent";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -20,31 +22,43 @@ import ProjectContent from "./components/projects/ProjectContent";
  * @returns {JSX.Element} The homepage layout
  *
  * @author Ralph Woiwode
- * @version 0.3.3
+ * @version 0.3.5
  */
 const Home = (): JSX.Element => {
   return (
     <div className="flex flex-col">
       <div className="space-y-40">
-        <section id="home" className="scroll-mt-20">
+        <section
+          id="home"
+          role="region"
+          aria-labelledby="home-heading"
+          className="scroll-mt-20"
+        >
           <div className="flex w-full justify-center md:mb-8">
             <Header />
           </div>
-          <h2 className="mb-4 w-full border-b-2 uppercase lg:hidden">Home</h2>
+          <SectionHeader id="home-heading">Home</SectionHeader>
           <HomeContent />
         </section>
-        <section id="experience" className="scroll-mt-20">
-          <h2 className="mb-4 w-full border-b-2 uppercase lg:hidden">
-            Experience
-          </h2>
+        <section
+          id="experience"
+          role="region"
+          aria-labelledby="experience-heading"
+          className="scroll-mt-20"
+        >
+          <SectionHeader id="experience-heading">Experience</SectionHeader>
           <ExperienceContent />
         </section>
-        <section id="projects" className="scroll-mt-20">
-          <h2 className="mb-4 w-full border-b-2 uppercase lg:hidden">
-            Projects
-          </h2>
+        <section
+          id="projects"
+          role="region"
+          aria-labelledby="projects-heading"
+          className="scroll-mt-20"
+        >
+          <SectionHeader id="projects-heading">Projects</SectionHeader>
           <ProjectContent />
         </section>
+        <CallToAction />
       </div>
       <Footer />
     </div>
