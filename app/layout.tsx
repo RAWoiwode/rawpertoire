@@ -18,16 +18,16 @@ const noto_sans = Noto_Sans({
  */
 export const metadata: Metadata = {
   title: "RAWpetoire",
-  authors: [{ name: "Ralph Alex Woiwode", url: "https://rawoiwode.ercel.app" }],
+  authors: [{ name: "Ralph Alex Woiwode", url: "https://rawoiwode.com" }],
   creator: "Ralph Alex Woiwode",
   description:
     "Portfolio for Ralph Alex Woiwode – Front-End Developer focused on performance and design.",
-  metadataBase: new URL("https://rawoiwode.vercel.app"),
+  metadataBase: new URL("https://rawoiwode.com"),
   openGraph: {
     title: "RAWpertoire",
     description:
       "Portfolio for Ralph Alex Woiwode – Front-End Developer focused on performance and design.",
-    url: "https://rawoiwode.vercel.app", // TODO: Update
+    url: "https://rawoiwode.com",
     siteName: "RAWpertoire",
     images: [
       {
