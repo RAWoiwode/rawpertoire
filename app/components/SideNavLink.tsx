@@ -22,7 +22,7 @@ interface SideNavLinkProps {
  * @returns {JSX.Element} A styled anchor linking to a section ID
  *
  * @author Ralph Woiwode
- * @version 0.1.0
+ * @version 0.1.1
  */
 export const SideNavLink = ({
   id,
@@ -34,6 +34,7 @@ export const SideNavLink = ({
     <a
       href={`#${id}`}
       onClick={onClick}
+      aria-current={isActive ? "true" : undefined}
       className={`underline-link underline-link-left px-2 py-2 text-lg tracking-widest uppercase ${
         isActive ? "underline-link-active" : "underline-link-hover"
       }`}

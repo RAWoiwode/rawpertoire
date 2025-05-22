@@ -30,14 +30,14 @@ interface ProjectDisplayProps {
  * @returns {JSX.Element} A responsive project grid layout
  *
  * @author Ralph Woiwode
- * @version 0.5.0
+ * @version 0.5.1
  */
 const ProjectDisplay = ({ projects }: ProjectDisplayProps): JSX.Element => {
   return (
     <div className="mx-auto flex flex-col">
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-1">
         {projects.map((project) => (
-          <div key={project.title} className="">
+          <div key={project.title}>
             <ProjectCard {...project} />
           </div>
         ))}

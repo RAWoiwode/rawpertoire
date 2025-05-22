@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 /**
  * Props for the ExternalLink component.
  *
@@ -33,7 +31,7 @@ interface ExternalLinkProps {
  * @returns {JSX.Element} A styled external anchor element
  *
  * @author Ralph Woiwode
- * @version 0.4.0
+ * @version 0.4.1
  */
 export const ExternalLink = ({
   href,
@@ -45,14 +43,15 @@ export const ExternalLink = ({
     direction === "right" ? "underline-link-right" : "underline-link-left";
 
   return (
-    <Link
+    <a
       href={href}
       title={title}
+      aria-label={title}
       target="_blank"
       rel="noopener noreferrer"
-      className={`underline-link ${directionClass} underline-link-hover text-sm`}
+      className={`underline-link ${directionClass} underline-link-hover`}
     >
       {children}
-    </Link>
+    </a>
   );
 };

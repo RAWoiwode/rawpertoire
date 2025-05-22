@@ -28,12 +28,12 @@ interface PillProps {
  * @returns {JSX.Element} A styled pill containing a text label
  *
  * @author Ralph Woiwode
- * @version 0.4.0
+ * @version 0.4.1
  */
 const Pill = ({ item }: PillProps): JSX.Element => {
   return (
-    <div className="bg-secondary rounded-full px-3 py-0.5">
-      <p className="tracking-widest">{item}</p>
+    <div role="listitem" className="bg-secondary rounded-full px-3 py-0.5">
+      <span className="text-sm tracking-widest">{item}</span>
     </div>
   );
 };
