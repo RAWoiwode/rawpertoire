@@ -16,7 +16,7 @@
  * @returns {JSX.Element} The footer section with site credits
  *
  * @author Ralph Woiwode
- * @version 0.2.0
+ * @version 1.0.0
  */
 const Footer = () => {
   return (

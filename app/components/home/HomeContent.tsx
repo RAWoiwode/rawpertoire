@@ -14,7 +14,7 @@
  * @returns {JSX.Element} The introductory section content
  *
  * @author Ralph Woiwode
- * @version 0.3.0
+ * @version 1.0.0
  */
 const HomeContent = (): JSX.Element => {
   return (

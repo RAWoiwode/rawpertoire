@@ -22,7 +22,7 @@ interface SideNavLinkProps {
  * @returns {JSX.Element} A styled anchor linking to a section ID
  *
  * @author Ralph Woiwode
- * @version 0.1.1
+ * @version 1.0.0
  */
 export const SideNavLink = ({
   id,
