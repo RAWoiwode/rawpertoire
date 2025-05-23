@@ -28,7 +28,7 @@ import SideNavLink from "./SideNavLink";
  * @returns {JSX.Element} The responsive sidebar with section links and social icons
  *
  * @author Ralph Woiwode
- * @version 0.6.1
+ * @version 1.0.0
  */
 const SideNav = (): JSX.Element => {
   const activeSection = useActiveSection(NAV_SECTIONS);

@@ -31,7 +31,7 @@ interface ExternalLinkProps {
  * @returns {JSX.Element} A styled external anchor element
  *
  * @author Ralph Woiwode
- * @version 0.4.1
+ * @version 1.0.0
  */
 export const ExternalLink = ({
   href,

@@ -13,7 +13,7 @@
  *
  * TODO: Show different tips (☞ﾟヮﾟ)☞
  * @author Ralph Woiwode
- * @version 0.1.1
+ * @version 1.0.0
  */
 const Loading = (): JSX.Element => {
   return (

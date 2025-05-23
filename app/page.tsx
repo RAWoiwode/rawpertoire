@@ -22,7 +22,7 @@ import ProjectContent from "./components/projects/ProjectContent";
  * @returns {JSX.Element} The homepage layout
  *
  * @author Ralph Woiwode
- * @version 0.3.5
+ * @version 1.0.0
  */
 const Home = (): JSX.Element => {
   return (

@@ -18,7 +18,7 @@ interface SectionHeaderProps {
  * @param {React.ReactNode} children - The content of the header
  * @returns {JSX.Element} A styled h2 element for section headers
  *
- * @version 0.1.1
+ * @version 1.0.0
  * @author Ralph Woiwode
  */
 const SectionHeader = ({ id, children }: SectionHeaderProps): JSX.Element => {

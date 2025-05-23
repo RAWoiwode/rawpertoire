@@ -42,7 +42,7 @@ interface IconLinkProps {
  * @returns {JSX.Element} A styled link containing a React icon
  *
  * @author Ralph Woiwode
- * @version 0.3.0
+ * @version 1.0.0
  */
 const IconLink = ({ url, title, children }: IconLinkProps): JSX.Element => {
   return (

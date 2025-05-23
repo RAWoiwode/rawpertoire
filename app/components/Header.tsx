@@ -16,7 +16,7 @@
  * @returns {JSX.Element} The header element for the app
  *
  * @author Ralph Woiwode
- * @version 0.5.0
+ * @version 1.0.0
  */
 const Header = (): JSX.Element => {
   return (

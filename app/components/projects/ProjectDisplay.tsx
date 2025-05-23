@@ -30,7 +30,7 @@ interface ProjectDisplayProps {
  * @returns {JSX.Element} A responsive project grid layout
  *
  * @author Ralph Woiwode
- * @version 0.5.1
+ * @version 1.0.0
  */
 const ProjectDisplay = ({ projects }: ProjectDisplayProps): JSX.Element => {
   return (

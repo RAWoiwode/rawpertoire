@@ -87,7 +87,7 @@ const fetchExperienceData = async (): Promise<Experience[]> => {
  * @returns {Promise<JSX.Element>} A section containing job experience cards
  *
  * @author Ralph Woiwode
- * @version 0.3.1
+ * @version 1.0.0
  */
 const ExperienceContent = async (): Promise<JSX.Element> => {
   const experiences: Experience[] = await fetchExperienceData();
