@@ -31,7 +31,7 @@ import { ExternalLink } from "./ExternalLink";
  * @returns {JSX.Element} A card displaying the project's title, description, image, and GitHub link
  *
  * @author Ralph Woiwode
- * @version 0.5.0
+ * @version 1.0.0
  */
 const ProjectCard = ({
   title,

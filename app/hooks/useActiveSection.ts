@@ -20,7 +20,7 @@ import { useEffect, useState } from "react";
  * ```
  *
  * @author Ralph Woiwode
- * @version 0.1.0
+ * @version 1.0.0
  */
 export const useActiveSection = (sectionIds: string[]): string => {
   const [activeSection, setActiveSection] = useState<string>("");

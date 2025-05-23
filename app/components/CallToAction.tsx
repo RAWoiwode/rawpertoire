@@ -20,7 +20,7 @@
  * @returns {JSX.Element} A visually distinct call-to-action section
  *
  * @author Ralph Woiwode
- * @version 0.1.0
+ * @version 1.0.0
  */
 const CallToAction = (): JSX.Element => {
   return (

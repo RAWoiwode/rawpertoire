@@ -39,7 +39,7 @@ interface JobCardProps {
  * @returns {JSX.Element} A job card displaying title, date, description, and skills
  *
  * @author Ralph Woiwode
- * @version 0.4.1
+ * @version 1.0.0
  */
 const JobCard = ({ title, date, desc, skills }: JobCardProps): JSX.Element => {
   return (

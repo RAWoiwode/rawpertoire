@@ -28,7 +28,7 @@ interface PillProps {
  * @returns {JSX.Element} A styled pill containing a text label
  *
  * @author Ralph Woiwode
- * @version 0.4.1
+ * @version 1.0.0
  */
 const Pill = ({ item }: PillProps): JSX.Element => {
   return (

@@ -66,13 +66,11 @@ export const metadata: Metadata = {
 /**
  * The RootLayout component defines the global layout structure of the app.
  *
- * TODO: Update Metatags
- *
  * @component
  * @returns {JSX.Element} The global layout wrapper for all routes
  *
  * @author Ralph Woiwode
- * @version 0.4.5
+ * @version 1.0.0
  */
 export default function RootLayout({
   children,

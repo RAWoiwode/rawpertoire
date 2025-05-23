@@ -1,12 +1,13 @@
 # **RAWpertoire**
 
+> Live Site: [https://rawoiwode.com](https://rawoiwode.com)
+
 ![Next.js](https://img.shields.io/badge/Next.js-14+-000?logo=next.js&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5+-3178c6?logo=typescript&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-4.0-38bdf8?logo=tailwindcss&logoColor=white)
 ![Prettier](https://img.shields.io/badge/Code%20Style-Prettier-f7b93e?logo=prettier&logoColor=white)
 ![Deployed on Vercel](https://img.shields.io/badge/Hosted%20on-Vercel-000?logo=vercel&logoColor=white)
-
-<!-- [![Vercel](https://vercel-badge.vercel.app/api/RAWoiwode/rawpertoire)](https://vercel.com/RAWoiwode/rawpertoire) -->
+[![Vercel](https://vercel-badge.vercel.app/api/RAWoiwode/rawpertoire)](https://vercel.com/RAWoiwode/rawpertoire)
 
 This is my personal portfolio for showcasing **Front-End Development** work, UI craftsmanship, and creative engineering. It features a clean, responsive design, well-structured components, and semantic accessibility — all built using modern tooling and best practices.
 
@@ -61,7 +62,8 @@ This is my personal portfolio for showcasing **Front-End Development** work, UI 
 
 - Optimized image loading via `next/image` (`blurDataURL`, `object-cover`)
 - External links use native `<a>` tags (not `next/link`)
-- Deployed via [Vercel](https://vercel.com)
+- Deployed on [Vercel](https://vercel.com) with custom domain [rawoiwode.com](https://rawoiwode.com)
+- Automatic HTTPS with edge network delivery
 - Font: [Google Noto Sans](https://fonts.google.com/specimen/Noto+Sans)
 
 ---
