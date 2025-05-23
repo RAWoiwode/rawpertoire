@@ -10,8 +10,6 @@ import SideNavLink from "./SideNavLink";
 /**
  * The SideNav component renders the sidebar navigation for the app.
  *
- * TODO: Separate data (navItems) from the UI for improved maintainability.
- *
  * ## Example:
  * ```tsx
  * import SideNav from "@/app/components/SideNav";
