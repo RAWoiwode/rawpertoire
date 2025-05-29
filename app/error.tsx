@@ -7,7 +7,7 @@
  * @returns {JSX.Element} A styled 500 fallback UI
  *
  * @author Ralph Woiwode
- * @version 0.1.2
+ * @version 1.0.0
  */
 
 const Error = (): JSX.Element => {

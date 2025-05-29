@@ -7,7 +7,7 @@ import Link from "next/link";
  * @returns {JSX.Element} A styled 404 page with return navigation
  *
  * @author Ralph Woiwode
- * @version 0.1.0
+ * @version 1.0.0
  */
 
 const NotFound = () => {
