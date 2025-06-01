@@ -14,26 +14,26 @@
  * @returns {JSX.Element} The introductory section content
  *
  * @author Ralph Woiwode
- * @version 1.0.0
+ * @version 1.0.1
  */
 const HomeContent = (): JSX.Element => {
   return (
     <div className="space-y-6">
       <p className="text-base">
-        I&apos;m a creative developer with six years of experience exploring how
-        thoughtful interfaces can elevate digital experiences. I love the
-        challenge of making things not just functional, but genuinely enjoyable
-        to use.
+        I&apos;m a skilled developer with six years of exploring how thoughtful
+        interfaces can elevate digital experiences. I enjoy the challenge of
+        building things that are both functional and genuinely satisfying for
+        users.
       </p>
       <p className="text-base">
-        While my path has taken a few turns, front-end development has always
-        been the constant. It&apos;s the work I return to—through projects,
-        collaboration, or simply experimenting to learn.
+        Front-end development has always been at the core of my work. It&apos;s
+        the area I keep coming back to—whether through projects, collaborations,
+        or simply experimenting to learn and grow.
       </p>
       <p className="text-base">
-        This portfolio ties these threads together—a space to share what
-        I&apos;ve built, how I think, and how I&apos;m growing as a developer
-        and designer.
+        This portfolio brings together my projects, design approach, and ongoing
+        growth as a developer — a place to share what I&apos;ve built and how I
+        think.
       </p>
       <p className="text-base">
         Outside of code, you can find me reading, cooking, golfing, saving

@@ -10,7 +10,7 @@
 
 @layer components {
   .underline-link {
-    @apply text-accent relative flex items-center gap-1 transition-colors duration-300;
+    @apply text-accent relative flex items-center gap-1 tracking-normal transition-discrete duration-300;
     @apply before:bg-accent before:absolute before:inset-x-0 before:-bottom-0.5 before:h-[2px];
     @apply before:transition-transform before:duration-300 before:ease-out before:will-change-transform;
   }
@@ -29,7 +29,11 @@
   }
 
   .underline-link-active {
-    @apply text-accent before:scale-x-100;
+    @apply text-accent tracking-wider before:scale-x-100;
+  }
+
+  .list-separator {
+    @apply after:mx-2.5 after:content-['|'] last:after:content-none;
   }
 }
 

@@ -87,7 +87,7 @@ const fetchExperienceData = async (): Promise<Experience[]> => {
  * @returns {Promise<JSX.Element>} A section containing job experience cards
  *
  * @author Ralph Woiwode
- * @version 1.0.0
+ * @version 1.0.1
  */
 const ExperienceContent = async (): Promise<JSX.Element> => {
   const experiences: Experience[] = await fetchExperienceData();
@@ -113,12 +113,12 @@ const ExperienceContent = async (): Promise<JSX.Element> => {
             Current tech
           </h3>
         </div>
-        <ul className="flex flex-wrap space-x-2.5">
-          <li>React</li>
-          <li>TailwindCSS</li>
-          <li>NextJS</li>
-          <li>ReactNative</li>
-          <li>Elixir</li>
+        <ul className="flex flex-wrap">
+          <li className="list-separator">React</li>
+          <li className="list-separator">TailwindCSS</li>
+          <li className="list-separator">NextJS</li>
+          <li className="list-separator">ReactNative</li>
+          <li className="list-separator">Elixir</li>
         </ul>
       </div>
       <div
@@ -131,9 +131,9 @@ const ExperienceContent = async (): Promise<JSX.Element> => {
             Misc
           </h3>
         </div>
-        <ul className="flex flex-wrap space-x-2.5">
-          <li>AWS Certified Cloud Practitioner</li>
-          <li>M.S. Software Engineering</li>
+        <ul className="flex flex-wrap">
+          <li className="list-separator">AWS Certified Cloud Practitioner</li>
+          <li className="list-separator">M.S. Software Engineering</li>
         </ul>
       </div>
     </div>
