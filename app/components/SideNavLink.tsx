@@ -35,7 +35,7 @@ export const SideNavLink = ({
       href={`#${id}`}
       onClick={onClick}
       aria-current={isActive ? "true" : undefined}
-      className={`underline-link underline-link-left px-2 py-2 text-lg tracking-widest uppercase ${
+      className={`underline-link underline-link-left px-2 py-2 text-lg uppercase ${
         isActive ? "underline-link-active" : "underline-link-hover"
       }`}
     >

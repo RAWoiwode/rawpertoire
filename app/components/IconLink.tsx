@@ -57,7 +57,7 @@ const IconLink = ({ url, title, children }: IconLinkProps): JSX.Element => {
         value={{
           className:
             "text-accent/75 hover:text-accent hover:scale-110 transition-all",
-          size: "32",
+          size: "28",
         }}
       >
         {children}

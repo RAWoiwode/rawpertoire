@@ -92,7 +92,7 @@ const SideNav = (): JSX.Element => {
             href="/files/RAW_Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline-link underline-link-left underline-link-hover flex w-max p-1 transition-all"
+            className="underline-link underline-link-left underline-link-hover flex w-max p-1 text-sm transition-all"
           >
             Resume
           </a>
