@@ -31,6 +31,10 @@
   .underline-link-active {
     @apply text-accent before:scale-x-100;
   }
+
+  .list-separator {
+    @apply after:mx-2.5 after:content-['|'] last:after:content-none;
+  }
 }
 
 @layer base {
