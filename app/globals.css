@@ -10,7 +10,7 @@
 
 @layer components {
   .underline-link {
-    @apply text-accent relative flex items-center gap-1 tracking-normal transition-discrete duration-300;
+    @apply text-accent relative flex items-center gap-1 tracking-widest transition-discrete duration-300;
     @apply before:bg-accent before:absolute before:inset-x-0 before:-bottom-0.5 before:h-[2px];
     @apply before:transition-transform before:duration-300 before:ease-out before:will-change-transform;
   }
@@ -24,12 +24,12 @@
   }
 
   .underline-link-hover {
-    @apply text-accent/90 hover:text-accent focus-visible:text-accent;
-    @apply before:scale-x-0 hover:before:scale-x-100 focus-visible:before:scale-x-100;
+    @apply hover:text-text/70 focus-visible:text-text/80;
+    @apply before:scale-x-0 hover:before:scale-x-33 focus-visible:before:scale-x-33;
   }
 
   .underline-link-active {
-    @apply text-accent tracking-wider before:scale-x-100;
+    @apply text-text before:scale-x-100;
   }
 
   .list-separator {
