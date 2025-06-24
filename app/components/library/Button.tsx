@@ -30,11 +30,11 @@ const Button = ({
   ...props
 }: ButtonProps): JSX.Element => {
   const baseStyles =
-    "relative inline-flex items-center justify-center px-4 py-2 tracking-wide transition-colors transition-shadow duration-400 ease-out hover:duration-100 hover:linear disabled:cursor-not-allowed disabled:opacity-50 border border-transparent ring-0 inset-ring-0 hover:text-text hover:inset-ring-1 hover:ring-1 hover:inset-ring-primary hover:ring-primary";
+    "relative inline-flex items-center justify-center px-4 py-2 tracking-wide transition-colors transition-shadow duration-400 ease-out hover:duration-100 hover:linear disabled:cursor-not-allowed disabled:opacity-50 border border-transparent ring-0 inset-ring-0 hover:text-text hover:inset-ring-1 hover:ring-1 hover:inset-ring-accent hover:ring-accent";
 
   const variantClasses = {
-    primary: "bg-primary/15 ",
-    secondary: "bg-secondary/50 ",
+    primary: "bg-primary",
+    secondary: "bg-secondary ",
   };
 
   return (
